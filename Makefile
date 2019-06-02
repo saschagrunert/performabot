@@ -13,7 +13,7 @@ cabal2nix:
 fmt:
 	$(call nix-shell,floskell,"floskell src/*.hs")
 
-lint: cabal2nix
+lint: cabal2nix fmt
 	$(call nix-shell,git,"git diff --exit-code")
 
 shell:
