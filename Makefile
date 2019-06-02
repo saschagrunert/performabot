@@ -3,11 +3,15 @@
 all:
 	nix-build release.nix
 
+define nix-shell
+    nix-shell --pure -p ${1} --run ${2}
+endef
+
 cabal2nix:
-	nix-shell --pure -p cabal2nix --run "cabal2nix ." > default.nix
+	$(call nix-shell,cabal2nix,"cabal2nix ." > default.nix)
 
 lint: cabal2nix
-	nix-shell --pure -p git --run "git diff --exit-code"
+	$(call nix-shell,git,"git diff --exit-code")
 
 shell:
 	nix-shell --pure shell.nix
