@@ -1,7 +1,4 @@
 let
-  nixpkgs = import ./nixpkgs.nix;
-  pkgs = import nixpkgs {
-    config = { };
-  };
+  pkgs = import ./nixpkgs.nix { };
 in
   pkgs.haskellPackages.callPackage ./default.nix { }

@@ -1,20 +1,23 @@
-.PHONY: cabal2nix lint shell
-
 all:
 	nix-build release.nix
 
-define nix-shell
-    nix-shell --pure -p ${1} --run ${2}
-endef
-
+.PHONY: cabal2nix
 cabal2nix:
-	$(call nix-shell,cabal2nix,"cabal2nix ." > default.nix)
+	nix-shell --pure -p cabal2nix --run "cabal2nix ." > default.nix
 
+.PHONY: fmt
 fmt:
-	$(call nix-shell,floskell,"floskell src/*.hs")
+	floskell src/*.hs
 
-lint: cabal2nix fmt
-	$(call nix-shell,git,"git diff --exit-code")
+.PHONY: lint
+lint: cabal2nix
+	nix-shell --pure -p git --run "git diff --exit-code"
 
+.PHONY: nixpkgs
+nixpkgs:
+	nix-shell -p nix-prefetch-git --run "nix-prefetch-git --no-deepClone \
+		https://github.com/nixos/nixpkgs > nixpkgs.json"
+
+.PHONY: shell
 shell:
-	nix-shell --pure shell.nix
+	nix-shell --pure

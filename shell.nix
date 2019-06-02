@@ -1,8 +1,5 @@
 let
-  nixpkgs = import ./nixpkgs.nix;
-  pkgs = import nixpkgs {
-    config = { };
-  };
+  pkgs = import ./nixpkgs.nix { };
   project = import ./release.nix;
 in
 pkgs.stdenv.mkDerivation {
