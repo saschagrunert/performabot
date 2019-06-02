@@ -10,6 +10,9 @@ endef
 cabal2nix:
 	$(call nix-shell,cabal2nix,"cabal2nix ." > default.nix)
 
+fmt:
+	$(call nix-shell,floskell,"floskell src/*.hs")
+
 lint: cabal2nix
 	$(call nix-shell,git,"git diff --exit-code")
 
