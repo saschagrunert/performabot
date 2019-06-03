@@ -3,11 +3,13 @@
 mkDerivation {
   pname = "performabot";
   version = "0.1.0";
-  src = ./.;
-  isLibrary = false;
+  src = ./..;
+  isLibrary = true;
   isExecutable = true;
+  libraryHaskellDepends = [ base ];
   executableHaskellDepends = [
     base heavy-logger mtl text-format-heavy
   ];
-  license = stdenv.lib.licenses.bsd3;
+  testHaskellDepends = [ base ];
+  license = stdenv.lib.licenses.mit;
 }

@@ -4,11 +4,11 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeFamilies #-}
 
-module Main where
+module Main ( main ) where
 
 import           Control.Monad.Trans        ( liftIO )
 
-import           Data.Text.Format.Heavy     ( Format, Single(Single) )
+import           Data.Text.Format.Heavy     ( Single(Single) )
 
 import           Lib                        ( parse )
 
@@ -16,7 +16,7 @@ import           System.IO
                  ( BufferMode(LineBuffering), hSetBuffering, stdout )
 import           System.Log.Heavy
                  ( LogContextFrame(LogContextFrame)
-                 , LoggingSettings(LoggingSettings), debug_level
+                 , LoggingSettings(LoggingSettings), LoggingT, debug_level
                  , defStdoutSettings, include, lsFormat, withLogContext
                  , withLoggingT )
 import           System.Log.Heavy.Shortcuts ( debug, info )
@@ -31,6 +31,7 @@ main = do
         liftIO . mapM_ parseAndPrint $ lines input
 
 -- | The default logger settings
+defaultLogger :: LoggingT IO a -> IO a
 defaultLogger = withLoggingT settings
     . withLogContext (LogContextFrame [] (include [ ([], debug_level) ]))
   where
