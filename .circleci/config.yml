@@ -2,40 +2,142 @@
 version: 2.1
 
 executors:
-  docker:
+  container:
     docker:
-      - image: &image nixos/nix
+      - image: nixos/nix
 
 workflows:
   version: 2
   pipeline:
     jobs:
       - build
+      - doc
+      - doc-publish:
+          requires:
+            - doc
+          filters:
+            branches:
+              only: master
       - lint
+      - test
 
 prepare-env: &prepare-env
   run:
     name: Install dependencies
-    command: |
-      apk add -y make
+    command: apk add -y bash ca-certificates curl findutils git make openssh
 
 jobs:
   build:
-    executor: docker
+    executor: container
     steps:
       - <<: *prepare-env
       - checkout
+      - restore_cache:
+          keys:
+            - v1-build-{{ checksum "nix/nixpkgs.json" }}
       - run:
           name: build
           command: make
+      - save_cache:
+          key: v1-build-{{ checksum "nix/nixpkgs.json" }}
+          paths:
+            - /nix
       - store_artifacts:
-          path: result/bin/performabot
+          path: result/bin
+          destination: bin
+      - store_artifacts:
+          path: result/lib
+          destination: lib
 
-  lint:
-    executor: docker
+  doc:
+    executor: container
     steps:
       - <<: *prepare-env
       - checkout
+      - restore_cache:
+          keys:
+            - v1-doc-{{ checksum "nix/nixpkgs.json" }}
+      - run:
+          name: documentation
+          command: make doc
+      - save_cache:
+          key: v1-doc-{{ checksum "nix/nixpkgs.json" }}
+          paths:
+            - /nix
+            - dist-newstyle
+      - store_artifacts:
+          path: dist-newstyle
+          destination: .
+      - persist_to_workspace:
+          root: .
+          paths:
+            - dist-newstyle
+
+  doc-publish:
+    executor: container
+    steps:
+      - add_ssh_keys:
+          fingerprints:
+            - bd:c1:fb:d1:82:51:92:b3:00:1c:e0:f8:99:a3:40:46
+      - <<: *prepare-env
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: Setup git
+          command: |
+            mkdir -p ~/.ssh
+            echo -e "Host github.com\n\tStrictHostKeyChecking no\n" \
+              >> ~/.ssh/config
+            git config --global user.email mail@saschagrunert.de
+            git config --global user.name "CircleCI"
+      - run:
+          name: Deploy documentation
+          command: |
+            git fetch origin gh-pages
+            git checkout -f gh-pages
+            mv dist-newstyle /
+            rm -rf *
+            mv $(find /dist-newstyle -name index.html -printf '%h')/* .
+            git add .
+            git diff-index --quiet HEAD || git commit -m 'Update documentation'
+            git push -f origin gh-pages
+
+  lint:
+    executor: container
+    steps:
+      - <<: *prepare-env
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-lint-{{ checksum "nix/nixpkgs.json" }}
       - run:
           name: lint
           command: make lint
+      - save_cache:
+          key: v1-lint-{{ checksum "nix/nixpkgs.json" }}
+          paths:
+            - /nix
+
+  test:
+    executor: container
+    steps:
+      - <<: *prepare-env
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-test-{{ checksum "nix/nixpkgs.json" }}
+      - run:
+          name: test
+          command: make test
+      - run:
+          name: Upload coverage
+          command: /bin/bash -c 'bash <(curl -s https://codecov.io/bash)'
+      - save_cache:
+          key: v1-test-{{ checksum "nix/nixpkgs.json" }}
+          paths:
+            - /nix
+            - dist-newstyle
+      - store_artifacts:
+          path: dist-newstyle
+          destination: .

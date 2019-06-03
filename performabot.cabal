@@ -1,14 +1,73 @@
 cabal-version: 2.4
 name: performabot
 version: 0.1.0
-license: BSD-3-Clause
+license: MIT
 license-file: LICENSE
 author: Sascha Grunert
 maintainer: mail@saschagrunert.de
 
-executable performabot
-  main-is: Main.hs
-  build-depends:
-    base < 5, heavy-logger, mtl, text-format-heavy
-  hs-source-dirs: src
+source-repository head
+  type: git
+  location: https://github.com/saschagrunert/performabot
+
+
+library
+  build-depends: base
   default-language: Haskell2010
+  exposed-modules: Lib
+  ghc-options:
+    -Werror
+    -Weverything
+    -Wno-all-missed-specialisations
+    -Wno-implicit-prelude
+    -Wno-missed-specialisations
+    -Wno-missing-exported-signatures
+    -Wno-missing-import-lists
+    -Wno-missing-local-signatures
+    -Wno-monomorphism-restriction
+    -Wno-safe
+    -Wno-unsafe
+  hs-source-dirs: src
+
+executable performabot
+  build-depends: base, heavy-logger, mtl, text-format-heavy
+  default-language: Haskell2010
+  ghc-options:
+    -Werror
+    -Weverything
+    -Wno-all-missed-specialisations
+    -Wno-implicit-prelude
+    -Wno-missed-specialisations
+    -Wno-missing-exported-signatures
+    -Wno-missing-import-lists
+    -Wno-missing-local-signatures
+    -Wno-monomorphism-restriction
+    -Wno-safe
+    -Wno-unsafe
+    -rtsopts
+    -threaded
+    -with-rtsopts=-N
+  hs-source-dirs: src
+  main-is: Main.hs
+  other-modules: Lib
+
+test-suite test-performabot
+  build-depends: base, performabot
+  ghc-options:
+    -Werror
+    -Weverything
+    -Wno-all-missed-specialisations
+    -Wno-implicit-prelude
+    -Wno-missed-specialisations
+    -Wno-missing-exported-signatures
+    -Wno-missing-import-lists
+    -Wno-missing-local-signatures
+    -Wno-monomorphism-restriction
+    -Wno-safe
+    -Wno-unsafe
+    -rtsopts
+    -threaded
+    -with-rtsopts=-N
+  hs-source-dirs: test
+  main-is: Test.hs
+  type: exitcode-stdio-1.0

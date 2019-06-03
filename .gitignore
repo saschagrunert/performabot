@@ -1,2 +1,5 @@
+*.orig
+.ghc.environment.*
 dist
+dist-*
 result
