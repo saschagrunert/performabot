@@ -10,7 +10,7 @@ import           Control.Monad.Trans        ( liftIO )
 
 import           Data.Text.Format.Heavy     ( Single(Single) )
 
-import           Lib                        ( parse )
+import           Parser                     ( parse )
 
 import           System.IO
                  ( BufferMode(LineBuffering), hSetBuffering, stdout )

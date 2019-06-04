@@ -1,4 +1,5 @@
-{ mkDerivation, base, heavy-logger, mtl, stdenv, text-format-heavy
+{ mkDerivation, base, heavy-logger, mtl, stdenv, tasty, tasty-hspec
+, tasty-quickcheck, text-format-heavy
 }:
 mkDerivation {
   pname = "performabot";
@@ -10,6 +11,6 @@ mkDerivation {
   executableHaskellDepends = [
     base heavy-logger mtl text-format-heavy
   ];
-  testHaskellDepends = [ base ];
+  testHaskellDepends = [ base tasty tasty-hspec tasty-quickcheck ];
   license = stdenv.lib.licenses.mit;
 }

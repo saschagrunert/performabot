@@ -8,6 +8,7 @@ pkgs.stdenv.mkDerivation {
     cabal-install
     cabal2nix
     git
+    haskellPackages.hpc-coveralls
     hlint
     nix-prefetch-git
   ];

@@ -14,7 +14,7 @@ source-repository head
 library
   build-depends: base
   default-language: Haskell2010
-  exposed-modules: Lib
+  exposed-modules: Parser
   ghc-options:
     -Werror
     -Weverything
@@ -49,10 +49,10 @@ executable performabot
     -with-rtsopts=-N
   hs-source-dirs: src
   main-is: Main.hs
-  other-modules: Lib
+  other-modules: Parser
 
-test-suite test-performabot
-  build-depends: base, performabot
+test-suite performabot-test
+  build-depends: base, performabot, tasty, tasty-hspec, tasty-quickcheck
   ghc-options:
     -Werror
     -Weverything
@@ -69,5 +69,6 @@ test-suite test-performabot
     -threaded
     -with-rtsopts=-N
   hs-source-dirs: test
-  main-is: Test.hs
+  main-is: Main.hs
+  other-modules: ParserSpec
   type: exitcode-stdio-1.0
