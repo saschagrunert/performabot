@@ -1,5 +1,12 @@
-all:
+all: build
+
+.PHONY: build
+build:
 	nix-build nix/release.nix
+
+.PHONY: build-static
+build-static:
+	nix-build nix/static.nix
 
 define nix-shell
 	nix-shell nix/shell.nix --pure $(1)
@@ -16,6 +23,15 @@ cabal2nix:
 .PHONY: clean
 clean:
 	$(call nix-shell-run,git clean -fdx)
+
+.PHONY: coverage
+coverage:
+	nix-shell nix/shell.nix --run \
+		"cabal configure --enable-tests --enable-coverage &&\
+		 cabal test &&\
+		 hpc-coveralls performabot-test \
+			-r ehCDKUtRSiNfht5xyC580BaZqCCjSBICz \
+			--exclude-dir=test"
 
 .PHONY: doc
 doc:

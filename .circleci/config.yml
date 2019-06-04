@@ -128,11 +128,8 @@ jobs:
           keys:
             - v1-test-{{ checksum "nix/nixpkgs.json" }}
       - run:
-          name: test
-          command: make test
-      - run:
-          name: Upload coverage
-          command: /bin/bash -c 'bash <(curl -s https://codecov.io/bash)'
+          name: test and coverage report
+          command: make coverage
       - save_cache:
           key: v1-test-{{ checksum "nix/nixpkgs.json" }}
           paths:
