@@ -4,6 +4,9 @@
 {-# LANGUAGE OverloadedStrings #-}
 {-# LANGUAGE TypeFamilies #-}
 
+-- | The main command line interface
+--
+-- @since 0.1.0
 module Main ( main ) where
 
 import           Control.Monad.Trans        ( liftIO )
