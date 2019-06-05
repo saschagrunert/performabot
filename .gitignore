@@ -1,6 +1,7 @@
 *.orig
 *.tix
 .ghc.environment.*
+.stack-work
 dist
 dist-*
 result

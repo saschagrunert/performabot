@@ -1,74 +1,76 @@
-cabal-version: 2.4
-name: performabot
-version: 0.1.0
-license: MIT
-license-file: LICENSE
-author: Sascha Grunert
-maintainer: mail@saschagrunert.de
+cabal-version: 1.12
+
+-- This file has been generated from package.yaml by hpack version 0.31.2.
+--
+-- see: https://github.com/sol/hpack
+--
+-- hash: 68caf93b86d38889e47ecf55b29392cde1472b2b9920e460da48df3738c48e44
+
+name:           performabot
+version:        0.1.0
+homepage:       https://github.com/saschagrunert/performabot#readme
+bug-reports:    https://github.com/saschagrunert/performabot/issues
+author:         Sascha Grunert
+maintainer:     mail@saschagrunert.de
+copyright:      2019 Sascha Grunert
+license:        MIT
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
 
 source-repository head
   type: git
   location: https://github.com/saschagrunert/performabot
 
-
 library
-  build-depends: base
+  exposed-modules:
+      Benchmark
+      GoParser
+      Parser
+  other-modules:
+      Paths_performabot
+  hs-source-dirs:
+      src
+  default-extensions: OverloadedStrings TemplateHaskell
+  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe
+  build-depends:
+      base
+    , lens
+    , megaparsec
   default-language: Haskell2010
-  exposed-modules: Parser
-  ghc-options:
-    -Werror
-    -Weverything
-    -Wno-all-missed-specialisations
-    -Wno-implicit-prelude
-    -Wno-missed-specialisations
-    -Wno-missing-exported-signatures
-    -Wno-missing-import-lists
-    -Wno-missing-local-signatures
-    -Wno-monomorphism-restriction
-    -Wno-safe
-    -Wno-unsafe
-  hs-source-dirs: src
 
 executable performabot
-  build-depends: base, heavy-logger, mtl, text-format-heavy
-  default-language: Haskell2010
-  ghc-options:
-    -Werror
-    -Weverything
-    -Wno-all-missed-specialisations
-    -Wno-implicit-prelude
-    -Wno-missed-specialisations
-    -Wno-missing-exported-signatures
-    -Wno-missing-import-lists
-    -Wno-missing-local-signatures
-    -Wno-monomorphism-restriction
-    -Wno-safe
-    -Wno-unsafe
-    -rtsopts
-    -threaded
-    -with-rtsopts=-N
-  hs-source-dirs: src
   main-is: Main.hs
-  other-modules: Parser
+  other-modules:
+      Paths_performabot
+  hs-source-dirs:
+      src/cmd
+  default-extensions: OverloadedStrings TemplateHaskell
+  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
+  build-depends:
+      base
+    , performabot
+  default-language: Haskell2010
 
 test-suite performabot-test
-  build-depends: base, performabot, tasty, tasty-hspec, tasty-quickcheck
-  ghc-options:
-    -Werror
-    -Weverything
-    -Wno-all-missed-specialisations
-    -Wno-implicit-prelude
-    -Wno-missed-specialisations
-    -Wno-missing-exported-signatures
-    -Wno-missing-import-lists
-    -Wno-missing-local-signatures
-    -Wno-monomorphism-restriction
-    -Wno-safe
-    -Wno-unsafe
-    -rtsopts
-    -threaded
-    -with-rtsopts=-N
-  hs-source-dirs: test
-  main-is: Main.hs
-  other-modules: ParserSpec
   type: exitcode-stdio-1.0
+  main-is: Main.hs
+  other-modules:
+      BenchmarkSpec
+      GoParserSpec
+      ParserSpec
+      Paths_performabot
+  hs-source-dirs:
+      test
+  default-extensions: OverloadedStrings TemplateHaskell
+  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
+  build-depends:
+      base
+    , lens
+    , megaparsec
+    , performabot
+    , tasty
+    , tasty-hspec
+    , tasty-quickcheck
+  default-language: Haskell2010

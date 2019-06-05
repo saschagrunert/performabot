@@ -1,6 +1,6 @@
 {
   "style": "cramer",
-  "extensions": [],
+  "extensions": ["TemplateHaskell"],
   "fixities": [],
   "formatting": {
     "op": {

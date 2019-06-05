@@ -1,0 +1,64 @@
+---
+name: performabot
+version: 0.1.0
+github: saschagrunert/performabot
+license: MIT
+author: Sascha Grunert
+maintainer: mail@saschagrunert.de
+copyright: 2019 Sascha Grunert
+
+extra-source-files:
+  - README.md
+
+dependencies:
+  - base
+
+ghc-options:
+  - -Werror
+  - -Weverything
+  - -Wno-all-missed-specialisations
+  - -Wno-implicit-prelude
+  - -Wno-missed-specialisations
+  - -Wno-missing-exported-signatures
+  - -Wno-missing-import-lists
+  - -Wno-missing-local-signatures
+  - -Wno-monomorphism-restriction
+  - -Wno-safe
+  - -Wno-unsafe
+
+default-extensions:
+  - OverloadedStrings
+  - TemplateHaskell
+
+executables:
+  performabot:
+    main: Main.hs
+    source-dirs: src/cmd
+    ghc-options:
+      - -rtsopts
+      - -threaded
+      - -with-rtsopts=-N
+    dependencies:
+      - performabot
+
+library:
+  source-dirs: src
+  dependencies:
+    - lens
+    - megaparsec
+
+tests:
+  performabot-test:
+    main: Main.hs
+    source-dirs: test
+    ghc-options:
+      - -rtsopts
+      - -threaded
+      - -with-rtsopts=-N
+    dependencies:
+      - lens
+      - megaparsec
+      - tasty
+      - tasty-hspec
+      - tasty-quickcheck
+      - performabot
