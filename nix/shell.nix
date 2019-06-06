@@ -4,6 +4,7 @@ let
 in
 pkgs.stdenv.mkDerivation {
   name = "shell";
+  LC_ALL = "C.UTF-8";
   buildInputs = with pkgs; project.env.nativeBuildInputs ++ [
     cabal-install
     cabal2nix
