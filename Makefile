@@ -31,7 +31,7 @@ coverage:
 		 cabal test &&\
 		 hpc-coveralls performabot-test \
 			-r ehCDKUtRSiNfht5xyC580BaZqCCjSBICz \
-			--exclude-dir=test"
+			--exclude-dir=test --exclude-dir=dist"
 
 .PHONY: doc
 doc:
