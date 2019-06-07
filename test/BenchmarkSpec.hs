@@ -8,6 +8,8 @@ import           Benchmark
 
 import           Control.Lens     ( (^.) )
 
+import           Data.Aeson       ( encode )
+
 import           Test.Tasty.Hspec
                  ( Spec, it, parallel, shouldBe, shouldContain )
 
@@ -31,3 +33,6 @@ benchmarkSpec = parallel $ do
 
     it "should succeed to access a Benchmarks 'unit'" $
         emptyBenchmark ^. unit `shouldBe` ""
+
+    it "should succeed to encode a Benchmarks to JSON" $ encode emptyBenchmark
+        `shouldBe` "{\"average\":0.0,\"derivation\":0.0,\"name\":\"\",\"samples\":0,\"unit\":\"\"}"

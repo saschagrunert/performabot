@@ -1,5 +1,6 @@
-{ mkDerivation, base, hpack, lens, megaparsec, stdenv, tasty
-, tasty-hspec, tasty-quickcheck
+{ mkDerivation, aeson, base, hpack, hslogger, lens, megaparsec
+, optparse-applicative, stdenv, tasty, tasty-hspec
+, tasty-quickcheck
 }:
 mkDerivation {
   pname = "performabot";
@@ -7,11 +8,11 @@ mkDerivation {
   src = ./..;
   isLibrary = true;
   isExecutable = true;
-  libraryHaskellDepends = [ base lens megaparsec ];
+  libraryHaskellDepends = [ aeson base hslogger lens megaparsec ];
   libraryToolDepends = [ hpack ];
-  executableHaskellDepends = [ base ];
+  executableHaskellDepends = [ base hslogger optparse-applicative ];
   testHaskellDepends = [
-    base lens megaparsec tasty tasty-hspec tasty-quickcheck
+    aeson base lens megaparsec tasty tasty-hspec tasty-quickcheck
   ];
   preConfigure = "hpack";
   homepage = "https://github.com/saschagrunert/performabot#readme";
