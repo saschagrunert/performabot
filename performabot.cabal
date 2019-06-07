@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 68caf93b86d38889e47ecf55b29392cde1472b2b9920e460da48df3738c48e44
+-- hash: 3db39fbe3f536e48b8fb7e63743e6dbe0898d17542afc2f1afd857fd98258aa4
 
 name:           performabot
 version:        0.1.0
@@ -27,15 +27,18 @@ library
   exposed-modules:
       Benchmark
       GoParser
+      Log
       Parser
   other-modules:
       Paths_performabot
   hs-source-dirs:
       src
-  default-extensions: OverloadedStrings TemplateHaskell
+  default-extensions: DeriveGeneric OverloadedStrings TemplateHaskell
   ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe
   build-depends:
-      base
+      aeson
+    , base
+    , hslogger
     , lens
     , megaparsec
   default-language: Haskell2010
@@ -46,10 +49,12 @@ executable performabot
       Paths_performabot
   hs-source-dirs:
       src/cmd
-  default-extensions: OverloadedStrings TemplateHaskell
+  default-extensions: DeriveGeneric OverloadedStrings TemplateHaskell
   ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
       base
+    , hslogger
+    , optparse-applicative
     , performabot
   default-language: Haskell2010
 
@@ -63,10 +68,11 @@ test-suite performabot-test
       Paths_performabot
   hs-source-dirs:
       test
-  default-extensions: OverloadedStrings TemplateHaskell
+  default-extensions: DeriveGeneric OverloadedStrings TemplateHaskell
   ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
-      base
+      aeson
+    , base
     , lens
     , megaparsec
     , performabot

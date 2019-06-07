@@ -44,4 +44,3 @@ integer = lexeme L.decimal
 -- | Parses double numbers
 double :: StringParser Double
 double = lexeme L.float
-

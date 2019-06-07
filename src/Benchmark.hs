@@ -11,7 +11,12 @@ module Benchmark
     , unit
     ) where
 
-import           Control.Lens ( makeLenses )
+import           Control.Lens  ( makeLenses )
+
+import           Data.Aeson.TH
+                 ( defaultOptions, deriveJSON, fieldLabelModifier )
+
+import           GHC.Generics  ( Generic )
 
 -- | A Benchmark result
 data Benchmark =
@@ -21,11 +26,14 @@ data Benchmark =
               , _samples    :: Integer -- The amount of sampled data
               , _unit       :: String  -- The unit of the benchmark, like "seconds"
               }
-    deriving ( Show )
+    deriving ( Generic, Show )
+
+-- | Lens creation
+makeLenses ''Benchmark
+
+-- | Drop the underscore from the Benchmark
+deriveJSON defaultOptions { fieldLabelModifier = drop 1 } ''Benchmark
 
 -- | Get a new empty Benchmark instance
 emptyBenchmark :: Benchmark
 emptyBenchmark = Benchmark 0 0 "" 0 ""
-
--- | Lens creation
-makeLenses ''Benchmark

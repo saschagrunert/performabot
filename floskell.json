@@ -1,6 +1,6 @@
 {
   "style": "cramer",
-  "extensions": ["TemplateHaskell"],
+  "extensions": ["DeriveGeneric", "OverloadedStrings", "TemplateHaskell"],
   "fixities": [],
   "formatting": {
     "op": {

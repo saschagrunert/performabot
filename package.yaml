@@ -27,6 +27,7 @@ ghc-options:
   - -Wno-unsafe
 
 default-extensions:
+  - DeriveGeneric
   - OverloadedStrings
   - TemplateHaskell
 
@@ -39,11 +40,15 @@ executables:
       - -threaded
       - -with-rtsopts=-N
     dependencies:
+      - hslogger
       - performabot
+      - optparse-applicative
 
 library:
   source-dirs: src
   dependencies:
+    - aeson
+    - hslogger
     - lens
     - megaparsec
 
@@ -56,6 +61,7 @@ tests:
       - -threaded
       - -with-rtsopts=-N
     dependencies:
+      - aeson
       - lens
       - megaparsec
       - tasty
