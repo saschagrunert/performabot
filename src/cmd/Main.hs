@@ -5,18 +5,15 @@ module Main ( main ) where
 
 import           Control.Monad       ( foldM )
 
-import           GoParser            ( parse )
+import           Log                 ( initLogger, notice )
 
-import           Log
-                 ( debug, info, initLogger, notice, noticeR )
-
-import qualified Options.Applicative as O ( info )
 import           Options.Applicative
                  ( (<**>), Parser, ParserInfo, ParserPrefs(..), customExecParser
-                 , flag', footer, fullDesc, header, help, helper, infoOption
-                 , long, many, short )
+                 , flag', footer, fullDesc, header, help, helper, info
+                 , infoOption, long, many, short )
 
-import           Parser              ( State(Ok, Failure, Init) )
+import           Result
+                 ( amount, initParserStep, parseStepIO, removeFromDisk, toDisk )
 
 import           System.IO
                  ( BufferMode(LineBuffering), hSetBuffering, stdout )
@@ -41,9 +38,9 @@ main = customExecParser p parser >>= run
 -- | The main argument parser
 parser :: ParserInfo Args
 parser =
-    O.info (arguments <**> version <**> helper)
-           (fullDesc <> header "performabot - Continuous performance analysis reports for software projects"
-            <> footer "More info at <https://github.com/saschagrunert/performabot>")
+    info (arguments <**> version <**> helper)
+         (fullDesc <> header "performabot - Continuous performance analysis reports for software projects"
+          <> footer "More info at <https://github.com/saschagrunert/performabot>")
 
 arguments :: Parser Args
 arguments = Args <$> verbosity
@@ -68,24 +65,10 @@ version =
 run :: Args -> IO ()
 run (Args v) = do
     initLogger v
-    notice "Welcome to performabot! Processing input from stdin…"
+    notice "Welcome to performabot! Processing input from stdin..."
     hSetBuffering stdout LineBuffering
     input <- getContents
-    (_, i) <- foldM parseAndPrint (Init, 0) $ lines input
-    notice . printf "Processing done, found %d result%s" i $
-        if i /= 1 then ("s" :: String) else ""
-
-parseAndPrint :: (State, Integer) -> String -> IO (State, Integer)
-parseAndPrint (s, i) line = do
-    noticeR line
-    let z = parse s line
-    debugState z
-    return (z, i + res z)
-
-debugState :: State -> IO ()
-debugState (Failure f) = info $ printf "Parse error: %s" f
-debugState x = debug . printf "State: %s" $ show x
-
-res :: State -> Integer
-res (Ok _) = 1
-res _ = 0
+    r <- foldM parseStepIO initParserStep $ lines input
+    notice . printf "Processing done, found %d results" $ amount r
+    nr <- toDisk r
+    removeFromDisk nr

@@ -10,9 +10,9 @@ import           System.Log.Logger ( Priority, debugM, infoM, noticeM, setLevel
 logger :: String
 logger = "logger"
 
--- | The prefix string for unraw log output: 🤖
+-- | The prefix string for non-raw log output
 prefix :: String
-prefix = "\129302"
+prefix = "> "
 
 -- | Logger initialization
 initLogger :: Priority -> IO ()

@@ -37,7 +37,7 @@ jobs:
             - v1-build-{{ checksum "nix/nixpkgs.json" }}
       - run:
           name: build
-          command: make
+          command: make build
       - save_cache:
           key: v1-build-{{ checksum "nix/nixpkgs.json" }}
           paths:

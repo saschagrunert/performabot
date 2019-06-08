@@ -18,7 +18,7 @@ import           Data.Aeson.TH
 
 import           GHC.Generics  ( Generic )
 
--- | A Benchmark result
+-- | A single Benchmark result
 data Benchmark =
     Benchmark { _average    :: Double  -- The average of the benchmark
               , _derivation :: Double  -- The standard derivation of the average
