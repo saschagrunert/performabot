@@ -1,4 +1,4 @@
-all: build
+all: cabal2nix build
 
 .PHONY: build
 build:

@@ -9,6 +9,8 @@ import           GoParserSpec          ( goParserSpec )
 
 import           ParserSpec            ( parserProps, parserSpec )
 
+import           ResultSpec            ( resultSpec )
+
 import           Test.Tasty
                  ( TestTree, defaultMain, localOption, testGroup )
 import           Test.Tasty.Hspec      ( testSpec )
@@ -28,9 +30,13 @@ unitTests = do
     benchmarkUnitTests <- testSpec "Benchmark.hs" benchmarkSpec
     goParserUnitTests <- testSpec "GoParser.hs" goParserSpec
     parserUnitTests <- testSpec "Parser.hs" parserSpec
-    return $
-        testGroup "Unit"
-                  [ benchmarkUnitTests, goParserUnitTests, parserUnitTests ]
+    resultUnitTests <- testSpec "Result.hs" resultSpec
+    return $ testGroup "Unit"
+                       [ benchmarkUnitTests
+                       , goParserUnitTests
+                       , parserUnitTests
+                       , resultUnitTests
+                       ]
 
 propertyTests :: TestTree
 propertyTests = testGroup "Property" [ parserProps ]

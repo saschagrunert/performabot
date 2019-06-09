@@ -20,7 +20,10 @@ import qualified Text.Megaparsec.Char.Lexer as L
                  ( decimal, float, lexeme, space )
 
 -- | All possible parser states
-data State = Init | NeedMore Benchmark | Ok Benchmark | Failure String
+data State = Init               -- The start phase of the phase
+           | NeedMore Benchmark -- Indicates that more input is needed
+           | Ok Benchmark       -- The parser is done
+           | Failure String     -- The parser failed
     deriving ( Show )
 
 -- | The generic string input parser
