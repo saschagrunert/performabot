@@ -13,6 +13,16 @@ extra-source-files:
 dependencies:
   - base
 
+flags:
+  library-only:
+    default: false
+    description: Build for use with "yesod devel"
+    manual: false
+  dev:
+    default: false
+    description: Turn on development settings, like auto-reload templates.
+    manual: false
+
 ghc-options:
   - -Werror
   - -Weverything
@@ -27,14 +37,23 @@ ghc-options:
   - -Wno-unsafe
 
 default-extensions:
+  - CPP
   - DeriveGeneric
+  - EmptyDataDecls
+  - FlexibleInstances
+  - GADTs
+  - GeneralizedNewtypeDeriving
+  - InstanceSigs
+  - MultiParamTypeClasses
   - OverloadedStrings
+  - RecordWildCards
   - TemplateHaskell
+  - TypeFamilies
 
 executables:
-  performabot:
+  client:
     main: Main.hs
-    source-dirs: src/cmd
+    source-dirs: src/cmd/client
     ghc-options:
       - -rtsopts
       - -threaded
@@ -43,16 +62,78 @@ executables:
       - hslogger
       - performabot
       - optparse-applicative
+    when:
+      - condition: flag(library-only)
+        buildable: false
+  server:
+    main: Main.hs
+    source-dirs: src/cmd/server
+    ghc-options:
+      - -rtsopts
+      - -threaded
+      - -with-rtsopts=-N
+    dependencies:
+      - performabot
+    when:
+      - condition: flag(library-only)
+        buildable: false
 
 library:
   source-dirs: src
   dependencies:
     - aeson
+    - bytestring
+    - case-insensitive
+    - classy-prelude
+    - classy-prelude-conduit
+    - classy-prelude-yesod
+    - conduit
+    - containers
+    - data-default
     - directory
+    - fast-logger
+    - file-embed
+    - foreign-store
+    - hjsmin
     - hslogger
+    - http-client-tls
+    - http-conduit
     - lens
     - megaparsec
+    - monad-control
+    - monad-logger
+    - persistent
+    - persistent-sqlite
+    - persistent-template
+    - safe
+    - shakespeare
+    - template-haskell
     - temporary
+    - text
+    - time
+    - unordered-containers
+    - vector
+    - wai
+    - wai-extra
+    - wai-logger
+    - warp
+    - yaml
+    - yesod
+    - yesod-auth
+    - yesod-core
+    - yesod-form
+    - yesod-static
+  when:
+    - condition: (flag(dev)) || (flag(library-only))
+      then:
+        cpp-options: -DDEVELOPMENT
+        ghc-options:
+          - -fwarn-tabs
+          - -O0
+      else:
+        ghc-options:
+          - -fwarn-tabs
+          - -O2
 
 tests:
   performabot-test:
@@ -64,10 +145,17 @@ tests:
       - -with-rtsopts=-N
     dependencies:
       - aeson
+      - classy-prelude
       - directory
       - lens
       - megaparsec
+      - monad-logger
       - performabot
+      - persistent
+      - persistent-sqlite
       - tasty
       - tasty-hspec
       - tasty-quickcheck
+      - yesod
+      - yesod-core
+      - yesod-test

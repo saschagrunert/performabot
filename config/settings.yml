@@ -1,0 +1,16 @@
+---
+static-dir: _env:YESOD_STATIC_DIR:static
+host: _env:YESOD_HOST:*
+port: _env:YESOD_PORT:3000
+ip-from-header: _env:YESOD_IP_FROM_HEADER:false
+
+database:
+  database: "_env:YESOD_SQLITE_DATABASE:performabot.sqlite3"
+  poolsize: "_env:YESOD_SQLITE_POOLSIZE:10"
+
+# Optional values with the following production defaults.
+# In development, they default to the inverse.
+#
+# development: false
+# detailed-logging: false
+# mutable-static: false

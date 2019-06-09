@@ -1,4 +1,7 @@
 ---
+nix:
+  enable: true
+  pure: false
 resolver: lts-13.24
 packages:
   - .

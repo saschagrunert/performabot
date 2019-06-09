@@ -1,0 +1,3 @@
+<h1 .uk-heading-divider .uk-text-center>Welcome
+<form .uk-text-right method=post action=@{HomeR} enctype=#{enctype}>^{widget}
+    <button .uk-button .uk-button-link uk-icon="trash" name="key" value="some_value" type="submit">

@@ -1,6 +1,14 @@
 {
   "style": "cramer",
-  "extensions": ["DeriveGeneric", "OverloadedStrings", "TemplateHaskell"],
+  "extensions": [
+    "CPP",
+    "DeriveGeneric",
+    "InstanceSigs",
+    "MultiParamTypeClasses",
+    "OverloadedStrings",
+    "TemplateHaskell",
+    "TypeFamilies"
+  ],
   "fixities": [],
   "formatting": {
     "op": {

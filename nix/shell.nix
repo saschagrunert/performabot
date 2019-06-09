@@ -8,9 +8,14 @@ pkgs.stdenv.mkDerivation {
   buildInputs = with pkgs; project.env.nativeBuildInputs ++ [
     cabal-install
     cabal2nix
+    expect
     git
     haskellPackages.hpc-coveralls
+    haskellPackages.yesod-bin
     hlint
     nix-prefetch-git
+    sass
+    wget
+    zlib
   ];
 }

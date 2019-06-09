@@ -1,0 +1,10 @@
+$newline never
+$doctype 5
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>#{pageTitle pc}
+        <meta name="viewport" content="width=device-width">
+        ^{pageHead pc}
+    <body>
+        ^{pageBody pc}

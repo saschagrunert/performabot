@@ -1,0 +1,17 @@
+<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
+    <nav uk-navbar .uk-navbar-container>
+        <div .uk-navbar-left>
+            <ul .uk-navbar-nav>
+                $forall NavItem label route _ <- navbarLeftFilteredItems
+                    <li :Just route == mcurrentRoute:.uk-active>
+                        <a href="@{route}">#{label}
+        <div .uk-navbar-right>
+            <ul .uk-navbar-nav>
+                $forall NavItem label route _ <- navbarRightFilteredItems
+                    <li :Just route == mcurrentRoute:.uk-active>
+                        <a href="@{route}">#{label}
+<div uk-grid .uk-grid-collapse .uk-child-width-expand@l>
+    <div>
+    <div .uk-padding-small>
+        ^{widget}
+    <div>
