@@ -12,7 +12,7 @@ build:
 
 .PHONY: build-static
 build-static:
-	nix-build nix/static.nix
+	nix-build nix/release-static.nix
 
 define nix-shell
 	nix-shell nix/shell.nix $(1)
