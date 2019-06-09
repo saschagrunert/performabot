@@ -1,0 +1,12 @@
+#!/usr/bin/env expect
+
+log_user 0
+spawn stack ghci performabot:lib --no-load --work-dir .stack-work-devel
+log_user 1
+
+expect ".*> "
+send ":l src/cmd/devel/GHCi.hs\n"
+expect ".*> "
+send "update\n"
+
+interact

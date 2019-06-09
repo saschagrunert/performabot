@@ -1,7 +1,11 @@
 *.orig
+*.sqlite3*
 *.tix
 .ghc.environment.*
-.stack-work
+.stack-work*
+build
 dist
 dist-*
 result
+static/tmp
+yesod-devel
