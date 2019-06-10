@@ -3,10 +3,12 @@
 -- @since 0.1.0
 module GoParser ( parse ) where
 
-import           Benchmark
-                 ( Benchmark(Benchmark), emptyBenchmark, samples )
-
 import           Control.Lens         ( (.~), (^.) )
+
+import           Data.Text            ( pack )
+
+import           Model
+                 ( Benchmark(Benchmark), benchmarkSamples, emptyBenchmark )
 
 import           Parser               ( Parser, State(Ok, Failure, NeedMore)
                                       , StringParser, double, integer )
@@ -36,7 +38,7 @@ step0 b = do
     space1
     s <- integer
     _ <- string "samples" <* colon <* eof
-    return . NeedMore $ samples .~ s $ b
+    return . NeedMore $ benchmarkSamples .~ s $ b
 
 -- | The last parse step
 step1 :: Benchmark -> Parser
@@ -52,7 +54,7 @@ step1 b = do
     d <- double
     _ <- s <* char ',' <* spaceChar <* string "Slowest" <* spaceChar
     _ <- string "Time" <* colon <* spaceChar <* double <* s <* eof
-    return . Ok $ Benchmark a d n (b ^. samples) "s"
+    return . Ok $ Benchmark a d (pack n) (b ^. benchmarkSamples) "s"
   where
     s = char 's'
 
