@@ -27,7 +27,9 @@ mkDerivation {
     yesod yesod-auth yesod-core yesod-form yesod-static
   ];
   libraryToolDepends = [ hpack ];
-  executableHaskellDepends = [ base hslogger optparse-applicative ];
+  executableHaskellDepends = [
+    base hslogger lens optparse-applicative
+  ];
   testHaskellDepends = [
     aeson base classy-prelude directory lens megaparsec monad-logger
     persistent persistent-sqlite tasty tasty-hspec tasty-quickcheck

@@ -4,8 +4,9 @@
 --
 -- @since 0.1.0
 module Model
-    ( Benchmark(..)
+    ( Benchmark(Benchmark)
     , BenchmarkId
+    , Environment(Environment)
     , EnvironmentId
     , Test
     , TestId

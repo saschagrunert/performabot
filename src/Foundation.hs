@@ -65,9 +65,7 @@ instance Yesod App where
                 [ x | x <- navbarRightItems, navItemAccessCallback x ]
         -- set the page content
         pc <- widgetToPageContent $ do
-            addStylesheet $ StaticR css_uikit_min_css
-            addScript $ StaticR js_uikit_min_js
-            addScript $ StaticR js_uikit_icons_min_js
+            addStylesheet $ StaticR css_bulma_min_css
             $(widgetFile "layout")
         withUrlRenderer $(hamletFile "templates/wrapper.hamlet")
 

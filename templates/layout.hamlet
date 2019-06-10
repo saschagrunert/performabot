@@ -1,17 +1,21 @@
-<div uk-sticky="sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky">
-    <nav uk-navbar .uk-navbar-container>
-        <div .uk-navbar-left>
-            <ul .uk-navbar-nav>
-                $forall NavItem label route _ <- navbarLeftFilteredItems
-                    <li :Just route == mcurrentRoute:.uk-active>
-                        <a href="@{route}">#{label}
-        <div .uk-navbar-right>
-            <ul .uk-navbar-nav>
-                $forall NavItem label route _ <- navbarRightFilteredItems
-                    <li :Just route == mcurrentRoute:.uk-active>
-                        <a href="@{route}">#{label}
-<div uk-grid .uk-grid-collapse .uk-child-width-expand@l>
-    <div>
-    <div .uk-padding-small>
-        ^{widget}
-    <div>
+<nav .navbar>
+  <div .navbar-brand>
+    <a .navbar-item href="#">
+      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+
+  <div .navbar-menu .is-active>
+    <div .navbar-start>
+      $forall NavItem label route _ <- navbarLeftFilteredItems
+        <a .navbar-item href="@{route}" :Just route == mcurrentRoute:.is-active>#{label}
+
+    <div .navbar-end>
+      <div .navbar-item>
+        <div .buttons>
+          $forall NavItem label route _ <- navbarRightFilteredItems
+            <a .button .is-primary href="@{route}">#{label}
+
+<div .columns>
+  <div .column>
+  <div .column>
+    ^{widget}
+  <div .column>

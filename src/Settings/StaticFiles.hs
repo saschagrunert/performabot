@@ -1,11 +1,7 @@
 -- | Static files manipulation
 --
 -- @since 0.1.0
-module Settings.StaticFiles
-    ( css_uikit_min_css
-    , js_uikit_min_js
-    , js_uikit_icons_min_js
-    ) where
+module Settings.StaticFiles ( css_bulma_min_css ) where
 
 import           Control.Lens ( (^.) )
 

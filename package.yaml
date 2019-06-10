@@ -60,6 +60,7 @@ executables:
       - -with-rtsopts=-N
     dependencies:
       - hslogger
+      - lens
       - performabot
       - optparse-applicative
     when:

@@ -1,8 +1,8 @@
 BUILD_DIR := build
-GLOB_SCSS := uikit.scss
-UIKIT_DIR := $(BUILD_DIR)/uikit
-UIKIT_TAG := 3.1.5
-UIKIT_URL := https://github.com/uikit/uikit
+GLOB_SCSS := config/bulma.scss
+BULMA_DIR := $(BUILD_DIR)/bulma
+BULMA_TAG := 0.7.5
+BULMA_URL := https://github.com/jgthms/bulma
 
 all: cabal2nix build
 
@@ -62,7 +62,7 @@ hlint:
 	$(call nix-shell-pure-run,hlint -g)
 
 .PHONY: lint
-lint: cabal2nix hlint uikit
+lint: cabal2nix hlint bulma
 	$(call nix-shell-pure-run,git diff --exit-code)
 
 .PHONY: nixpkgs
@@ -87,18 +87,16 @@ test:
 	$(call nix-shell-pure-run,\
 		cabal new-test --enable-coverage --enable-library-coverage)
 
-.PHONY: uikit
-uikit:
+.PHONY: bulma
+bulma:
 	$(call nix-shell-run,\
-		if [ ! -d $(UIKIT_DIR) ]; then \
+		if [ ! -d $(BULMA_DIR) ]; then \
 			mkdir -p $(BUILD_DIR) &&\
-			wget -qO- $(UIKIT_URL)/archive/v$(UIKIT_TAG).tar.gz \
+			wget -qO- $(BULMA_URL)/archive/$(BULMA_TAG).tar.gz \
 				| tar xfz - -C $(BUILD_DIR) &&\
-			mv $(BUILD_DIR)/uikit-* $(UIKIT_DIR) ;\
+			mv $(BUILD_DIR)/bulma-* $(BULMA_DIR) ;\
 		fi &&\
-		cp config/$(GLOB_SCSS) $(BUILD_DIR) &&\
-		cd $(BUILD_DIR) &&\
-		sass -t compressed $(GLOB_SCSS) > ../static/css/uikit.min.css)
+		sass -t compressed $(GLOB_SCSS) > static/css/bulma.min.css)
 
 .PHONY: yesod
 yesod:

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 60b1205f99d6bf8db735cd6582d0e22b2302879a054b717ac1b641a503a69d37
+-- hash: b6a2eb38538ce12092993821d660beaa5f24c5052962d76ae1cd1a65adef2309
 
 name:           performabot
 version:        0.1.0
@@ -119,6 +119,7 @@ executable client
   build-depends:
       base
     , hslogger
+    , lens
     , optparse-applicative
     , performabot
   if flag(library-only)
