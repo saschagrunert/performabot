@@ -21,7 +21,7 @@ import           Foundation
 
 import           Handler.Api                          ( getApiR, postApiR )
 import           Handler.Common                       ( getFaviconR )
-import           Handler.Home                         ( getHomeR, postHomeR )
+import           Handler.Home                         ( getHomeR )
 
 import           Language.Haskell.TH.Syntax           ( qLocation )
 

@@ -1,4 +1,4 @@
-/               HomeR       GET POST
+/               HomeR       GET
 /api            ApiR        GET POST
 /favicon.ico    FaviconR    GET
 /static         StaticR     Static appStatic
