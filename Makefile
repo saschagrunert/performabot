@@ -98,7 +98,8 @@ uikit:
 		fi &&\
 		cp config/$(GLOB_SCSS) $(BUILD_DIR) &&\
 		cd $(BUILD_DIR) &&\
-		sass -t compressed $(GLOB_SCSS) > ../static/css/uikit.min.css)
+		sass -t compressed $(GLOB_SCSS) > ../static/css/uikit.min.css &&\
+		cp uikit/dist/js/*min.js ../static/js)
 
 .PHONY: yesod
 yesod:
