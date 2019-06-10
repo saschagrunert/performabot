@@ -3,8 +3,6 @@
 -- @since 0.1.0
 module Main ( main ) where
 
-import           BenchmarkSpec         ( benchmarkSpec )
-
 import           GoParserSpec          ( goParserSpec )
 
 import           ParserSpec            ( parserProps, parserSpec )
@@ -27,16 +25,11 @@ main = do
 -- Unit tests based on hspec
 unitTests :: IO TestTree
 unitTests = do
-    benchmarkUnitTests <- testSpec "Benchmark.hs" benchmarkSpec
     goParserUnitTests <- testSpec "GoParser.hs" goParserSpec
     parserUnitTests <- testSpec "Parser.hs" parserSpec
     resultUnitTests <- testSpec "Result.hs" resultSpec
     return $ testGroup "Unit"
-                       [ benchmarkUnitTests
-                       , goParserUnitTests
-                       , parserUnitTests
-                       , resultUnitTests
-                       ]
+                       [ goParserUnitTests, parserUnitTests, resultUnitTests ]
 
 propertyTests :: TestTree
 propertyTests = testGroup "Property" [ parserProps ]

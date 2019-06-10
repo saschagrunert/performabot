@@ -12,7 +12,7 @@ import           Options.Applicative
                  , flag', footer, fullDesc, header, help, helper, info
                  , infoOption, long, many, short )
 
-import           Result
+import           ParserResult
                  ( amount, initParserStep, parseStepIO, removeFromDisk, toDisk )
 
 import           System.IO

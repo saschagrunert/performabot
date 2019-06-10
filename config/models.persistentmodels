@@ -1,4 +1,14 @@
-User
-    ident Text
-    password Text Maybe
-    UniqueUser ident
+Test
+    benchmarks  [Benchmark]
+    branch      Text
+    pr          Text
+    time        UTCTime
+    deriving    Show
+
+Benchmark
+    average     Double
+    derivation  Double
+    name        Text
+    samples     Int
+    unit        Text
+    deriving    Show

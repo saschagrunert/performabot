@@ -10,9 +10,9 @@ module Parser
     , integer
     ) where
 
-import           Benchmark                  ( Benchmark )
-
 import           Data.Void                  ( Void )
+
+import           Model                      ( Benchmark )
 
 import           Text.Megaparsec            ( Parsec, empty )
 import           Text.Megaparsec.Char       ( space1 )
@@ -41,7 +41,7 @@ lexeme :: StringParser a -> StringParser a
 lexeme = L.lexeme spaceConsumer
 
 -- | Parses integer numbers
-integer :: StringParser Integer
+integer :: StringParser Int
 integer = lexeme L.decimal
 
 -- | Parses double numbers

@@ -3,7 +3,7 @@
 -- @since 0.1.0
 module ResultSpec ( resultSpec ) where
 
-import           Result           ( amount, initParserStep, parseStepIO )
+import           ParserResult     ( amount, initParserStep, parseStepIO )
 
 import           Test.Tasty.Hspec ( Spec, it, parallel, shouldBe )
 

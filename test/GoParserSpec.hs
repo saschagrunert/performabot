@@ -3,12 +3,14 @@
 -- @since 0.1.0
 module GoParserSpec ( goParserSpec ) where
 
-import           Benchmark        ( Benchmark, average, derivation
-                                  , emptyBenchmark, name, samples, unit )
-
 import           Control.Lens     ( (^.) )
 
 import           GoParser         ( parse )
+
+import           Model
+                 ( Benchmark, benchmarkAverage, benchmarkDerivation
+                 , benchmarkName, benchmarkSamples, benchmarkUnit
+                 , emptyBenchmark )
 
 import           Parser           ( State(Failure, Init, NeedMore, Ok) )
 
@@ -31,18 +33,18 @@ goParserSpec :: Spec
 goParserSpec = parallel $ do
     it "should succeed to parse" $ do
         let s = parse Init "  10 samples:"
-        benchmark s ^. samples `shouldBe` 10
+        benchmark s ^. benchmarkSamples `shouldBe` 10
         let res = benchmark . parse s $ "    pullTime - Fastest Time: 0.944s, "
                 ++ "Average Time: 0.953s ± 0.008s, Slowest Time: 0.971s"
-        res ^. average `shouldBe` 0.953
-        res ^. derivation `shouldBe` 0.008
-        res ^. name `shouldBe` "pullTime"
-        res ^. samples `shouldBe` 10
-        res ^. unit `shouldBe` "s"
+        res ^. benchmarkAverage `shouldBe` 0.953
+        res ^. benchmarkDerivation `shouldBe` 0.008
+        res ^. benchmarkName `shouldBe` "pullTime"
+        res ^. benchmarkSamples `shouldBe` 10
+        res ^. benchmarkUnit `shouldBe` "s"
 
     it "should succeed to parse a huge sample number" $
         benchmark (parse Init " 192835128754 samples:")
-        ^. samples `shouldBe` 192835128754
+        ^. benchmarkSamples `shouldBe` 192835128754
 
     it "should fail to parse empty input" $ failure (parse Init "")
         `shouldContain` "unexpected end of input"
