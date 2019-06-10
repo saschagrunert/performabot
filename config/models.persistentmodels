@@ -1,8 +1,14 @@
 Test
     benchmarks  [Benchmark]
-    branch      Text
-    pr          Text
+    environment Environment
     time        UTCTime
+    deriving    Show
+
+Environment
+    branch      Text
+    commit      Text
+    pullRequest Text
+    token       Text
     deriving    Show
 
 Benchmark

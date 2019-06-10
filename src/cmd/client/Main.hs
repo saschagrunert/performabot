@@ -5,7 +5,9 @@ module Main ( main ) where
 
 import           Control.Monad       ( foldM )
 
-import           Log                 ( initLogger, notice )
+import           Environment         ( isCI )
+
+import           Log                 ( debug, err, initLogger, notice )
 
 import           Options.Applicative
                  ( (<**>), Parser, ParserInfo, ParserPrefs(..), customExecParser
@@ -15,6 +17,7 @@ import           Options.Applicative
 import           ParserResult
                  ( amount, initParserStep, parseStepIO, removeFromDisk, toDisk )
 
+import           System.Exit         ( exitFailure )
 import           System.IO
                  ( BufferMode(LineBuffering), hSetBuffering, stdout )
 import           System.Log.Logger   ( Priority(..) )
@@ -65,7 +68,15 @@ version =
 run :: Args -> IO ()
 run (Args v) = do
     initLogger v
-    notice "Welcome to performabot! Processing input from stdin..."
+    notice "Welcome to performabot!"
+    c <- isCI
+    if c
+        then debug "CI environment found, you're good to go."
+        else do
+            err "No supported CI environment found"
+            exitFailure
+
+    notice "Processing input from stdin..."
     hSetBuffering stdout LineBuffering
     input <- getContents
     r <- foldM parseStepIO initParserStep $ lines input

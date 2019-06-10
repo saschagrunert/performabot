@@ -6,6 +6,7 @@
 module Model
     ( Benchmark(..)
     , BenchmarkId
+    , EnvironmentId
     , Test
     , TestId
     , benchmarkAverage
@@ -14,10 +15,13 @@ module Model
     , benchmarkSamples
     , benchmarkUnit
     , emptyBenchmark
+    , environmentBranch
+    , environmentCommit
+    , environmentPullRequest
+    , environmentToken
     , migrateAll
     , testBenchmarks
-    , testBranch
-    , testPr
+    , testEnvironment
     , testTime
     ) where
 
@@ -41,6 +45,9 @@ deriveJSON defaultOptions { fieldLabelModifier = drop 10 } ''Benchmark
 
 -- | Drop the "_result" from the Result
 deriveJSON defaultOptions { fieldLabelModifier = drop 5 } ''Test
+
+-- | Drop the "_result" from the Result
+deriveJSON defaultOptions { fieldLabelModifier = drop 12 } ''Environment
 
 -- | Get a new empty Benchmark instance
 emptyBenchmark :: Benchmark

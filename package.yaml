@@ -82,6 +82,7 @@ library:
   source-dirs: src
   dependencies:
     - aeson
+    - ansi-terminal
     - bytestring
     - case-insensitive
     - classy-prelude
