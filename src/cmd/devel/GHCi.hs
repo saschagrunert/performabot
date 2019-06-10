@@ -1,7 +1,7 @@
 -- | The main for the GHCi repl
 --
 -- @since 0.1.0
-module Ghci ( update, shutdown ) where
+module GHCi ( update, shutdown ) where
 
 import           Control.Concurrent
                  ( MVar, ThreadId, forkFinally, killThread, newEmptyMVar
