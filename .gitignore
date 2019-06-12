@@ -2,6 +2,7 @@
 *.sqlite3*
 *.tix
 .ghc.environment.*
+.sass-cache
 .stack-work*
 build
 dist

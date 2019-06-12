@@ -3,14 +3,24 @@
 -- @since 0.1.0
 module Main ( main ) where
 
+import           Control.Lens        ( (^.) )
 import           Control.Monad       ( foldM )
 
+import           Environment         ( fillEnvironment )
+
+import           Log                 as L ( info )
 import           Log                 ( initLogger, notice )
 
+import           Model
+                 ( Environment(Environment), environmentBranch
+                 , environmentCommit, environmentPullRequest )
+
+import           Options.Applicative as O ( info )
 import           Options.Applicative
                  ( (<**>), Parser, ParserInfo, ParserPrefs(..), customExecParser
-                 , flag', footer, fullDesc, header, help, helper, info
-                 , infoOption, long, many, short )
+                 , flag', footer, fullDesc, header, help, helper, infoOption
+                 , long, many, metavar, short, short, showDefault, strOption
+                 , value )
 
 import           ParserResult
                  ( amount, initParserStep, parseStepIO, removeFromDisk, toDisk )
@@ -21,7 +31,7 @@ import           System.Log.Logger   ( Priority(..) )
 
 import           Text.Printf         ( printf )
 
-newtype Args = Args Priority
+data Args = Args Environment Priority
 
 -- | The main function
 main :: IO ()
@@ -30,7 +40,7 @@ main = customExecParser p parser >>= run
     p = ParserPrefs { prefMultiSuffix     = ""
                     , prefDisambiguate    = True
                     , prefShowHelpOnError = False
-                    , prefShowHelpOnEmpty = True
+                    , prefShowHelpOnEmpty = False
                     , prefBacktrack       = True
                     , prefColumns         = 80
                     }
@@ -38,12 +48,15 @@ main = customExecParser p parser >>= run
 -- | The main argument parser
 parser :: ParserInfo Args
 parser =
-    info (arguments <**> version <**> helper)
-         (fullDesc <> header "performabot - Continuous performance analysis reports for software projects"
-          <> footer "More info at <https://github.com/saschagrunert/performabot>")
+    O.info (arguments <**> version <**> helper)
+           (fullDesc <> header ("performabot - Continuous "
+                                ++ "performance analysis reports for "
+                                ++ "software projects")
+            <> footer ("More info at "
+                       ++ "<https://github.com/saschagrunert/performabot>"))
 
 arguments :: Parser Args
-arguments = Args <$> verbosity
+arguments = Args <$> environment <*> verbosity
 
 verbosity :: Parser Priority
 verbosity = priority . length
@@ -57,15 +70,35 @@ verbosity = priority . length
         | a == 1 = INFO
         | otherwise = DEBUG
 
+environment :: Parser Environment
+environment = Environment
+    <$> strOption (long "branch" <> short 'b' <> help "Branch name"
+                   <> metavar "BRANCH" <> value "")
+    <*> strOption (long "commit" <> short 'c' <> help "Commit hash"
+                   <> metavar "COMMIT" <> showDefault <> value "")
+    <*> strOption (long "pull-request" <> short 'p'
+                   <> help "Pull request number" <> metavar "PULL_REQUEST"
+                   <> showDefault <> value "")
+    <*> strOption (long "token" <> short 't' <> help "Token to be used"
+                   <> metavar "TOKEN" <> showDefault <> value "") <**> helper
+
 version :: Parser (a -> a)
 version =
     infoOption "v0.1.0" (long "version" <> help "Print the current version")
 
 -- | The entry function after argument parsing
 run :: Args -> IO ()
-run (Args v) = do
+run (Args e v) = do
     initLogger v
-    notice "Welcome to performabot! Processing input from stdin..."
+    notice "Welcome to performabot!"
+    notice . printf "The logging verbosity is set to: %s" $ show v
+
+    env <- fillEnvironment e
+    L.info . printf "Using branch: %s" $ env ^. environmentBranch
+    L.info . printf "Using commit: %s" $ env ^. environmentCommit
+    L.info . printf "Using pull request: %s" $ env ^. environmentPullRequest
+
+    notice "Processing input from stdin..."
     hSetBuffering stdout LineBuffering
     input <- getContents
     r <- foldM parseStepIO initParserStep $ lines input

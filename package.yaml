@@ -60,6 +60,7 @@ executables:
       - -with-rtsopts=-N
     dependencies:
       - hslogger
+      - lens
       - performabot
       - optparse-applicative
     when:
@@ -82,6 +83,7 @@ library:
   source-dirs: src
   dependencies:
     - aeson
+    - ansi-terminal
     - bytestring
     - case-insensitive
     - classy-prelude
