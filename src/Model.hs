@@ -8,7 +8,7 @@ module Model
     , BenchmarkId
     , Environment(Environment)
     , EnvironmentId
-    , Test
+    , Test(Test)
     , TestId
     , benchmarkAverage
     , benchmarkDerivation

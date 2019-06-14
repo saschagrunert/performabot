@@ -98,6 +98,7 @@ library:
     - foreign-store
     - hjsmin
     - hslogger
+    - http-client
     - http-client-tls
     - http-conduit
     - lens

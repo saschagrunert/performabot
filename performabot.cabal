@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: b6a2eb38538ce12092993821d660beaa5f24c5052962d76ae1cd1a65adef2309
+-- hash: a6884df1b62f16200c9854fc4e7e101fbfd650b64ba7248a900764727b5ed43e
 
 name:           performabot
 version:        0.1.0
@@ -74,6 +74,7 @@ library
     , foreign-store
     , hjsmin
     , hslogger
+    , http-client
     , http-client-tls
     , http-conduit
     , lens

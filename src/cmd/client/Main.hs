@@ -9,7 +9,7 @@ import           Control.Monad       ( foldM )
 import           Environment         ( fillEnvironment )
 
 import           Log                 as L ( info )
-import           Log                 ( initLogger, notice )
+import           Log                 ( initLogger, notice, warn )
 
 import           Model
                  ( Environment(Environment), environmentBranch
@@ -19,19 +19,23 @@ import           Options.Applicative as O ( info )
 import           Options.Applicative
                  ( (<**>), Parser, ParserInfo, ParserPrefs(..), customExecParser
                  , flag', footer, fullDesc, header, help, helper, infoOption
-                 , long, many, metavar, short, short, showDefault, strOption
-                 , value )
+                 , internal, long, many, metavar, short, short, showDefault
+                 , strOption, switch, value )
 
 import           ParserResult
-                 ( amount, initParserStep, parseStepIO, removeFromDisk, toDisk )
+                 ( amount, initParserStep, parseStepIO, send )
 
+import           System.Exit         ( exitFailure )
 import           System.IO
                  ( BufferMode(LineBuffering), hSetBuffering, stdout )
 import           System.Log.Logger   ( Priority(..) )
 
 import           Text.Printf         ( printf )
 
-data Args = Args Environment Priority
+data Args = Args Environment  -- ^ Contains data sent to the server
+                 Priority     -- ^ The log level
+                 String       -- ^ The API url
+                 Bool         -- ^ Development mode without runtime checks
 
 -- | The main function
 main :: IO ()
@@ -56,19 +60,7 @@ parser =
                        ++ "<https://github.com/saschagrunert/performabot>"))
 
 arguments :: Parser Args
-arguments = Args <$> environment <*> verbosity
-
-verbosity :: Parser Priority
-verbosity = priority . length
-    <$> many (flag' ()
-                    (long "verbose" <> short 'v'
-                     <> help ("the logging verbosity,"
-                              ++ " can be specified up to 2x")))
-  where
-    priority a
-        | a == 0 = NOTICE
-        | a == 1 = INFO
-        | otherwise = DEBUG
+arguments = Args <$> environment <*> verbosity <*> apiUrl <*> devel
 
 environment :: Parser Environment
 environment = Environment
@@ -82,26 +74,55 @@ environment = Environment
     <*> strOption (long "token" <> short 't' <> help "Token to be used"
                    <> metavar "TOKEN" <> showDefault <> value "") <**> helper
 
+verbosity :: Parser Priority
+verbosity = priority . length
+    <$> many (flag' ()
+                    (long "verbose" <> short 'v'
+                     <> help ("the logging verbosity,"
+                              ++ " can be specified up to 2x")))
+  where
+    priority a
+        | a == 0 = NOTICE
+        | a == 1 = INFO
+        | otherwise = DEBUG
+
+apiUrl :: Parser String
+apiUrl = strOption (long "url" <> short 'u' <> help "API url for sending data"
+                    <> metavar "URL" <> value "http://localhost:3000/api")
+
+devel :: Parser Bool
+devel = switch (internal <> long "devel" <> short 'd')
+
 version :: Parser (a -> a)
 version =
     infoOption "v0.1.0" (long "version" <> help "Print the current version")
 
 -- | The entry function after argument parsing
 run :: Args -> IO ()
-run (Args e v) = do
+run (Args e v u d) = do
+    -- Setup logging
     initLogger v
     notice "Welcome to performabot!"
     notice . printf "The logging verbosity is set to: %s" $ show v
 
-    env <- fillEnvironment e
+    -- Prepare environment
+    env <- fillEnvironment e d
     L.info . printf "Using branch: %s" $ env ^. environmentBranch
     L.info . printf "Using commit: %s" $ env ^. environmentCommit
     L.info . printf "Using pull request: %s" $ env ^. environmentPullRequest
 
+    -- Parse loop
     notice "Processing input from stdin..."
     hSetBuffering stdout LineBuffering
     input <- getContents
     r <- foldM parseStepIO initParserStep $ lines input
-    notice . printf "Processing done, found %d results" $ amount r
-    nr <- toDisk r
-    removeFromDisk nr
+
+    -- Evaluate and send results if needed
+    let c = amount r
+    notice . printf "Processing done, found %d result%s" c $
+        if c == 1 then "" else "s" :: String
+    if c /= 0
+        then send r u env
+        else do
+            warn "Not sending anything because no results found"
+            exitFailure

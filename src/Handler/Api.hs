@@ -14,7 +14,7 @@ getApiR = return $ String "Hello world"
 
 postApiR :: Handler ()
 postApiR = do
-    body <- parseCheckJsonBody :: Handler (T.Result Value)
+    body <- parseCheckJsonBody :: Handler (T.Result Test)
     case body of
-        Success _ -> sendResponse . toTypedContent . toJSON $ emptyBenchmark
+        Success _ -> sendResponseStatus status200 ()
         _ -> sendResponseStatus status400 ()

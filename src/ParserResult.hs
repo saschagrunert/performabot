@@ -1,52 +1,43 @@
 -- | Result and state handling
 --
 -- @since 0.1.0
-module ParserResult
-    ( ParserResult
-    , amount
-    , initParserStep
-    , parseStepIO
-    , removeFromDisk
-    , toDisk
-    ) where
+module ParserResult ( ParserResult, amount, initParserStep, parseStepIO, send ) where
 
-import           Control.Lens     ( (.~), (?~), (^.), makeLenses )
+import           Control.Exception          ( displayException, try )
 
-import           Data.Aeson       ( encodeFile )
-import           Data.Aeson.TH
-                 ( defaultOptions, deriveJSON, fieldLabelModifier )
+import           Data.Aeson                 ( encodeFile )
+import           Data.ByteString.Lazy.Char8 as C ( unpack )
+import           Data.Time.Clock            ( getCurrentTime )
 
-import           GoParser         ( parse )
+import           GoParser                   ( parse )
 
-import           Log              ( debug, info, noticeR )
+import           Log                        ( debug, err, notice, noticeR )
 
-import           Model            ( Benchmark )
+import           Model
+                 ( Benchmark, Environment, Test(Test) )
 
-import           Parser           ( State(Failure, Init, Ok) )
+import           Network.HTTP.Simple
+                 ( HttpException, Request, getResponseBody
+                 , getResponseStatusCode, httpLBS, parseRequest
+                 , setRequestBodyJSON )
 
-import           System.Directory ( removePathForcibly )
-import           System.IO.Temp   ( emptySystemTempFile )
+import           Parser                     ( State(Failure, Init, Ok) )
 
-import           Text.Printf      ( printf )
+import           System.Directory           ( removePathForcibly )
+import           System.Exit                ( exitFailure )
+import           System.IO.Temp             ( emptySystemTempFile )
+
+import           Text.Printf                ( printf )
 
 -- | The result of the complete run
-data ParserResult =
-    ParserResult { _path       :: Maybe String -- Path on disk
-                 , _benchmarks :: [Benchmark]  -- All Benchmark results
-                 }
-
--- | Lens creation
-makeLenses ''ParserResult
-
--- | Drop the underscore from the Result
-deriveJSON defaultOptions { fieldLabelModifier = drop 1 } ''ParserResult
+type ParserResult = [Benchmark]
 
 -- | A single parser step consists of an intermediate state and result
 type ParserStep = (State, ParserResult)
 
 -- | Initial parser step for convenience
 initParserStep :: ParserStep
-initParserStep = (Init, ParserResult Nothing [])
+initParserStep = (Init, [])
 
 -- | Go one step forward and log output
 parseStepIO :: ParserStep -> String -> IO ParserStep
@@ -62,36 +53,78 @@ parseStep (s, r) i = let ns = parse s i in (ns, appendBenchmark ns r)
 
 -- | Append the succeeding result if possible
 appendBenchmark :: State -> ParserResult -> ParserResult
-appendBenchmark (Ok b) r = benchmarks .~ (r ^. benchmarks ++ pure b) $ r
+appendBenchmark (Ok b) r = r ++ pure b
 appendBenchmark _ r = r
 
 -- | Retrieve the amount of benchmark results for the provided ParserStep
 amount :: ParserStep -> Int
-amount (_, r) = length $ r ^. benchmarks
+amount (_, r) = length r
 
 -- | Print a debug message for the current step
 debugStep :: ParserStep -> IO ()
 debugStep (Failure f, r) = do
-    info $ printf "Parse error: %s" f
+    debug $ printf "Parse error: %s" f
     debugResult r
 debugStep (_, r) = debugResult r
 
 -- | Print a debug message for the current result
 debugResult :: ParserResult -> IO ()
-debugResult r = debug . printf "Result: %s" . show $ r ^. benchmarks
+debugResult r = debug . printf "Current result: %s" $ show r
 
 -- | Store the current result on disk
-toDisk :: ParserStep -> IO ParserStep
-toDisk (s, r) = do
+toDisk :: Test -> IO FilePath
+toDisk t = do
     f <- emptySystemTempFile "result-.json"
     debug $ printf "Writing to temp file: %s" f
-    let n = path ?~ f $ r
-    encodeFile f n
-    return (s, n)
+    encodeFile f t
+    return f
 
--- | Remove the result from disk
-removeFromDisk :: ParserStep -> IO ()
-removeFromDisk (_, r) = rm $ r ^. path
-  where
-    rm (Just x) = removePathForcibly x
-    rm _ = return ()
+-- | Convert a parser result and a given environment to a test model
+toTest :: ParserResult -> Environment -> IO Test
+toTest r e = Test r e <$> getCurrentTime
+
+-- | Sen the provided data to the given url including the environment
+send :: ParserStep -> String -> Environment -> IO ()
+send (_, r) u e = do
+    t <- toTest r e
+    p <- toDisk t
+    request <- buildRequest u p
+    debug . printf "Doing HTTP request:\n%s" $ show request
+    doRequest request t p
+
+-- | Do the provided request
+doRequest :: Request -> Test -> FilePath -> IO ()
+doRequest r t p = do
+    response <- try . httpLBS $ setRequestBodyJSON t r
+    case response of
+        Right res -> case getResponseStatusCode res of
+            200 -> do
+                notice "Successfully sent"
+                removePathForcibly p
+                debug "Removed temp file"
+            code -> do
+                err $ printf "Got wrong HTTP status code: %d" code
+                debug . printf "Got sesponse:\n%s" . C.unpack $
+                    getResponseBody res
+                logFilePath p
+        Left exception -> do
+            err "Unable to do HTTP request"
+            debug . printf "Exception details:\n%s" $
+                displayException (exception :: HttpException)
+            logFilePath p
+
+-- | Build the HTTP post request from the given URL and path. The function does
+-- earily exit on failure.
+buildRequest :: String -> FilePath -> IO Request
+buildRequest u p = do
+    r <- try . parseRequest $ printf "POST %s" u
+    case r :: Either HttpException Request of
+        Right req -> return req
+        Left _ -> do
+            err $ printf "Invalid URL provided: %s" u
+            logFilePath p
+            exitFailure
+
+-- | Log the file path convenience function
+logFilePath :: FilePath -> IO ()
+logFilePath p = notice $ printf "You can try to resend by using the file %s" p
