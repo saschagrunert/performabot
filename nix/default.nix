@@ -7,8 +7,8 @@
 , persistent, persistent-sqlite, persistent-template, safe
 , shakespeare, stdenv, tasty, tasty-hspec, tasty-quickcheck
 , template-haskell, temporary, text, time, unordered-containers
-, vector, wai, wai-extra, wai-logger, warp, yaml, yesod, yesod-auth
-, yesod-core, yesod-form, yesod-static, yesod-test
+, uuid, vector, wai, wai-extra, wai-logger, warp, yaml, yesod
+, yesod-auth, yesod-core, yesod-form, yesod-static, yesod-test
 }:
 mkDerivation {
   pname = "performabot";
@@ -23,8 +23,8 @@ mkDerivation {
     hslogger http-client http-client-tls http-conduit lens megaparsec
     monad-control monad-logger persistent persistent-sqlite
     persistent-template safe shakespeare template-haskell temporary
-    text time unordered-containers vector wai wai-extra wai-logger warp
-    yaml yesod yesod-auth yesod-core yesod-form yesod-static
+    text time unordered-containers uuid vector wai wai-extra wai-logger
+    warp yaml yesod yesod-auth yesod-core yesod-form yesod-static
   ];
   libraryToolDepends = [ hpack ];
   executableHaskellDepends = [
