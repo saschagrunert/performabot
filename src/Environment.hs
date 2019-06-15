@@ -10,13 +10,15 @@ module Environment
     ) where
 
 import           Control.Lens       ( (.~), (^.) )
-import           Control.Monad      ( mapM, msum )
+import           Control.Monad      ( mapM, msum, unless )
 
 import           Data.List          ( intercalate )
+import           Data.Maybe         ( isNothing )
 import           Data.Text          ( Text, pack )
 import qualified Data.Text          as T ( null )
+import           Data.UUID          ( fromText )
 
-import           Log                ( err )
+import           Log                ( debug, err )
 
 import           Model
                  ( Environment, environmentBranch, environmentCommit
@@ -33,6 +35,15 @@ fillEnvironment e d = do
     c <- getEnv (e ^. environmentCommit) "commit" commitEnvVars
     p <- getEnv (e ^. environmentPullRequest) "pull request" pullRequestEnvVars
     t <- getEnv (e ^. environmentToken) "token" tokenEnvVars
+
+    -- Validate the token
+    unless (T.null t) $ if isNothing (fromText t)
+                        then do
+                            err $ printf "Invalid token '%s' provided" t
+                            exitFailure
+                        else debug $ printf "Token '%s' seems to be valid" t
+
+    -- Validate the other environment variables
     if not d && any T.null [ b, c, p, t ]
         then exitFailure
         else return $ environmentToken .~ t $ environmentPullRequest .~ p $

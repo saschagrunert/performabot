@@ -115,6 +115,7 @@ library:
     - text
     - time
     - unordered-containers
+    - uuid
     - vector
     - wai
     - wai-extra

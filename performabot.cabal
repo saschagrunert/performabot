@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a6884df1b62f16200c9854fc4e7e101fbfd650b64ba7248a900764727b5ed43e
+-- hash: 29443bc3901d58a1f3b9da668d25f551b3bf28ce23c282fc30300335359371ab
 
 name:           performabot
 version:        0.1.0
@@ -91,6 +91,7 @@ library
     , text
     , time
     , unordered-containers
+    , uuid
     , vector
     , wai
     , wai-extra
