@@ -54,7 +54,7 @@ import           Yesod.Default.Config2
                  ( configSettingsYml, develMainHelper, getDevSettings
                  , loadYamlSettings, loadYamlSettingsArgs, makeYesodLogger
                  , useEnv )
-import           Yesod.Static                         ( static, staticDevel )
+import qualified Yesod.Static                         as Y
 
 mkYesodDispatch "App" resourcesApp
 
@@ -93,7 +93,7 @@ makeFoundation :: AppSettings -> IO App
 makeFoundation settings = do
     httpManager <- getGlobalManager
     logger <- newStdoutLoggerSet defaultBufSize >>= makeYesodLogger
-    stat <- (if settings ^. appMutableStatic then staticDevel else static) $
+    stat <- (if settings ^. appMutableStatic then Y.staticDevel else Y.static) $
         settings ^. appStaticDir
 
     -- We need a log function to create a connection pool. We need a connection
