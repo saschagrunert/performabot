@@ -1,7 +1,13 @@
 -- | System Environment handling
 --
 -- @since 0.1.0
-module Environment ( fillEnvironment ) where
+module Environment
+    ( branchEnvVars
+    , commitEnvVars
+    , fillEnvironment
+    , pullRequestEnvVars
+    , tokenEnvVars
+    ) where
 
 import           Control.Lens       ( (.~), (^.) )
 import           Control.Monad      ( mapM, msum )
@@ -26,7 +32,7 @@ fillEnvironment e d = do
     b <- getEnv (e ^. environmentBranch) "branch" branchEnvVars
     c <- getEnv (e ^. environmentCommit) "commit" commitEnvVars
     p <- getEnv (e ^. environmentPullRequest) "pull request" pullRequestEnvVars
-    t <- getToken (e ^. environmentToken)
+    t <- getEnv (e ^. environmentToken) "token" tokenEnvVars
     if not d && any T.null [ b, c, p, t ]
         then exitFailure
         else return $ environmentToken .~ t $ environmentPullRequest .~ p $
@@ -37,8 +43,8 @@ prefix :: String -> String
 prefix = (++) "PB_"
 
 -- | Possible token environment variables sorted by priority
-tokenEnvVar :: String
-tokenEnvVar = prefix "TOKEN"
+tokenEnvVars :: [String]
+tokenEnvVars = [ prefix "TOKEN" ]
 
 -- | Possible branch environment variables sorted by priority
 branchEnvVars :: [String]
@@ -53,19 +59,6 @@ pullRequestEnvVars :: [String]
 pullRequestEnvVars =
     [ prefix "PULL_REQUEST", "CIRCLE_PR_NUMBER", "TRAVIS_PULL_REQUEST" ]
 
--- | Retrieve the token environment value
-getToken :: Text -> IO Text
-getToken "" = do
-    e <- lookupEnv tokenEnvVar
-    case e of
-        Just t -> return $ pack t
-        _ -> do
-            err $ printf "No token found via $%s environment variable"
-                         tokenEnvVar
-            return ""
-
-getToken x = return x
-
 -- | Generic environment variable retrieval
 getEnv :: Text -> String -> [String] -> IO Text
 getEnv "" t v = do
@@ -73,9 +66,11 @@ getEnv "" t v = do
     case msum e of
         Just b -> return $ pack b
         _ -> do
-            err . printf ("No %s found via the $%s environment "
-                          ++ "variables or the command line")
-                         t $ intercalate "/$" v
+            err $ printf ("No %s found via the $%s environment "
+                          ++ "variable%s or the command line")
+                         t
+                         (intercalate ", $" v)
+                         (if length v == 1 then "" else "s" :: String)
             return ""
 
 getEnv x _ _ = return x

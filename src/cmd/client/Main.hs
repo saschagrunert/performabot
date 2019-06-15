@@ -6,7 +6,11 @@ module Main ( main ) where
 import           Control.Lens        ( (^.) )
 import           Control.Monad       ( foldM )
 
-import           Environment         ( fillEnvironment )
+import           Data.List           ( intercalate )
+
+import           Environment
+                 ( branchEnvVars, commitEnvVars, fillEnvironment
+                 , pullRequestEnvVars, tokenEnvVars )
 
 import           Log                 as L ( info )
 import           Log                 ( initLogger, notice, warn )
@@ -63,16 +67,22 @@ arguments :: Parser Args
 arguments = Args <$> environment <*> verbosity <*> apiUrl <*> devel
 
 environment :: Parser Environment
-environment = Environment
-    <$> strOption (long "branch" <> short 'b' <> help "Branch name"
-                   <> metavar "BRANCH" <> value "")
-    <*> strOption (long "commit" <> short 'c' <> help "Commit hash"
-                   <> metavar "COMMIT" <> showDefault <> value "")
+environment = Environment <$> strOption (long "branch" <> short 'b'
+                                         <> envHelp "Branch name" branchEnvVars
+                                         <> metavar "BRANCH" <> value "")
+    <*> strOption (long "commit" <> short 'c'
+                   <> envHelp "Commit hash" commitEnvVars <> metavar "COMMIT"
+                   <> value "")
     <*> strOption (long "pull-request" <> short 'p'
-                   <> help "Pull request number" <> metavar "PULL_REQUEST"
-                   <> showDefault <> value "")
-    <*> strOption (long "token" <> short 't' <> help "Token to be used"
-                   <> metavar "TOKEN" <> showDefault <> value "") <**> helper
+                   <> envHelp "Pull request number" pullRequestEnvVars
+                   <> metavar "PULL_REQUEST" <> value "")
+    <*> strOption (long "token" <> short 't' <> envHelp "Token" tokenEnvVars
+                   <> metavar "TOKEN" <> value "") <**> helper
+  where
+    envHelp x y = help $ printf "%s - fallback environment  variable%s: $%s"
+                                (x :: String)
+                                (if length y == 1 then "" else "s" :: String)
+                                (intercalate ", $" y)
 
 verbosity :: Parser Priority
 verbosity = priority . length
@@ -88,7 +98,8 @@ verbosity = priority . length
 
 apiUrl :: Parser String
 apiUrl = strOption (long "url" <> short 'u' <> help "API url for sending data"
-                    <> metavar "URL" <> value "http://localhost:3000/api")
+                    <> metavar "URL" <> showDefault
+                    <> value "http://localhost:3000/api")
 
 devel :: Parser Bool
 devel = switch (internal <> long "devel" <> short 'd')
