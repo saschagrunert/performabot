@@ -65,6 +65,10 @@ hlint:
 lint: cabal2nix hlint bulma
 	$(call nix-shell-pure-run,git diff --exit-code)
 
+.PHONY: locale
+locale:
+	@$(call nix-shell-pure-run,echo \$$LOCALE_ARCHIVE)
+
 .PHONY: nixpkgs
 nixpkgs:
 	nix-shell -p nix-prefetch-git --run "nix-prefetch-git --no-deepClone \
@@ -100,4 +104,4 @@ bulma:
 
 .PHONY: yesod
 yesod:
-	$(call nix-shell-run,stack exec -- yesod devel)
+	$(call nix-shell-run,stack exec --no-nix-pure -- yesod devel)

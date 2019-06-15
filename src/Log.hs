@@ -1,15 +1,25 @@
 -- | The logging faccade
 --
 -- @since 0.1.0
-module Log ( err, debug, debugR, info, infoR, initLogger, notice, noticeR ) where
+module Log
+    ( debug
+    , debugR
+    , err
+    , info
+    , infoR
+    , initLogger
+    , notice
+    , noticeR
+    , warn
+    ) where
 
 import           System.Console.ANSI
-                 ( Color(Blue, Green, Red, White), ColorIntensity(Vivid)
+                 ( Color(Blue, Green, Yellow, Red, White), ColorIntensity(Vivid)
                  , ConsoleLayer(Foreground), SGR(SetColor, Reset), hSetSGR
                  , setSGR )
 import           System.IO           ( stderr )
 import           System.Log.Logger   ( Priority, debugM, errorM, infoM, noticeM
-                                     , setLevel, updateGlobalLogger )
+                                     , setLevel, updateGlobalLogger, warningM )
 
 import           Text.Printf         ( printf )
 
@@ -53,6 +63,13 @@ notice m = do
 -- | Output an notice message
 noticeR :: String -> IO ()
 noticeR = noticeM logger
+
+-- | Output a warning message with prefix
+warn :: String -> IO ()
+warn m = do
+    hSetSGR stderr [ SetColor Foreground Vivid Yellow ]
+    warningM logger $ printf "[WARN]: %s" m
+    setSGR [ Reset ]
 
 -- | Output an error message with prefix
 err :: String -> IO ()

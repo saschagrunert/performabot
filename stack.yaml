@@ -1,8 +1,8 @@
 ---
 nix:
   enable: true
-  packages: [zlib.dev, zlib.out]
-  pure: false
+  pure: true
+  shell-file: nix/shell.nix
 resolver: lts-13.24
 packages:
   - .

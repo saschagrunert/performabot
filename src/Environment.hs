@@ -8,7 +8,7 @@ import           Control.Monad      ( mapM, msum )
 
 import           Data.List          ( intercalate )
 import           Data.Text          ( Text, pack )
-import qualified Data.Text          as T
+import qualified Data.Text          as T ( null )
 
 import           Log                ( err )
 
@@ -17,17 +17,17 @@ import           Model
                  , environmentPullRequest, environmentToken )
 
 import           System.Environment ( lookupEnv )
-import           System.Exit
+import           System.Exit        ( exitFailure )
 
 import           Text.Printf        ( printf )
 
-fillEnvironment :: Environment -> IO Environment
-fillEnvironment e = do
+fillEnvironment :: Environment -> Bool -> IO Environment
+fillEnvironment e d = do
     b <- getEnv (e ^. environmentBranch) "branch" branchEnvVars
     c <- getEnv (e ^. environmentCommit) "commit" commitEnvVars
     p <- getEnv (e ^. environmentPullRequest) "pull request" pullRequestEnvVars
     t <- getToken (e ^. environmentToken)
-    if any T.null [ b, c, p, t ]
+    if not d && any T.null [ b, c, p, t ]
         then exitFailure
         else return $ environmentToken .~ t $ environmentPullRequest .~ p $
             environmentCommit .~ c $ environmentBranch .~ b $ e
