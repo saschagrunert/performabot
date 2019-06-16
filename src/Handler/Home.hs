@@ -8,5 +8,5 @@ import           Import
 -- | The Home GET request handler
 getHomeR :: Handler Html
 getHomeR = defaultLayout $ do
-    setTitle "Home"
+    setTitle "Performabot - Home"
     $(widgetFile "home")

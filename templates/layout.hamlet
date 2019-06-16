@@ -1,7 +1,8 @@
-<nav .navbar>
+$newline never
+<nav .navbar .is-dark>
   <div .navbar-brand>
     <a .navbar-item href="#">
-      <img src="https://bulma.io/images/bulma-logo.png" width="112" height="28">
+      Performabot
 
   <div .navbar-menu .is-active>
     <div .navbar-start>
