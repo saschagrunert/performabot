@@ -1,7 +1,7 @@
 -- | The golang ginkgo benchmark parser
 --
 -- @since 0.1.0
-module GoParser ( parse ) where
+module ParserGo ( parse ) where
 
 import           Control.Lens         ( (.~), (^.) )
 

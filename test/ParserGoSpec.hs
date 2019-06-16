@@ -1,11 +1,9 @@
 -- | The go parser tests
 --
 -- @since 0.1.0
-module GoParserSpec ( goParserSpec ) where
+module ParserGoSpec ( parserGoSpec ) where
 
 import           Control.Lens     ( (^.) )
-
-import           GoParser         ( parse )
 
 import           Model
                  ( Benchmark, benchmarkAverage, benchmarkDerivation
@@ -13,6 +11,8 @@ import           Model
                  , emptyBenchmark )
 
 import           Parser           ( State(Failure, Init, NeedMore, Ok) )
+
+import           ParserGo         ( parse )
 
 import           Test.Tasty.Hspec
                  ( Spec, it, parallel, shouldBe, shouldContain )
@@ -28,9 +28,9 @@ benchmark (NeedMore b) = b
 benchmark (Ok b) = b
 benchmark _ = emptyBenchmark
 
--- GoParser.hs related unit tests
-goParserSpec :: Spec
-goParserSpec = parallel $ do
+-- ParserGo.hs related unit tests
+parserGoSpec :: Spec
+parserGoSpec = parallel $ do
     it "should succeed to parse" $ do
         let s = parse Init "  10 samples:"
         benchmark s ^. benchmarkSamples `shouldBe` 10

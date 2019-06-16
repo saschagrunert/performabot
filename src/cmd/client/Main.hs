@@ -8,7 +8,7 @@ import           Control.Monad       ( foldM )
 
 import           Data.List           ( intercalate )
 
-import           Environment
+import           Env
                  ( branchEnvVars, commitEnvVars, fillEnvironment
                  , pullRequestEnvVars, tokenEnvVars )
 

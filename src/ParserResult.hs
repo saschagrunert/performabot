@@ -8,8 +8,6 @@ import           Control.Exception          ( displayException, try )
 import           Data.Aeson                 ( encodeFile )
 import           Data.ByteString.Lazy.Char8 as C ( unpack )
 
-import           GoParser                   ( parse )
-
 import           Log                        ( debug, err, notice, noticeR )
 
 import           Model                      ( Benchmark, Environment, ReqBody )
@@ -20,6 +18,8 @@ import           Network.HTTP.Simple
                  , setRequestBodyJSON )
 
 import           Parser                     ( State(Failure, Init, Ok) )
+
+import qualified ParserGo                   as Go ( parse )
 
 import           System.Directory           ( removePathForcibly )
 import           System.Exit                ( exitFailure )
@@ -47,7 +47,7 @@ parseStepIO s line = do
 
 -- | Go one step forward by parsing the input String
 parseStep :: ParserStep -> String -> ParserStep
-parseStep (s, r) i = let ns = parse s i in (ns, appendBenchmark ns r)
+parseStep (s, r) i = let ns = Go.parse s i in (ns, appendBenchmark ns r)
 
 -- | Append the succeeding result if possible
 appendBenchmark :: State -> ParserResult -> ParserResult
