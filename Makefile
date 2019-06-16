@@ -53,16 +53,16 @@ coverage:
 doc:
 	$(call nix-shell-pure-run,cabal new-haddock)
 
-.PHONY: fmt
-fmt:
-	floskell src/*.hs
+.PHONY: floskell
+floskell:
+	$(call nix-shell-pure-run,shopt -s globstar && floskell src/**/*.hs)
 
 .PHONY: hlint
 hlint:
 	$(call nix-shell-pure-run,hlint -g)
 
 .PHONY: lint
-lint: cabal2nix hlint bulma
+lint: bulma cabal2nix floskell hlint
 	$(call nix-shell-pure-run,git diff --exit-code)
 
 .PHONY: locale

@@ -113,7 +113,7 @@ jobs:
             - v1-lint-{{ checksum "nix/nixpkgs.json" }}
       - run:
           name: lint
-          command: make lint
+          command: make lint -j4
       - save_cache:
           key: v1-lint-{{ checksum "nix/nixpkgs.json" }}
           paths:

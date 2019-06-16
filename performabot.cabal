@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 29443bc3901d58a1f3b9da668d25f551b3bf28ce23c282fc30300335359371ab
+-- hash: 17163459e38977ea3fe426d1f52b7d7e0a9773c789d2f5626ca94a22c2c5b58d
 
 name:           performabot
 version:        0.1.0
@@ -35,9 +35,8 @@ flag library-only
 
 library
   exposed-modules:
-      Environment
+      Env
       Foundation
-      GoParser
       Handler.Api
       Handler.Common
       Handler.Home
@@ -46,6 +45,7 @@ library
       Log
       Model
       Parser
+      ParserGo
       ParserResult
       Server
       Settings
@@ -147,7 +147,7 @@ test-suite performabot-test
   type: exitcode-stdio-1.0
   main-is: Main.hs
   other-modules:
-      GoParserSpec
+      ParserGoSpec
       ParserSpec
       ResultSpec
       TestImport

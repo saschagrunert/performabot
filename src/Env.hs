@@ -1,7 +1,7 @@
--- | System Environment handling
+-- | System environment handling
 --
 -- @since 0.1.0
-module Environment
+module Env
     ( branchEnvVars
     , commitEnvVars
     , fillEnvironment
