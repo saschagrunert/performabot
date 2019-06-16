@@ -5,12 +5,20 @@ executors:
   container:
     docker:
       - image: nixos/nix
+  performabot-build:
+    docker:
+      - image: saschagrunert/performabot-build
+  machine:
+    machine:
+      docker_layer_caching: true
+      image: ubuntu-1604:201903-01
 
 workflows:
   version: 2
   pipeline:
     jobs:
       - build
+      - build-static
       - doc
       # - doc-publish:
       #     requires:
@@ -18,6 +26,16 @@ workflows:
       #     filters:
       #       branches:
       #         only: master
+      - image:
+          name: image-client
+          target: client
+          requires:
+            - build-static
+      - image:
+          name: image-server
+          target: server
+          requires:
+            - build-static
       - lint
       - test
 
@@ -48,6 +66,25 @@ jobs:
       - store_artifacts:
           path: result/lib
           destination: lib
+
+  build-static:
+    executor: performabot-build
+    steps:
+      - <<: *prepare-env
+      - checkout
+      - run:
+          name: build
+          command: make build-static
+      - store_artifacts:
+          path: result/bin
+          destination: bin
+      - store_artifacts:
+          path: result/lib
+          destination: lib
+      - persist_to_workspace:
+          root: .
+          paths:
+            - result/bin
 
   doc:
     executor: container
@@ -102,6 +139,26 @@ jobs:
             git add .
             git diff-index --quiet HEAD || git commit -m 'Update documentation'
             git push -f origin gh-pages
+
+  image:
+    executor: machine
+    parameters:
+      target:
+        type: string
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: create container image
+          command: make image-<< parameters.target >> CONTAINER_RUNTIME=docker
+      - run:
+          name: save container image
+          command: |
+            docker save -o image-<< parameters.target >>.tar \
+              performabot-<< parameters.target >>
+      - store_artifacts:
+          path: image-<< parameters.target >>.tar
 
   lint:
     executor: container

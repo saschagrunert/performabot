@@ -22,6 +22,10 @@ flags:
     default: false
     description: Turn on development settings, like auto-reload templates.
     manual: false
+  static:
+    default: false
+    description: Build static binaries
+    manual: false
 
 ghc-options:
   - -Werror
@@ -138,6 +142,9 @@ library:
         ghc-options:
           - -fwarn-tabs
           - -O2
+    - condition: flag(static)
+      cc-options: -static -fPIC
+      ld-options: -static -fPIC
 
 tests:
   performabot-test:

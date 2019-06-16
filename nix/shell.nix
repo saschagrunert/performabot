@@ -14,9 +14,11 @@ let
 in
 pkgs.stdenv.mkDerivation {
   buildInputs = with pkgs; project.env.nativeBuildInputs ++ [
+    bash
     cabal-install
     cabal2nix
     expect
+    file
     git
     glibcLocales
     haskellPackages.floskell
@@ -24,6 +26,7 @@ pkgs.stdenv.mkDerivation {
     haskellPackages.yesod-bin
     hlint
     nix-prefetch-git
+    podman
     sass
     sqlite
     wget

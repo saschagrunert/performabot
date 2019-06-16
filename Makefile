@@ -3,16 +3,7 @@ GLOB_SCSS := config/bulma.scss
 BULMA_DIR := $(BUILD_DIR)/bulma
 BULMA_TAG := 0.7.5
 BULMA_URL := https://github.com/jgthms/bulma
-
-all: cabal2nix build
-
-.PHONY: build
-build:
-	nix-build nix/release.nix
-
-.PHONY: build-static
-build-static:
-	nix-build nix/release-static.nix
+CONTAINER_RUNTIME := podman
 
 define nix-shell
 	nix-shell nix/shell.nix $(1)
@@ -29,6 +20,32 @@ endef
 define nix-shell-pure-run
 	$(call nix-shell-pure,--run "$(1)")
 endef
+
+define image-build
+	$(CONTAINER_RUNTIME) build --pull -f Dockerfile-$(1) -t performabot-$(1) .
+endef
+
+
+all: cabal2nix build
+
+.PHONY: build
+build:
+	nix-build nix/release.nix
+
+.PHONY: build-static
+build-static:
+	nix-build nix/release-static.nix
+
+.PHONY: build-static-with-image
+build-static-with-image:
+	export WORKDIR=/performabot &&\
+	$(CONTAINER_RUNTIME) run --rm -it -v $(shell pwd):/$$WORKDIR \
+		saschagrunert/performabot-build sh -c "\
+			export BUILD_DIR=$$WORKDIR/result/bin &&\
+			rm -rf $$WORKDIR/result &&\
+			mkdir -p \$$BUILD_DIR &&\
+			nix-build $$WORKDIR/nix/release-static.nix &&\
+			cp result/bin/* \$$BUILD_DIR"
 
 .PHONY: cabal2nix
 cabal2nix:
@@ -60,6 +77,20 @@ floskell:
 .PHONY: hlint
 hlint:
 	$(call nix-shell-pure-run,hlint -g)
+
+.PHONY: image-build
+image-build:
+	$(call image-build,build)
+
+.PHONY: image-client
+image-client:
+	$(nix-shell-pure-run,hack/is-static result/bin/client)
+	$(call image-build,client)
+
+.PHONY: image-server
+image-server:
+	$(nix-shell-pure-run,hack/is-static result/bin/server)
+	$(call image-build,server)
 
 .PHONY: lint
 lint: bulma cabal2nix floskell hlint
