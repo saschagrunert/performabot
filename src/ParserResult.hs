@@ -7,14 +7,12 @@ import           Control.Exception          ( displayException, try )
 
 import           Data.Aeson                 ( encodeFile )
 import           Data.ByteString.Lazy.Char8 as C ( unpack )
-import           Data.Time.Clock            ( getCurrentTime )
 
 import           GoParser                   ( parse )
 
 import           Log                        ( debug, err, notice, noticeR )
 
-import           Model
-                 ( Benchmark, Environment, Test(Test) )
+import           Model                      ( Benchmark, Environment, ReqBody )
 
 import           Network.HTTP.Simple
                  ( HttpException, Request, getResponseBody
@@ -72,30 +70,26 @@ debugResult :: ParserResult -> IO ()
 debugResult r = debug . printf "Current result: %s" $ show r
 
 -- | Store the current result on disk
-toDisk :: Test -> IO FilePath
-toDisk t = do
+toDisk :: ReqBody -> IO FilePath
+toDisk b = do
     f <- emptySystemTempFile "result-.json"
     debug $ printf "Writing to temp file: %s" f
-    encodeFile f t
+    encodeFile f b
     return f
-
--- | Convert a parser result and a given environment to a test model
-toTest :: ParserResult -> Environment -> IO Test
-toTest r e = Test r e <$> getCurrentTime
 
 -- | Sen the provided data to the given url including the environment
 send :: ParserStep -> String -> Environment -> IO ()
 send (_, r) u e = do
-    t <- toTest r e
-    p <- toDisk t
+    let body = (e, r)
+    p <- toDisk body
     request <- buildRequest u p
     debug . printf "Doing HTTP request:\n%s" $ show request
-    doRequest request t p
+    doRequest request body p
 
 -- | Do the provided request
-doRequest :: Request -> Test -> FilePath -> IO ()
-doRequest r t p = do
-    response <- try . httpLBS $ setRequestBodyJSON t r
+doRequest :: Request -> ReqBody -> FilePath -> IO ()
+doRequest r b p = do
+    response <- try . httpLBS $ setRequestBodyJSON b r
     case response of
         Right res -> case getResponseStatusCode res of
             200 -> do

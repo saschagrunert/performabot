@@ -1,6 +1,6 @@
 Test
-    benchmarks  [Benchmark]
-    environment Environment
+    benchmarks  [BenchmarkId]
+    environment EnvironmentId
     time        UTCTime
     deriving    Show
 

@@ -14,6 +14,7 @@ pkgs.stdenv.mkDerivation {
     hlint
     nix-prefetch-git
     sass
+    sqlite
     wget
     zlib
   ];

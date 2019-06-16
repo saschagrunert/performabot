@@ -6,6 +6,7 @@
 module Model
     ( Benchmark(Benchmark)
     , BenchmarkId
+    , ReqBody
     , Environment(Environment)
     , EnvironmentId
     , Test(Test)
@@ -40,6 +41,8 @@ share [ mkPersist sqlSettings { mpsGenerateLenses = True }
       , mkMigrate "migrateAll"
       ]
       $(persistFileWith lowerCaseSettings "config/models.persistentmodels")
+
+type ReqBody = (Environment, [Benchmark])
 
 -- | Drop the "_benchmark" from the Benchmark
 deriveJSON defaultOptions { fieldLabelModifier = drop 10 } ''Benchmark
