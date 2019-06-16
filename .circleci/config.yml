@@ -12,12 +12,12 @@ workflows:
     jobs:
       - build
       - doc
-      - doc-publish:
-          requires:
-            - doc
-          filters:
-            branches:
-              only: master
+      # - doc-publish:
+      #     requires:
+      #       - doc
+      #     filters:
+      #       branches:
+      #         only: master
       - lint
       - test
 
