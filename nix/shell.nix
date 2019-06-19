@@ -26,7 +26,6 @@ pkgs.stdenv.mkDerivation {
     haskellPackages.yesod-bin
     hlint
     nix-prefetch-git
-    podman
     sass
     sqlite
     wget
