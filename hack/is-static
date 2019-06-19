@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+if [ ! -f $1 ]; then
+    echo "File '$1' does not exist"
+    exit 1
+fi
+
+file $1 | grep "statically linked" | grep -q stripped
+if [ $? -ne 0 ]; then
+    echo "Binary does not seem to be statically linked"
+    exit 1
+fi

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 17163459e38977ea3fe426d1f52b7d7e0a9773c789d2f5626ca94a22c2c5b58d
+-- hash: 38eac125c0d21f366d8c3dabe54aaaee9b298efc0badf2725f54a765d580e700
 
 name:           performabot
 version:        0.1.0
@@ -30,6 +30,11 @@ flag dev
 
 flag library-only
   description: Build for use with "yesod devel"
+  manual: False
+  default: False
+
+flag static
+  description: Build static binaries
   manual: False
   default: False
 
@@ -108,6 +113,9 @@ library
     cpp-options: -DDEVELOPMENT
   else
     ghc-options: -fwarn-tabs -O2
+  if flag(static)
+    cc-options: -static -fPIC
+    ld-options: -static -fPIC
   default-language: Haskell2010
 
 executable client

@@ -1,0 +1,7 @@
+# vim: set syntax=dockerfile:
+FROM scratch
+COPY result/bin/server /
+COPY config /config
+COPY static /static
+COPY templates /templates
+ENTRYPOINT ["/server"]

@@ -1,0 +1,5 @@
+# vim: set syntax=dockerfile:
+FROM nixos/nix
+COPY . /build
+RUN nix-build --no-out-link build/nix/release-static.nix
+RUN rm -rf build
