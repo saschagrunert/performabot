@@ -159,6 +159,7 @@ jobs:
               performabot-<< parameters.target >>
       - store_artifacts:
           path: image-<< parameters.target >>.tar
+          destination: image-<< parameters.target >>.tar
 
   lint:
     executor: container
