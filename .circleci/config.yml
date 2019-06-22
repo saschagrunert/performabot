@@ -8,10 +8,6 @@ executors:
   performabot-build:
     docker:
       - image: saschagrunert/performabot-build
-  machine:
-    machine:
-      docker_layer_caching: true
-      image: ubuntu-1604:201903-01
 
 workflows:
   version: 2
@@ -141,25 +137,33 @@ jobs:
             git push -f origin gh-pages
 
   image:
-    executor: machine
+    executor: container
     parameters:
       target:
         type: string
     steps:
+      - <<: *prepare-env
       - checkout
       - attach_workspace:
           at: .
       - run:
-          name: create container image
-          command: make image-<< parameters.target >> CONTAINER_RUNTIME=docker
-      - run:
-          name: save container image
+          name: setup container policy
           command: |
-            docker save -o image-<< parameters.target >>.tar \
-              performabot-<< parameters.target >>
+            mkdir -p /etc/containers
+            cp hack/policy.json /etc/containers
+      - restore_cache:
+          keys:
+            - v1-image-{{ checksum "nix/nixpkgs.json" }}
+      - run:
+          name: create container image
+          command: make image-<< parameters.target >>
+      - save_cache:
+          key: v1-image-{{ checksum "nix/nixpkgs.json" }}
+          paths:
+            - /nix
       - store_artifacts:
-          path: image-<< parameters.target >>.tar
-          destination: image-<< parameters.target >>.tar
+          path: build/image-<< parameters.target >>.tar
+          destination: build/image-<< parameters.target >>.tar
 
   lint:
     executor: container
