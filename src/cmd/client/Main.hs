@@ -99,7 +99,7 @@ verbosity = priority . length
 apiUrl :: Parser String
 apiUrl = strOption (long "url" <> short 'u' <> help "API url for sending data"
                     <> metavar "URL" <> showDefault
-                    <> value "http://localhost:3000/api")
+                    <> value "https://performabot.saschagrunert.de/client")
 
 devel :: Parser Bool
 devel = switch (internal <> long "devel" <> short 'd')

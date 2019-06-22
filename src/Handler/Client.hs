@@ -1,20 +1,17 @@
 {-# LANGUAGE NoImplicitPrelude #-}
 
--- | Main API handler
+-- | Client API handler
 --
 -- @since 0.1.0
-module Handler.Api ( getApiR, postApiR ) where
+module Handler.Client ( postClientR ) where
 
 import           Data.Aeson.Types as T ( Result(Success) )
 import           Data.Time.Clock  ( getCurrentTime )
 
 import           Import
 
-getApiR :: Handler Value
-getApiR = return $ String "Hello world"
-
-postApiR :: Handler ()
-postApiR = do
+postClientR :: Handler ()
+postClientR = do
     body <- parseCheckJsonBody :: Handler (T.Result ReqBody)
     case body of
         Success (e, b) -> do

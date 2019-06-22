@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 38eac125c0d21f366d8c3dabe54aaaee9b298efc0badf2725f54a765d580e700
+-- hash: 6c821a95966b6f7c260cfb55f5f1f46fbfbcde307733c7d1044ba2e3cb100f88
 
 name:           performabot
 version:        0.1.0
@@ -42,8 +42,9 @@ library
   exposed-modules:
       Env
       Foundation
-      Handler.Api
+      Handler.Client
       Handler.Common
+      Handler.GitHub
       Handler.Home
       Import
       Import.NoFoundation
@@ -77,6 +78,7 @@ library
     , fast-logger
     , file-embed
     , foreign-store
+    , github-webhooks
     , hjsmin
     , hslogger
     , http-client
