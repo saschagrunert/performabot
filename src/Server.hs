@@ -19,8 +19,9 @@ import           Database.Persist.Sqlite
 import           Foundation
                  ( App(..), Route(..), resourcesApp )
 
-import           Handler.Api                          ( getApiR, postApiR )
+import           Handler.Client                       ( postClientR )
 import           Handler.Common                       ( getFaviconR )
+import           Handler.GitHub                       ( postGitHubR )
 import           Handler.Home                         ( getHomeR )
 
 import           Language.Haskell.TH.Syntax           ( qLocation )

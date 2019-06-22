@@ -100,6 +100,7 @@ library:
     - fast-logger
     - file-embed
     - foreign-store
+    - github-webhooks
     - hjsmin
     - hslogger
     - http-client
