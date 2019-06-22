@@ -22,7 +22,8 @@ define nix-shell-pure-run
 endef
 
 define image-build
-	$(CONTAINER_RUNTIME) build --pull -f Dockerfile-$(1) -t performabot-$(1) .
+	$(CONTAINER_RUNTIME) build --pull --no-cache \
+		-f Dockerfile-$(1) -t performabot-$(1) .
 endef
 
 
