@@ -3,7 +3,6 @@ GLOB_SCSS := config/bulma.scss
 BULMA_DIR := $(BUILD_DIR)/bulma
 BULMA_TAG := 0.7.5
 BULMA_URL := https://github.com/jgthms/bulma
-CONTAINER_RUNTIME := podman
 
 define nix-shell
 	nix-shell nix/shell.nix $(1)
@@ -21,9 +20,14 @@ define nix-shell-pure-run
 	$(call nix-shell-pure,--run "$(1)")
 endef
 
-define image-build
-	$(CONTAINER_RUNTIME) build --pull --no-cache \
-		-f Dockerfile-$(1) -t performabot-$(1) .
+define image
+	$(call nix-shell-pure-run,\
+		hack/podman-config &&\
+		podman --config=$(BUILD_DIR)/podman.conf --storage-driver=vfs \
+			build --pull --no-cache -f image-$(1) -t performabot-$(1) &&\
+		rm -f $(BUILD_DIR)/image-$(1).tar &&\
+		podman --config=$(BUILD_DIR)/podman.conf --storage-driver=vfs \
+			save  -o $(BUILD_DIR)/image-$(1).tar performabot-$(1))
 endef
 
 
@@ -40,7 +44,7 @@ build-static:
 .PHONY: build-static-with-image
 build-static-with-image:
 	export WORKDIR=/performabot &&\
-	$(CONTAINER_RUNTIME) run --rm -it -v $(shell pwd):/$$WORKDIR \
+	podman run --rm -it -v $(shell pwd):/$$WORKDIR \
 		saschagrunert/performabot-build sh -c "\
 			export BUILD_DIR=$$WORKDIR/result/bin &&\
 			rm -rf $$WORKDIR/result &&\
@@ -81,17 +85,17 @@ hlint:
 
 .PHONY: image-build
 image-build:
-	$(call image-build,build)
+	$(call image,build)
 
 .PHONY: image-client
 image-client:
-	$(nix-shell-pure-run,hack/is-static result/bin/client)
-	$(call image-build,client)
+	$(call nix-shell-pure-run,hack/is-static result/bin/client)
+	$(call image,client)
 
 .PHONY: image-server
 image-server:
-	$(nix-shell-pure-run,hack/is-static result/bin/server)
-	$(call image-build,server)
+	$(call nix-shell-pure-run,hack/is-static result/bin/server)
+	$(call image,server)
 
 .PHONY: lint
 lint: bulma cabal2nix floskell hlint

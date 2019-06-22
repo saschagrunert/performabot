@@ -1,5 +1,6 @@
 *.orig
 *.sqlite3*
+*.tar
 *.tix
 .ghc.environment.*
 .sass-cache

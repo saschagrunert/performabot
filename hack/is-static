@@ -1,11 +1,12 @@
 #!/usr/bin/env bash
-if [ ! -f $1 ]; then
-    echo "File '$1' does not exist"
+set -euo pipefail
+
+if [ ! -x "$1" ]; then
+    echo "File is not executable"
     exit 1
 fi
 
-file $1 | grep "statically linked" | grep -q stripped
-if [ $? -ne 0 ]; then
-    echo "Binary does not seem to be statically linked"
+if ! file "$1" | grep "statically linked" | grep -q stripped; then
+    echo "Binary is not statically linked and stripped"
     exit 1
 fi

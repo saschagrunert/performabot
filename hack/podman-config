@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+set -euo pipefail
+
+BUILD_DIR=build
+mkdir -p $BUILD_DIR
+
+CONFIG=$BUILD_DIR/podman.conf
+cat >$CONFIG <<EOL
+conmon_path = [ "$(command -v conmon)" ]
+[runtimes]
+runc = [ "$(command -v runc)" ]
+EOL
