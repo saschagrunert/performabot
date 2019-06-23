@@ -5,9 +5,9 @@ Test
     deriving    Show
 
 Environment
-    branch      Text
     commit      Text
     pullRequest Text
+    repository  Text
     token       Text
     deriving    Show
 

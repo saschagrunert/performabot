@@ -9,22 +9,25 @@ import           Control.Monad       ( foldM )
 import           Data.List           ( intercalate )
 
 import           Env
-                 ( branchEnvVars, commitEnvVars, fillEnvironment
-                 , pullRequestEnvVars, tokenEnvVars )
+                 ( commitEnvVars, fillEnvironment, pullRequestEnvVars
+                 , repositoryEnvVars, tokenEnvVars )
 
 import           Log                 as L ( info )
 import           Log                 ( initLogger, notice, warn )
 
 import           Model
-                 ( Environment(Environment), environmentBranch
-                 , environmentCommit, environmentPullRequest )
+                 ( Environment(Environment), environmentCommit
+                 , environmentPullRequest, environmentRepository )
 
 import           Options.Applicative as O ( info )
 import           Options.Applicative
-                 ( (<**>), Parser, ParserInfo, ParserPrefs(..), customExecParser
-                 , flag', footer, fullDesc, header, help, helper, infoOption
-                 , internal, long, many, metavar, short, short, showDefault
-                 , strOption, switch, value )
+                 ( (<**>), Parser, ParserInfo
+                 , ParserPrefs(ParserPrefs, prefMultiSuffix, prefDisambiguate,
+            prefShowHelpOnEmpty, prefShowHelpOnError, prefBacktrack,
+            prefColumns)
+                 , customExecParser, flag', footer, fullDesc, header, help
+                 , helper, infoOption, internal, long, many, metavar, short
+                 , short, showDefault, strOption, switch, value )
 
 import           ParserResult
                  ( amount, initParserStep, parseStepIO, send )
@@ -32,11 +35,11 @@ import           ParserResult
 import           System.Exit         ( exitFailure )
 import           System.IO
                  ( BufferMode(LineBuffering), hSetBuffering, stdout )
-import           System.Log.Logger   ( Priority(..) )
+import           System.Log.Logger   ( Priority(INFO, DEBUG, NOTICE) )
 
 import           Text.Printf         ( printf )
 
-data Args = Args Environment  -- ^ Contains data sent to the server
+data Args = Args Environment  -- ^ Contains metadata about the current run
                  Priority     -- ^ The log level
                  String       -- ^ The API url
                  Bool         -- ^ Development mode without runtime checks
@@ -67,9 +70,11 @@ arguments :: Parser Args
 arguments = Args <$> environment <*> verbosity <*> apiUrl <*> devel
 
 environment :: Parser Environment
-environment = Environment <$> strOption (long "branch" <> short 'b'
-                                         <> envHelp "Branch name" branchEnvVars
-                                         <> metavar "BRANCH" <> value "")
+environment = Environment
+    <$> strOption (long "repository" <> short 'r'
+                   <> envHelp "GitHub repository name (owner/repo)"
+                              repositoryEnvVars <> metavar "REPOSITORY"
+                   <> value "")
     <*> strOption (long "commit" <> short 'c'
                    <> envHelp "Commit hash" commitEnvVars <> metavar "COMMIT"
                    <> value "")
@@ -118,9 +123,9 @@ run (Args e v u d) = do
 
     -- Prepare environment
     env <- fillEnvironment e d
-    L.info . printf "Using branch: %s" $ env ^. environmentBranch
     L.info . printf "Using commit: %s" $ env ^. environmentCommit
     L.info . printf "Using pull request: %s" $ env ^. environmentPullRequest
+    L.info . printf "Using repository: %s" $ env ^. environmentRepository
 
     -- Parse loop
     notice "Processing input from stdin..."

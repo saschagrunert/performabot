@@ -1,8 +1,4 @@
 BUILD_DIR := build
-GLOB_SCSS := config/bulma.scss
-BULMA_DIR := $(BUILD_DIR)/bulma
-BULMA_TAG := 0.7.5
-BULMA_URL := https://github.com/jgthms/bulma
 
 define nix-shell
 	nix-shell nix/shell.nix $(1)
@@ -54,9 +50,7 @@ build-static-with-image:
 
 .PHONY: cabal2nix
 cabal2nix:
-	$(call nix-shell-pure-run,\
-		cd nix && \
-		cabal2nix --no-haddock .. > default.nix)
+	$(call nix-shell-pure-run,cd nix && cabal2nix .. > default.nix)
 
 .PHONY: clean
 clean:
@@ -92,13 +86,8 @@ image-client:
 	$(call nix-shell-pure-run,hack/is-static result/bin/client)
 	$(call image,client)
 
-.PHONY: image-server
-image-server:
-	$(call nix-shell-pure-run,hack/is-static result/bin/server)
-	$(call image,server)
-
 .PHONY: lint
-lint: bulma cabal2nix floskell hlint
+lint: cabal2nix floskell hlint
 	$(call nix-shell-pure-run,git diff --exit-code)
 
 .PHONY: locale
@@ -110,13 +99,9 @@ nixpkgs:
 	nix-shell -p nix-prefetch-git --run "nix-prefetch-git --no-deepClone \
 		https://github.com/nixos/nixpkgs > nix/nixpkgs.json"
 
-.PHONY: repl-client
-repl-client:
+.PHONY: repl
+repl:
 	$(call nix-shell-pure-run,cabal new-repl exe:client)
-
-.PHONY: repl-server
-repl-server:
-	$(call nix-shell-run,hack/repl)
 
 .PHONY: shell
 shell:
@@ -126,18 +111,3 @@ shell:
 test:
 	$(call nix-shell-pure-run,\
 		cabal new-test --enable-coverage --enable-library-coverage)
-
-.PHONY: bulma
-bulma:
-	$(call nix-shell-run,\
-		if [ ! -d $(BULMA_DIR) ]; then \
-			mkdir -p $(BUILD_DIR) &&\
-			wget -qO- $(BULMA_URL)/archive/$(BULMA_TAG).tar.gz \
-				| tar xfz - -C $(BUILD_DIR) &&\
-			mv $(BUILD_DIR)/bulma-* $(BULMA_DIR) ;\
-		fi &&\
-		sass -t compressed $(GLOB_SCSS) > static/css/bulma.min.css)
-
-.PHONY: yesod
-yesod:
-	$(call nix-shell-run,stack exec --no-nix-pure -- yesod devel)

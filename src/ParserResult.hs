@@ -10,7 +10,7 @@ import           Data.ByteString.Lazy.Char8 as C ( unpack )
 
 import           Log                        ( debug, err, notice, noticeR )
 
-import           Model                      ( Benchmark, Environment, ReqBody )
+import           Model                      ( Benchmark, Entry, Environment )
 
 import           Network.HTTP.Simple
                  ( HttpException, Request, getResponseBody
@@ -70,7 +70,7 @@ debugResult :: ParserResult -> IO ()
 debugResult r = debug . printf "Current result: %s" $ show r
 
 -- | Store the current result on disk
-toDisk :: ReqBody -> IO FilePath
+toDisk :: Entry -> IO FilePath
 toDisk b = do
     f <- emptySystemTempFile "result-.json"
     debug $ printf "Writing to temp file: %s" f
@@ -87,7 +87,7 @@ send (_, r) u e = do
     doRequest request body p
 
 -- | Do the provided request
-doRequest :: Request -> ReqBody -> FilePath -> IO ()
+doRequest :: Request -> Entry -> FilePath -> IO ()
 doRequest r b p = do
     response <- try . httpLBS $ setRequestBodyJSON b r
     case response of

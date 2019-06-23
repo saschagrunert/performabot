@@ -2,27 +2,25 @@
 --
 -- @since 0.1.0
 module Env
-    ( branchEnvVars
-    , commitEnvVars
+    ( commitEnvVars
     , fillEnvironment
     , pullRequestEnvVars
+    , repositoryEnvVars
     , tokenEnvVars
     ) where
 
 import           Control.Lens       ( (.~), (^.) )
-import           Control.Monad      ( mapM, msum, unless )
+import           Control.Monad      ( mapM, msum )
 
 import           Data.List          ( intercalate )
-import           Data.Maybe         ( isNothing )
 import           Data.Text          ( Text, pack )
 import qualified Data.Text          as T ( null )
-import           Data.UUID          ( fromText )
 
-import           Log                ( debug, err )
+import           Log                ( err )
 
 import           Model
-                 ( Environment, environmentBranch, environmentCommit
-                 , environmentPullRequest, environmentToken )
+                 ( Environment, environmentCommit, environmentPullRequest
+                 , environmentRepository, environmentToken )
 
 import           System.Environment ( lookupEnv )
 import           System.Exit        ( exitFailure )
@@ -31,23 +29,16 @@ import           Text.Printf        ( printf )
 
 fillEnvironment :: Environment -> Bool -> IO Environment
 fillEnvironment e d = do
-    b <- getEnv (e ^. environmentBranch) "branch" branchEnvVars
     c <- getEnv (e ^. environmentCommit) "commit" commitEnvVars
     p <- getEnv (e ^. environmentPullRequest) "pull request" pullRequestEnvVars
+    r <- getEnv (e ^. environmentRepository) "repository" repositoryEnvVars
     t <- getEnv (e ^. environmentToken) "token" tokenEnvVars
 
-    -- Validate the token
-    unless (T.null t) $ if isNothing (fromText t)
-                        then do
-                            err $ printf "Invalid token '%s' provided" t
-                            exitFailure
-                        else debug $ printf "Token '%s' seems to be valid" t
-
     -- Validate the other environment variables
-    if not d && any T.null [ b, c, p, t ]
+    if not d && any T.null [ r, c, p, t ]
         then exitFailure
         else return $ environmentToken .~ t $ environmentPullRequest .~ p $
-            environmentCommit .~ c $ environmentBranch .~ b $ e
+            environmentCommit .~ c $ environmentRepository .~ r $ e
 
 -- | The prefix for local env vars
 prefix :: String -> String
@@ -57,9 +48,10 @@ prefix = (++) "PB_"
 tokenEnvVars :: [String]
 tokenEnvVars = [ prefix "TOKEN" ]
 
--- | Possible branch environment variables sorted by priority
-branchEnvVars :: [String]
-branchEnvVars = [ prefix "BRANCH", "CIRCLE_BRANCH", "TRAVIS_BRANCH" ]
+-- | Possible repository environment variables sorted by priority
+repositoryEnvVars :: [String]
+repositoryEnvVars =
+    [ prefix "REPOSITORY", "CIRCLE_PROJECT_REPONAME", "TRAVIS_REPO_SLUG" ]
 
 -- | Possible commit environment variables sorted by priority
 commitEnvVars :: [String]
