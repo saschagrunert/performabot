@@ -81,10 +81,10 @@ hlint:
 image-build:
 	$(call image,build)
 
-.PHONY: image-client
-image-client:
-	$(call nix-shell-pure-run,hack/is-static result/bin/client)
-	$(call image,client)
+.PHONY: image-performabot
+image-performabot:
+	$(call nix-shell-pure-run,hack/is-static result/bin/performabot)
+	$(call image,performabot)
 
 .PHONY: lint
 lint: cabal2nix floskell hlint
@@ -101,7 +101,7 @@ nixpkgs:
 
 .PHONY: repl
 repl:
-	$(call nix-shell-pure-run,cabal new-repl exe:client)
+	$(call nix-shell-pure-run,cabal new-repl)
 
 .PHONY: shell
 shell:

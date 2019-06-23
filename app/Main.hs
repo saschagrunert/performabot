@@ -10,14 +10,14 @@ import           Data.List           ( intercalate )
 
 import           Env
                  ( commitEnvVars, fillEnvironment, pullRequestEnvVars
-                 , repositoryEnvVars, tokenEnvVars )
+                 , repoSlugEnvVars, tokenEnvVars )
 
 import           Log                 as L ( info )
 import           Log                 ( initLogger, notice, warn )
 
 import           Model
                  ( Environment(Environment), environmentCommit
-                 , environmentPullRequest, environmentRepository )
+                 , environmentPullRequest, environmentRepoSlug )
 
 import           Options.Applicative as O ( info )
 import           Options.Applicative
@@ -27,10 +27,10 @@ import           Options.Applicative
             prefColumns)
                  , customExecParser, flag', footer, fullDesc, header, help
                  , helper, infoOption, internal, long, many, metavar, short
-                 , short, showDefault, strOption, switch, value )
+                 , short, strOption, switch, value )
 
 import           ParserResult
-                 ( amount, initParserStep, parseStepIO, send )
+                 ( amount, initParserStep, parseStepIO, save )
 
 import           System.Exit         ( exitFailure )
 import           System.IO
@@ -41,7 +41,6 @@ import           Text.Printf         ( printf )
 
 data Args = Args Environment  -- ^ Contains metadata about the current run
                  Priority     -- ^ The log level
-                 String       -- ^ The API url
                  Bool         -- ^ Development mode without runtime checks
 
 -- | The main function
@@ -67,14 +66,13 @@ parser =
                        ++ "<https://github.com/saschagrunert/performabot>"))
 
 arguments :: Parser Args
-arguments = Args <$> environment <*> verbosity <*> apiUrl <*> devel
+arguments = Args <$> environment <*> verbosity <*> devel
 
 environment :: Parser Environment
 environment = Environment
-    <$> strOption (long "repository" <> short 'r'
-                   <> envHelp "GitHub repository name (owner/repo)"
-                              repositoryEnvVars <> metavar "REPOSITORY"
-                   <> value "")
+    <$> strOption (long "repo-slug" <> short 'r'
+                   <> envHelp "GitHub repository slug (owner/repo)"
+                              repoSlugEnvVars <> metavar "REPOSLUG" <> value "")
     <*> strOption (long "commit" <> short 'c'
                    <> envHelp "Commit hash" commitEnvVars <> metavar "COMMIT"
                    <> value "")
@@ -101,11 +99,6 @@ verbosity = priority . length
         | a == 1 = INFO
         | otherwise = DEBUG
 
-apiUrl :: Parser String
-apiUrl = strOption (long "url" <> short 'u' <> help "API url for sending data"
-                    <> metavar "URL" <> showDefault
-                    <> value "https://performabot.saschagrunert.de/client")
-
 devel :: Parser Bool
 devel = switch (internal <> long "devel" <> short 'd')
 
@@ -115,7 +108,7 @@ version =
 
 -- | The entry function after argument parsing
 run :: Args -> IO ()
-run (Args e v u d) = do
+run (Args e v d) = do
     -- Setup logging
     initLogger v
     notice "Welcome to performabot!"
@@ -125,7 +118,7 @@ run (Args e v u d) = do
     env <- fillEnvironment e d
     L.info . printf "Using commit: %s" $ env ^. environmentCommit
     L.info . printf "Using pull request: %s" $ env ^. environmentPullRequest
-    L.info . printf "Using repository: %s" $ env ^. environmentRepository
+    L.info . printf "Using repository slug: %s" $ env ^. environmentRepoSlug
 
     -- Parse loop
     notice "Processing input from stdin..."
@@ -133,12 +126,12 @@ run (Args e v u d) = do
     input <- getContents
     r <- foldM parseStepIO initParserStep $ lines input
 
-    -- Evaluate and send results if needed
+    -- Evaluate and save results if needed
     let c = amount r
     notice . printf "Processing done, found %d result%s" c $
         if c == 1 then "" else "s" :: String
     if c /= 0
-        then send r u env
+        then save r env
         else do
-            warn "Not sending anything because no results found"
+            warn "Not saving anything because no results found"
             exitFailure

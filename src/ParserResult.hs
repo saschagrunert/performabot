@@ -1,7 +1,7 @@
 -- | Result and state handling
 --
 -- @since 0.1.0
-module ParserResult ( ParserResult, amount, initParserStep, parseStepIO, send ) where
+module ParserResult ( ParserResult, amount, initParserStep, parseStepIO, save ) where
 
 import           Control.Exception          ( displayException, try )
 
@@ -78,11 +78,11 @@ toDisk b = do
     return f
 
 -- | Sen the provided data to the given url including the environment
-send :: ParserStep -> String -> Environment -> IO ()
-send (_, r) u e = do
+save :: ParserStep -> Environment -> IO ()
+save (_, r) e = do
     let body = (e, r)
     p <- toDisk body
-    request <- buildRequest u p
+    request <- buildRequest "" p
     debug . printf "Doing HTTP request:\n%s" $ show request
     doRequest request body p
 
@@ -121,4 +121,4 @@ buildRequest u p = do
 
 -- | Log the file path convenience function
 logFilePath :: FilePath -> IO ()
-logFilePath p = notice $ printf "You can try to resend by using the file %s" p
+logFilePath p = notice $ printf "You can retry by using the file %s" p
