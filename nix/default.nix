@@ -22,7 +22,7 @@ mkDerivation {
   testHaskellDepends = [
     aeson base lens megaparsec tasty tasty-hspec tasty-quickcheck
   ];
-  preConfigure = "hpack";
+  prePatch = "hpack";
   homepage = "https://github.com/saschagrunert/performabot#readme";
   license = stdenv.lib.licenses.mit;
 }
