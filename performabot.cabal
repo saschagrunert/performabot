@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 6c821a95966b6f7c260cfb55f5f1f46fbfbcde307733c7d1044ba2e3cb100f88
+-- hash: 665505687f01d92f60f5c1d2be427ccf22e515ec4d3a0cd68a64bd51d3fd32c5
 
 name:           performabot
 version:        0.1.0
@@ -23,16 +23,6 @@ source-repository head
   type: git
   location: https://github.com/saschagrunert/performabot
 
-flag dev
-  description: Turn on development settings, like auto-reload templates.
-  manual: False
-  default: False
-
-flag library-only
-  description: Build for use with "yesod devel"
-  manual: False
-  default: False
-
 flag static
   description: Build static binaries
   manual: False
@@ -41,80 +31,33 @@ flag static
 library
   exposed-modules:
       Env
-      Foundation
-      Handler.Client
-      Handler.Common
-      Handler.GitHub
-      Handler.Home
-      Import
-      Import.NoFoundation
       Log
       Model
       Parser
       ParserGo
       ParserResult
-      Server
-      Settings
-      Settings.StaticFiles
   other-modules:
       Paths_performabot
   hs-source-dirs:
       src
-  default-extensions: CPP DeriveGeneric EmptyDataDecls FlexibleInstances GADTs GeneralizedNewtypeDeriving InstanceSigs MultiParamTypeClasses OverloadedStrings RecordWildCards TemplateHaskell TypeFamilies
-  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe
+  default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings TemplateHaskell TypeFamilies
+  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe
   build-depends:
       aeson
     , ansi-terminal
     , base
     , bytestring
-    , case-insensitive
-    , classy-prelude
-    , classy-prelude-conduit
-    , classy-prelude-yesod
-    , conduit
-    , containers
-    , data-default
     , directory
-    , fast-logger
-    , file-embed
-    , foreign-store
-    , github-webhooks
-    , hjsmin
     , hslogger
-    , http-client
-    , http-client-tls
     , http-conduit
     , lens
     , megaparsec
-    , monad-control
-    , monad-logger
     , persistent
     , persistent-sqlite
     , persistent-template
-    , safe
-    , shakespeare
-    , template-haskell
     , temporary
     , text
     , time
-    , unordered-containers
-    , uuid
-    , vector
-    , wai
-    , wai-extra
-    , wai-logger
-    , warp
-    , yaml
-    , yesod
-    , yesod-auth
-    , yesod-core
-    , yesod-form
-    , yesod-static
-  if (flag(dev)) || (flag(library-only))
-    ghc-options: -fwarn-tabs -O0
-    cpp-options: -DDEVELOPMENT
-  else
-    ghc-options: -fwarn-tabs -O2
   if flag(static)
     cc-options: -static -fPIC
     ld-options: -static -fPIC
@@ -125,32 +68,15 @@ executable client
   other-modules:
       Paths_performabot
   hs-source-dirs:
-      src/cmd/client
-  default-extensions: CPP DeriveGeneric EmptyDataDecls FlexibleInstances GADTs GeneralizedNewtypeDeriving InstanceSigs MultiParamTypeClasses OverloadedStrings RecordWildCards TemplateHaskell TypeFamilies
-  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
+      app
+  default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings TemplateHaskell TypeFamilies
+  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
       base
     , hslogger
     , lens
     , optparse-applicative
     , performabot
-  if flag(library-only)
-    buildable: False
-  default-language: Haskell2010
-
-executable server
-  main-is: Main.hs
-  other-modules:
-      Paths_performabot
-  hs-source-dirs:
-      src/cmd/server
-  default-extensions: CPP DeriveGeneric EmptyDataDecls FlexibleInstances GADTs GeneralizedNewtypeDeriving InstanceSigs MultiParamTypeClasses OverloadedStrings RecordWildCards TemplateHaskell TypeFamilies
-  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
-  build-depends:
-      base
-    , performabot
-  if flag(library-only)
-    buildable: False
   default-language: Haskell2010
 
 test-suite performabot-test
@@ -160,27 +86,18 @@ test-suite performabot-test
       ParserGoSpec
       ParserSpec
       ResultSpec
-      TestImport
       Paths_performabot
   hs-source-dirs:
       test
-  default-extensions: CPP DeriveGeneric EmptyDataDecls FlexibleInstances GADTs GeneralizedNewtypeDeriving InstanceSigs MultiParamTypeClasses OverloadedStrings RecordWildCards TemplateHaskell TypeFamilies
-  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-exported-signatures -Wno-missing-import-lists -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-safe -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
+  default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings TemplateHaskell TypeFamilies
+  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
       aeson
     , base
-    , classy-prelude
-    , directory
     , lens
     , megaparsec
-    , monad-logger
     , performabot
-    , persistent
-    , persistent-sqlite
     , tasty
     , tasty-hspec
     , tasty-quickcheck
-    , yesod
-    , yesod-core
-    , yesod-test
   default-language: Haskell2010

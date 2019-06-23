@@ -1,5 +1,0 @@
-/               HomeR       GET
-/client         ClientR     POST
-/favicon.ico    FaviconR    GET
-/github         GitHubR     POST
-/static         StaticR     Static appStatic

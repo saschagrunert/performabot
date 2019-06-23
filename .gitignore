@@ -11,4 +11,3 @@ dist
 dist-*
 result
 static/tmp
-yesod-devel

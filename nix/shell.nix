@@ -18,19 +18,16 @@ pkgs.stdenv.mkDerivation {
     cabal-install
     cabal2nix
     conmon
-    expect
     file
     git
     glibcLocales
     haskellPackages.floskell
     haskellPackages.hpc-coveralls
-    haskellPackages.yesod-bin
     hlint
     iptables
     nix-prefetch-git
     podman
     runc
-    sass
     sqlite
     utillinux
     wget

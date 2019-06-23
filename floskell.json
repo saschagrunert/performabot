@@ -1,9 +1,8 @@
 {
   "style": "cramer",
   "extensions": [
-    "CPP",
-    "DeriveGeneric",
-    "InstanceSigs",
+    "GADTs",
+    "GeneralizedNewtypeDeriving",
     "MultiParamTypeClasses",
     "OverloadedStrings",
     "TemplateHaskell",

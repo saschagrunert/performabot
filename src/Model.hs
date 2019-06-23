@@ -1,12 +1,10 @@
-{-# LANGUAGE NoImplicitPrelude #-}
-
 -- | Database models
 --
 -- @since 0.1.0
 module Model
     ( Benchmark(Benchmark)
     , BenchmarkId
-    , ReqBody
+    , Entry
     , Environment(Environment)
     , EnvironmentId
     , Test(Test)
@@ -17,9 +15,9 @@ module Model
     , benchmarkSamples
     , benchmarkUnit
     , emptyBenchmark
-    , environmentBranch
     , environmentCommit
     , environmentPullRequest
+    , environmentRepository
     , environmentToken
     , migrateAll
     , testBenchmarks
@@ -27,22 +25,22 @@ module Model
     , testTime
     ) where
 
-import           ClassyPrelude.Yesod
-                 ( Bool(True), Double, Int, Show, Text, UTCTime, drop, mkMigrate
-                 , mkPersist, mpsGenerateLenses, persistFileWith, share
-                 , sqlSettings )
-
 import           Data.Aeson.TH
                  ( defaultOptions, deriveJSON, fieldLabelModifier )
+import           Data.Text              ( Text )
+import           Data.Time              ( UTCTime )
 
 import           Database.Persist.Quasi ( lowerCaseSettings )
+import           Database.Persist.TH
+                 ( mkMigrate, mkPersist, mpsGenerateLenses, persistFileWith
+                 , share, sqlSettings )
 
 share [ mkPersist sqlSettings { mpsGenerateLenses = True }
       , mkMigrate "migrateAll"
       ]
-      $(persistFileWith lowerCaseSettings "config/models.persistentmodels")
+      $(persistFileWith lowerCaseSettings "config/models")
 
-type ReqBody = (Environment, [Benchmark])
+type Entry = (Environment, [Benchmark])
 
 -- | Drop the "_benchmark" from the Benchmark
 deriveJSON defaultOptions { fieldLabelModifier = drop 10 } ''Benchmark
@@ -50,7 +48,7 @@ deriveJSON defaultOptions { fieldLabelModifier = drop 10 } ''Benchmark
 -- | Drop the "_result" from the Result
 deriveJSON defaultOptions { fieldLabelModifier = drop 5 } ''Test
 
--- | Drop the "_result" from the Result
+-- | Drop the "_environment" from the Environment
 deriveJSON defaultOptions { fieldLabelModifier = drop 12 } ''Environment
 
 -- | Get a new empty Benchmark instance

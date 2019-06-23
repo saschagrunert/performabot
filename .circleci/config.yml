@@ -16,20 +16,15 @@ workflows:
       - build
       - build-static
       - doc
-      # - doc-publish:
-      #     requires:
-      #       - doc
-      #     filters:
-      #       branches:
-      #         only: master
+      - doc-publish:
+          requires:
+            - doc
+          filters:
+            branches:
+              only: master
       - image:
           name: image-client
           target: client
-          requires:
-            - build-static
-      - image:
-          name: image-server
-          target: server
           requires:
             - build-static
       - lint
