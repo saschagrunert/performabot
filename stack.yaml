@@ -1,6 +1,6 @@
 ---
 nix:
-  enable: false
+  enable: true
   pure: true
   shell-file: nix/shell.nix
 resolver: lts-13.25
