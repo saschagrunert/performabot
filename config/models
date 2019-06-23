@@ -7,7 +7,7 @@ Test
 Environment
     commit      Text
     pullRequest Text
-    repository  Text
+    repoSlug    Text
     token       Text
     deriving    Show
 

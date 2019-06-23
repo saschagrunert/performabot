@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 665505687f01d92f60f5c1d2be427ccf22e515ec4d3a0cd68a64bd51d3fd32c5
+-- hash: 98e3e7b597afb8f01a3adcd57ee89ff5fc280f44f10f4ed176b522ed0470dd76
 
 name:           performabot
 version:        0.1.0
@@ -41,7 +41,7 @@ library
   hs-source-dirs:
       src
   default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings TemplateHaskell TypeFamilies
-  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe
+  ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe
   build-depends:
       aeson
     , ansi-terminal
@@ -55,6 +55,7 @@ library
     , persistent
     , persistent-sqlite
     , persistent-template
+    , split
     , temporary
     , text
     , time
@@ -63,14 +64,14 @@ library
     ld-options: -static -fPIC
   default-language: Haskell2010
 
-executable client
+executable performabot
   main-is: Main.hs
   other-modules:
       Paths_performabot
   hs-source-dirs:
       app
   default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings TemplateHaskell TypeFamilies
-  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
+  ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
       base
     , hslogger
@@ -90,7 +91,7 @@ test-suite performabot-test
   hs-source-dirs:
       test
   default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings TemplateHaskell TypeFamilies
-  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
+  ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
       aeson
     , base

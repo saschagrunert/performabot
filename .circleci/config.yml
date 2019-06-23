@@ -23,8 +23,6 @@ workflows:
             branches:
               only: master
       - image:
-          name: image-client
-          target: client
           requires:
             - build-static
       - lint
@@ -133,9 +131,6 @@ jobs:
 
   image:
     executor: container
-    parameters:
-      target:
-        type: string
     steps:
       - <<: *prepare-env
       - checkout
@@ -151,14 +146,14 @@ jobs:
             - v1-image-{{ checksum "nix/nixpkgs.json" }}
       - run:
           name: create container image
-          command: make image-<< parameters.target >>
+          command: make image-performabot
       - save_cache:
           key: v1-image-{{ checksum "nix/nixpkgs.json" }}
           paths:
             - /nix
       - store_artifacts:
-          path: build/image-<< parameters.target >>.tar
-          destination: build/image-<< parameters.target >>.tar
+          path: build/image-performabot.tar
+          destination: build/image-performabot.tar
 
   lint:
     executor: container

@@ -20,7 +20,7 @@ flags:
     manual: false
 
 ghc-options:
-  - -Werror
+  # - -Werror
   - -Weverything
   - -Wno-all-missed-specialisations
   - -Wno-implicit-prelude
@@ -38,7 +38,7 @@ default-extensions:
   - TypeFamilies
 
 executables:
-  client:
+  performabot:
     main: Main.hs
     source-dirs: app
     ghc-options:
@@ -65,6 +65,7 @@ library:
     - persistent
     - persistent-sqlite
     - persistent-template
+    - split
     - temporary
     - text
     - time

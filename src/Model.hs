@@ -17,7 +17,7 @@ module Model
     , emptyBenchmark
     , environmentCommit
     , environmentPullRequest
-    , environmentRepository
+    , environmentRepoSlug
     , environmentToken
     , migrateAll
     , testBenchmarks
