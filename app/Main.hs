@@ -8,16 +8,13 @@ import           Control.Monad       ( foldM )
 
 import           Data.List           ( intercalate )
 
-import           Env
-                 ( commitEnvVars, fillEnvironment, pullRequestEnvVars
+import           Environment
+                 ( Environment(Environment), commit, commitEnvVars
+                 , fillEnvironment, pullRequest, pullRequestEnvVars, repoSlug
                  , repoSlugEnvVars, tokenEnvVars )
 
 import           Log                 as L ( info )
 import           Log                 ( initLogger, notice, warn )
-
-import           Model
-                 ( Environment(Environment), environmentCommit
-                 , environmentPullRequest, environmentRepoSlug )
 
 import           Options.Applicative as O ( info )
 import           Options.Applicative
@@ -29,7 +26,7 @@ import           Options.Applicative
                  , helper, infoOption, internal, long, many, metavar, short
                  , short, strOption, switch, value )
 
-import           ParserResult
+import           Result
                  ( amount, initParserStep, parseStepIO, save )
 
 import           System.Exit         ( exitFailure )
@@ -116,9 +113,9 @@ run (Args e v d) = do
 
     -- Prepare environment
     env <- fillEnvironment e d
-    L.info . printf "Using commit: %s" $ env ^. environmentCommit
-    L.info . printf "Using pull request: %s" $ env ^. environmentPullRequest
-    L.info . printf "Using repository slug: %s" $ env ^. environmentRepoSlug
+    L.info . printf "Using commit: %s" $ env ^. commit
+    L.info . printf "Using pull request: %s" $ env ^. pullRequest
+    L.info . printf "Using repository slug: %s" $ env ^. repoSlug
 
     -- Parse loop
     notice "Processing input from stdin..."

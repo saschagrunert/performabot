@@ -1,45 +1,56 @@
 -- | System environment handling
 --
 -- @since 0.1.0
-module Env
-    ( commitEnvVars
+module Environment
+    ( Environment(Environment)
+    , commit
+    , commitEnvVars
     , fillEnvironment
+    , pullRequest
     , pullRequestEnvVars
+    , repoSlug
     , repoSlugEnvVars
     , tokenEnvVars
     ) where
 
-import           Control.Lens       ( (.~), (^.) )
+import           Control.Lens       ( (.~), (^.), makeLenses )
 import           Control.Monad      ( mapM, msum )
 
+import           Data.Aeson.TH
+                 ( defaultOptions, deriveJSON, fieldLabelModifier )
 import           Data.List          ( intercalate )
 import           Data.List.Split    ( splitOn )
-import           Data.Text          ( Text, pack )
-import qualified Data.Text          as T ( null )
 
 import           Log                ( err )
-
-import           Model
-                 ( Environment, environmentCommit, environmentPullRequest
-                 , environmentRepoSlug, environmentToken )
 
 import           System.Environment ( lookupEnv )
 import           System.Exit        ( exitFailure )
 
 import           Text.Printf        ( printf )
 
+data Environment = Environment { _commit      :: String
+                               , _pullRequest :: String
+                               , _repoSlug    :: String
+                               , _token       :: String
+                               }
+    deriving Show
+
+$(makeLenses ''Environment)
+
+deriveJSON defaultOptions { fieldLabelModifier = drop 1 } ''Environment
+
 fillEnvironment :: Environment -> Bool -> IO Environment
 fillEnvironment e d = do
-    c <- getEnv (e ^. environmentCommit) "commit" commitEnvVars
-    p <- getEnv (e ^. environmentPullRequest) "pull request" pullRequestEnvVars
-    r <- getEnv (e ^. environmentRepoSlug) "repo slug" repoSlugEnvVars
-    t <- getEnv (e ^. environmentToken) "token" tokenEnvVars
+    c <- getEnv (e ^. commit) "commit" commitEnvVars
+    p <- getEnv (e ^. pullRequest) "pull request" pullRequestEnvVars
+    r <- getEnv (e ^. repoSlug) "repo slug" repoSlugEnvVars
+    t <- getEnv (e ^. token) "token" tokenEnvVars
 
     -- Validate the other environment variables
-    if not d && any T.null [ r, c, p, t ]
+    if not d && any null [ c, p, r, t ]
         then exitFailure
-        else return $ environmentToken .~ t $ environmentPullRequest .~ p $
-            environmentCommit .~ c $ environmentRepoSlug .~ r $ e
+        else return $ token .~ t $ pullRequest .~ p $ commit .~ c $
+            repoSlug .~ r $ e
 
 -- | The prefix for local env vars
 prefix :: String -> String
@@ -72,11 +83,11 @@ pullRequestEnvVars =
     [ prefix "PULL_REQUEST", "CIRCLE_PR_NUMBER", "TRAVIS_PULL_REQUEST" ]
 
 -- | Generic environment variable retrieval
-getEnv :: Text -> String -> [String] -> IO Text
+getEnv :: String -> String -> [String] -> IO String
 getEnv "" t v = do
     e <- mapM lookupSplitEnv v
     case msum e of
-        Just b -> return $ pack b
+        Just b -> return b
         _ -> do
             err $ printf ("No %s found via the $%s environment "
                           ++ "variable%s or the command line")

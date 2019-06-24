@@ -1,6 +1,5 @@
-{ mkDerivation, aeson, ansi-terminal, base, bytestring, directory
-, hpack, hslogger, http-conduit, lens, megaparsec
-, optparse-applicative, persistent, persistent-sqlite
+{ mkDerivation, aeson, ansi-terminal, base, hpack, hslogger, lens
+, megaparsec, optparse-applicative, persistent, persistent-sqlite
 , persistent-template, split, stdenv, tasty, tasty-hspec
 , tasty-quickcheck, temporary, text, time
 }:
@@ -11,9 +10,8 @@ mkDerivation {
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [
-    aeson ansi-terminal base bytestring directory hslogger http-conduit
-    lens megaparsec persistent persistent-sqlite persistent-template
-    split temporary text time
+    aeson ansi-terminal base hslogger lens megaparsec persistent
+    persistent-sqlite persistent-template split temporary text time
   ];
   libraryToolDepends = [ hpack ];
   executableHaskellDepends = [

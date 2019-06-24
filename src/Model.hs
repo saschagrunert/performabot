@@ -5,8 +5,6 @@ module Model
     ( Benchmark(Benchmark)
     , BenchmarkId
     , Entry
-    , Environment(Environment)
-    , EnvironmentId
     , Test(Test)
     , TestId
     , benchmarkAverage
@@ -15,60 +13,36 @@ module Model
     , benchmarkSamples
     , benchmarkUnit
     , emptyBenchmark
-    , environmentCommit
-    , environmentPullRequest
-    , environmentRepoSlug
-    , environmentToken
     , migrateAll
     , testBenchmarks
-    , testEnvironment
+    , testCommit
+    , testPullRequest
+    , testRepoSlug
     , testTime
     ) where
 
 import           Data.Aeson.TH
                  ( defaultOptions, deriveJSON, fieldLabelModifier )
-import           Data.Text           ( Text )
-import           Data.Time           ( UTCTime )
+import           Data.Text              ( Text )
+import           Data.Time              ( UTCTime )
 
-import           Database.Persist.TH ( mkMigrate, mkPersist, mpsGenerateLenses
-                                     , persistLowerCase, share, sqlSettings )
+import           Database.Persist.Quasi ( lowerCaseSettings )
+import           Database.Persist.TH
+                 ( mkMigrate, mkPersist, mpsGenerateLenses, persistFileWith
+                 , share, sqlSettings )
 
 share [ mkPersist sqlSettings { mpsGenerateLenses = True }
       , mkMigrate "migrateAll"
       ]
-      [persistLowerCase|
-Test
-    benchmarks  [BenchmarkId]
-    environment EnvironmentId
-    time        UTCTime
-    deriving    Show
+      $(persistFileWith lowerCaseSettings "src/model")
 
-Environment
-    commit      Text
-    pullRequest Text
-    repoSlug    Text
-    token       Text
-    deriving    Show
-
-Benchmark
-    average     Double
-    derivation  Double
-    name        Text
-    samples     Int
-    unit        Text
-    deriving    Show
-|]
-
-type Entry = (Environment, [Benchmark])
+type Entry = (Test, [Benchmark])
 
 -- | Drop the "_benchmark" from the Benchmark
 deriveJSON defaultOptions { fieldLabelModifier = drop 10 } ''Benchmark
 
 -- | Drop the "_result" from the Result
 deriveJSON defaultOptions { fieldLabelModifier = drop 5 } ''Test
-
--- | Drop the "_environment" from the Environment
-deriveJSON defaultOptions { fieldLabelModifier = drop 12 } ''Environment
 
 -- | Get a new empty Benchmark instance
 emptyBenchmark :: Benchmark
