@@ -27,18 +27,37 @@ module Model
 
 import           Data.Aeson.TH
                  ( defaultOptions, deriveJSON, fieldLabelModifier )
-import           Data.Text              ( Text )
-import           Data.Time              ( UTCTime )
+import           Data.Text           ( Text )
+import           Data.Time           ( UTCTime )
 
-import           Database.Persist.Quasi ( lowerCaseSettings )
-import           Database.Persist.TH
-                 ( mkMigrate, mkPersist, mpsGenerateLenses, persistFileWith
-                 , share, sqlSettings )
+import           Database.Persist.TH ( mkMigrate, mkPersist, mpsGenerateLenses
+                                     , persistLowerCase, share, sqlSettings )
 
 share [ mkPersist sqlSettings { mpsGenerateLenses = True }
       , mkMigrate "migrateAll"
       ]
-      $(persistFileWith lowerCaseSettings "config/models")
+      [persistLowerCase|
+Test
+    benchmarks  [BenchmarkId]
+    environment EnvironmentId
+    time        UTCTime
+    deriving    Show
+
+Environment
+    commit      Text
+    pullRequest Text
+    repoSlug    Text
+    token       Text
+    deriving    Show
+
+Benchmark
+    average     Double
+    derivation  Double
+    name        Text
+    samples     Int
+    unit        Text
+    deriving    Show
+|]
 
 type Entry = (Environment, [Benchmark])
 

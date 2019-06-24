@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 98e3e7b597afb8f01a3adcd57ee89ff5fc280f44f10f4ed176b522ed0470dd76
+-- hash: 6dd0c8bb11e5e152228978bd9c385e7a0c7d3f0c96a4d034f60166c3e020325a
 
 name:           performabot
 version:        0.1.0
@@ -40,7 +40,7 @@ library
       Paths_performabot
   hs-source-dirs:
       src
-  default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings TemplateHaskell TypeFamilies
+  default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings QuasiQuotes TemplateHaskell TypeFamilies
   ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe
   build-depends:
       aeson
@@ -70,7 +70,7 @@ executable performabot
       Paths_performabot
   hs-source-dirs:
       app
-  default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings TemplateHaskell TypeFamilies
+  default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings QuasiQuotes TemplateHaskell TypeFamilies
   ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
       base
@@ -90,7 +90,7 @@ test-suite performabot-test
       Paths_performabot
   hs-source-dirs:
       test
-  default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings TemplateHaskell TypeFamilies
+  default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings QuasiQuotes TemplateHaskell TypeFamilies
   ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
       aeson

@@ -2,7 +2,7 @@
 nix:
   enable: true
   pure: true
-  shell-file: nix/shell.nix
-resolver: lts-13.25
+  packages: [zlib.dev, zlib.out]
+resolver: lts-13.26
 packages:
   - .

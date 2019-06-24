@@ -34,6 +34,7 @@ default-extensions:
   - GeneralizedNewtypeDeriving
   - MultiParamTypeClasses
   - OverloadedStrings
+  - QuasiQuotes
   - TemplateHaskell
   - TypeFamilies
 
