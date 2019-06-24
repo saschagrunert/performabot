@@ -20,7 +20,7 @@ flags:
     manual: false
 
 ghc-options:
-  # - -Werror
+  - -Werror
   - -Weverything
   - -Wno-all-missed-specialisations
   - -Wno-implicit-prelude
@@ -57,10 +57,7 @@ library:
   dependencies:
     - aeson
     - ansi-terminal
-    - bytestring
-    - directory
     - hslogger
-    - http-conduit
     - lens
     - megaparsec
     - persistent

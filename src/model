@@ -1,0 +1,15 @@
+Test
+    time        UTCTime
+    commit      Text
+    repoSlug    Text
+    pullRequest Text
+    benchmarks  [BenchmarkId]
+    deriving    Show
+
+Benchmark
+    average     Double
+    derivation  Double
+    name        Text
+    samples     Int
+    unit        Text
+    deriving    Show

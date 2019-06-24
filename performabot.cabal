@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 6dd0c8bb11e5e152228978bd9c385e7a0c7d3f0c96a4d034f60166c3e020325a
+-- hash: 78812b67fb634b70ac93b92d47f01a0f4fbabb2234f2c82f01904e75ad697fe1
 
 name:           performabot
 version:        0.1.0
@@ -30,26 +30,23 @@ flag static
 
 library
   exposed-modules:
-      Env
+      Environment
       Log
       Model
       Parser
       ParserGo
-      ParserResult
+      Result
   other-modules:
       Paths_performabot
   hs-source-dirs:
       src
   default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings QuasiQuotes TemplateHaskell TypeFamilies
-  ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe
+  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe
   build-depends:
       aeson
     , ansi-terminal
     , base
-    , bytestring
-    , directory
     , hslogger
-    , http-conduit
     , lens
     , megaparsec
     , persistent
@@ -71,7 +68,7 @@ executable performabot
   hs-source-dirs:
       app
   default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings QuasiQuotes TemplateHaskell TypeFamilies
-  ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
+  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
       base
     , hslogger
@@ -91,7 +88,7 @@ test-suite performabot-test
   hs-source-dirs:
       test
   default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings QuasiQuotes TemplateHaskell TypeFamilies
-  ghc-options: -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
+  ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
       aeson
     , base
