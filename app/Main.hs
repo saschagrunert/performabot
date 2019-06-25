@@ -66,16 +66,15 @@ arguments :: Parser Args
 arguments = Args <$> environment <*> verbosity <*> devel
 
 environment :: Parser Environment
-environment = Environment
-    <$> strOption (long "repo-slug" <> short 'r'
-                   <> envHelp "GitHub repository slug (owner/repo)"
-                              repoSlugEnvVars <> metavar "REPOSLUG" <> value "")
-    <*> strOption (long "commit" <> short 'c'
-                   <> envHelp "Commit hash" commitEnvVars <> metavar "COMMIT"
-                   <> value "")
+environment = Environment <$> strOption (long "commit" <> short 'c'
+                                         <> envHelp "Commit hash" commitEnvVars
+                                         <> metavar "COMMIT" <> value "")
     <*> strOption (long "pull-request" <> short 'p'
                    <> envHelp "Pull request number" pullRequestEnvVars
                    <> metavar "PULL_REQUEST" <> value "")
+    <*> strOption (long "repo-slug" <> short 'r'
+                   <> envHelp "GitHub repository slug (owner/repo)"
+                              repoSlugEnvVars <> metavar "REPOSLUG" <> value "")
     <*> strOption (long "token" <> short 't' <> envHelp "Token" tokenEnvVars
                    <> metavar "TOKEN" <> value "") <**> helper
   where

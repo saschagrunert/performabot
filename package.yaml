@@ -63,8 +63,8 @@ library:
     - persistent
     - persistent-sqlite
     - persistent-template
+    - regex-compat
     - split
-    - temporary
     - text
     - time
   when:

@@ -1,6 +1,6 @@
 *.lock
 *.orig
-*.sqlite3*
+*.sqlite
 *.tar
 *.tix
 .ghc.environment.*
