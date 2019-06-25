@@ -1,33 +1,31 @@
 -- | Result and state handling
 --
 -- @since 0.1.0
-module Result ( Result, amount, initParserStep, parseStepIO, save ) where
+module Result ( amount, initParserStep, parseStepIO, save ) where
 
-import           Control.Lens    ( (^.) )
+import           Control.Lens            ( (^.) )
 
-import           Data.Aeson      ( encodeFile )
-import           Data.Text       ( pack )
-import           Data.Time.Clock ( getCurrentTime )
+import           Data.Text               ( Text, pack )
+import           Data.Time.Clock         ( getCurrentTime )
 
-import           Environment     ( Environment, commit, pullRequest, repoSlug )
+import           Database.Persist        ( insert )
+import           Database.Persist.Sqlite ( runMigration, runSqlite )
 
-import           Log             ( debug, notice, noticeR )
+import           Environment
+                 ( Environment, commit, pullRequest, repoSlug )
 
-import           Model           ( Benchmark, Test(Test) )
+import           Log                     ( debug, noticeR )
 
-import           Parser          ( State(Failure, Init, Ok) )
+import           Model                   ( Benchmarks, Test(Test), migrateAll )
 
-import qualified ParserGo        as Go ( parse )
+import           Parser                  ( State(Failure, Init, Ok) )
 
-import           System.IO.Temp  ( emptySystemTempFile )
+import qualified ParserGo                as Go ( parse )
 
-import           Text.Printf     ( printf )
-
--- | The result of the complete run
-type Result = [Benchmark]
+import           Text.Printf             ( printf )
 
 -- | A single parser step consists of an intermediate state and result
-type Step = (State, Result)
+type Step = (State, Benchmarks)
 
 -- | Initial parser step for convenience
 initParserStep :: Step
@@ -46,7 +44,7 @@ parseStep :: Step -> String -> Step
 parseStep (s, r) i = let ns = Go.parse s i in (ns, appendBenchmark ns r)
 
 -- | Append the succeeding result if possible
-appendBenchmark :: State -> Result -> Result
+appendBenchmark :: State -> Benchmarks -> Benchmarks
 appendBenchmark (Ok b) r = r ++ pure b
 appendBenchmark _ r = r
 
@@ -62,32 +60,23 @@ debugStep (Failure f, r) = do
 debugStep (_, r) = debugResult r
 
 -- | Print a debug message for the current result
-debugResult :: Result -> IO ()
+debugResult :: Benchmarks -> IO ()
 debugResult r = debug . printf "Current result: %s" $ show r
-
--- | Store the current result on disk
-toDisk :: (Test, Result) -> IO FilePath
-toDisk b = do
-    f <- emptySystemTempFile "result-.json"
-    debug $ printf "Writing to temp file: %s" f
-    encodeFile f b
-    return f
 
 -- | Sen the provided data to the given url including the environment
 save :: Step -> Environment -> IO ()
-save (_, r) e = do
+save (_, b) e = do
     t <- getCurrentTime
-    let d = ( Test t
-                   (pack $ e ^. commit)
-                   (pack $ e ^. repoSlug)
-                   (pack $ e ^. pullRequest)
-                   []
-            , r
-            )
-    p <- toDisk d
-    logFilePath p
+    _ <- runSqlite db $ do
+        runMigration migrateAll
+        bids <- mapM insert b
+        insert $ Test t
+                      (pack $ e ^. commit)
+                      (pack $ e ^. repoSlug)
+                      (pack $ e ^. pullRequest)
+                      bids
     return ()
 
--- | Log the file path convenience function
-logFilePath :: FilePath -> IO ()
-logFilePath p = notice $ printf "You can retry by using the file %s" p
+-- | The database name
+db :: Text
+db = "performabot.sqlite"

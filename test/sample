@@ -1,0 +1,2431 @@
+[1561470226] [1mCRI validation[0m - 7/76 specs [36mS[0m[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about lifecycle of PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+
+[90m------------------------------[0m
+[32m• [MEASUREMENT][0m
+[90m[k8s.io] PodSandbox [0m[0mbenchmark about operations on PodSandbox [0m[90mbenchmark about lifecycle of PodSandbox [0m
+[37m/home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:42[0m
+
+  [1m20[0m samples:
+    [1mcreate PodSandbox[0m - Fastest Time: [32m0.231[0ms, Average Time: [36m0.404[0ms ± [36m0.471[0ms, Slowest Time: [91m2.371[0ms
+    [1mPodSandbox status[0m - Fastest Time: [32m0.000[0ms, Average Time: [36m0.000[0ms ± [36m0.000[0ms, Slowest Time: [91m0.001[0ms
+    [1mstop PodSandbox[0m - Fastest Time: [32m0.212[0ms, Average Time: [36m0.240[0ms ± [36m0.015[0ms, Slowest Time: [91m0.270[0ms
+    [1mremove PodSandbox[0m - Fastest Time: [32m0.019[0ms, Average Time: [36m0.056[0ms ± [36m0.012[0ms, Slowest Time: [91m0.071[0ms
+[90m------------------------------[0m
+[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:01.238: INFO: Created container "23bb0bf73327dd5b9df0fb86d33e7478a5ab338c0944580f96c52d9f0e5ed4fe"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:02.114: INFO: Created container "6e319509e12bf14c22302b7d1f246aa6c06b9c2cd683fba32b6f3a2224bf2d96"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:02.841: INFO: Created container "95eacb2c17b0d6b32d6924df65168611d2adf8bc2b7faca5a11b5656de7ab7e3"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:03.606: INFO: Created container "3681355814e43cfc479213e95d48c179eb716780eccc4f0e2dbb06230975154a"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:04.315: INFO: Created container "d624544d3077032fe61ed74b85e9aa60d28f361e5ed9411180a6596072ae800b"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:05.036: INFO: Created container "637a7197985d5bc6538cdc058610235fa825078b26a8a688116130e34a95b450"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:05.842: INFO: Created container "3d326994b068312a3faa92c9eca253370b61391a158332eba3de0f8af8ddca75"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:06.602: INFO: Created container "828ebc7a026179964cfdc49f161122f8ee66dea1c8ead46f863621b70f23785b"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:07.472: INFO: Created container "85f27b4ab473c89e2a3cd91d42cdb6d7abdc678cc9cff18196de650465a144f2"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:08.242: INFO: Created container "457e5c3a6bb35e4d89fa7bcafe98254cd9e9e400fc50b1fe5d5ab4d8f81be2ec"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:09.085: INFO: Created container "94dc84758be2b6448c31919035e43b6f8a043b3e0302623d76c170daaa70f3ec"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:09.945: INFO: Created container "ccf759cd39fed57a11c5edd3c0cdb829dfe72d5ab1278c8606f5d95390c41bab"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:10.602: INFO: Created container "95cf759f5be0686709d1e77682521982d5957b741e4245773549b8c13a4ad19c"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:11.347: INFO: Created container "655c2b91faa9cd042532acbae5efdfd2260a12eaadbc20bab5a7c9c87cc5be66"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:12.220: INFO: Created container "151d76286e180ed975830d112a368bdb7235142e2b590c2d1ba6f8b14a5445de"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:13.027: INFO: Created container "ad54f559229a790310604780707d5abdbf9ab5c4d135afd26e001f760b9929a4"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:13.786: INFO: Created container "09a144d27a20110dbca1678b518990e762db1d12a0a7b35868d76d6b5d470e90"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:14.565: INFO: Created container "f844be25577af3d5183440f0034ca898dab2aece91fa10bf56e8c29ddea184a1"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:15.373: INFO: Created container "f13d99054aa3cc13a5c730ac5108383ded93b84230f72945fcef7e0c1b27cbee"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:35
+[Measure] benchmark about start a container from scratch
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48
+[1mSTEP[0m: run PodSandbox
+[1mSTEP[0m: create container in PodSandbox
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:44:16.129: INFO: Created container "c7ecc784166c90a8e019feee95b90205c6392fff1f7c1062c37d2bc0aba92ede"
+
+[1mSTEP[0m: start container in PodSandbox
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:40
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+
+[90m------------------------------[0m
+[32m• [MEASUREMENT][0m
+[90m[k8s.io] PodSandbox [0m[0mbenchmark about start a container from scratch [0m[90mbenchmark about start a container from scratch [0m
+[37m/home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod_container.go:48[0m
+
+  [1m20[0m samples:
+    [1mcreate PodSandbox and container[0m - Fastest Time: [32m0.299[0ms, Average Time: [36m0.405[0ms ± [36m0.049[0ms, Slowest Time: [91m0.489[0ms
+[90m------------------------------[0m
+[36mS[0m[36mS[0m[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about listing Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[1mSTEP[0m: Pull image : busybox:1-uclibc
+[1mSTEP[0m: Pull image : busybox:1
+[1mSTEP[0m: Pull image : busybox:1-glibc
+[1mSTEP[0m: Pull image : busybox:1-musl
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+
+[90m------------------------------[0m
+[32m• [MEASUREMENT][0m
+[90m[k8s.io] Container [0m[0mbenchmark about operations on Image [0m[90mbenchmark about listing Image [0m
+[37m/home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:83[0m
+
+  [1m20[0m samples:
+    [1mlist Container[0m - Fastest Time: [32m0.000[0ms, Average Time: [36m0.002[0ms ± [36m0.005[0ms, Slowest Time: [91m0.022[0ms
+[90m------------------------------[0m
+[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:33
+[Measure] benchmark about basic operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57
+[1mSTEP[0m: Pull image : busybox:1.26.2-uclibc
+[AfterEach] benchmark about operations on Image
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:48
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+
+[90m------------------------------[0m
+[32m• [MEASUREMENT][0m
+[90m[k8s.io] Container [0m[0mbenchmark about operations on Image [0m[90mbenchmark about basic operations on Image [0m
+[37m/home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/image.go:57[0m
+
+  [1m20[0m samples:
+    [1mpull Image[0m - Fastest Time: [32m5.828[0ms, Average Time: [36m6.498[0ms ± [36m0.478[0ms, Slowest Time: [91m7.392[0ms
+    [1mImage status[0m - Fastest Time: [32m0.001[0ms, Average Time: [36m0.002[0ms ± [36m0.001[0ms, Slowest Time: [91m0.003[0ms
+    [1mremove Image[0m - Fastest Time: [32m0.036[0ms, Average Time: [36m0.068[0ms ± [36m0.044[0ms, Slowest Time: [91m0.229[0ms
+[90m------------------------------[0m
+[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:00.855: INFO: Created container "bbda58334f34ced1a0e32920c450f365421759f35cc5e4ef149b4ec31b1ec54a"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:01.609: INFO: Created container "7b989294bab4f3d07c736b2f60335511c17a45e6562a9eed3faff16b3119f90e"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:02.401: INFO: Created container "301d3a045967358c04085840ab64df7dbe044dbe1da4590a2fe78cde2af524af"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:03.218: INFO: Created container "eb65933d503b454b6c3ee5a4e450f276aa54f8041f7a137c4c67d7231997b0de"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:03.976: INFO: Created container "740d528807851ff2e8d6db5a0ef16601337018a1598abedb1fa85a1b064ede6a"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:04.739: INFO: Created container "ec600b468d666445f21c122a868cee3dd88bb22eed02cc99be51ada76b3913ac"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:05.566: INFO: Created container "517548ac54d37aef7bc9f8c7304f7ac615c0e1530973d64d2d4738b2d71777e9"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:06.610: INFO: Created container "ed17ac9480015a800fa1955e18eef23823d8945260cda4951d7eb11fc046cae3"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:07.616: INFO: Created container "65c7b91061f37b7214260ce66cef52165628d531c7c9f2c7feda4b1d45c297dc"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:08.610: INFO: Created container "fd4064838433df4b0b04ce717086f452f3c04a599fdb3f405aed5400d9e3f63a"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:09.369: INFO: Created container "339cbf854c74f114dbd15fccaf3d6614407f96704303793dadd964521b82773e"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:10.096: INFO: Created container "8b9eee4a2fe177182254739f997366cda796c01367b79ca4e2fe098d0e3df5c6"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:10.875: INFO: Created container "a98260c1abfb26480f4c8e76c5be1c1e16093f12d28bcf5b6f641a4d7d20d7fa"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:11.638: INFO: Created container "ad0a7a826d565e8cebedff1139286184b974643372ce833a8e58307dd2772d23"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:12.448: INFO: Created container "1bdb49995aa90028970908fff571dc5dd5bd0369aaa6a688ee588aa35c18130d"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:13.290: INFO: Created container "f07b4035636a5d57d42016727e9a0fe19534a6578c6aee97163f2f9e373640db"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:14.044: INFO: Created container "eeae47396b56e14f2f21d1eb8e1cc2fe6b56bb6969117706e656f2945dccac53"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:14.775: INFO: Created container "7cc1d307ca020a0b8ce38478cbd105a89f824d8001b37b34d7869d79a76c1767"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:15.660: INFO: Created container "a4589e435f61da8032a7da535cb5b3174662b20737c44cf1088bd8e967952b7e"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about basic operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54
+[1mSTEP[0m: benchmark about creating Container
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 15:59:16.554: INFO: Created container "5a1cfcbb67e60619ae4a5a281add75444ddd28608ef084e0eb2b77aa09511158"
+
+[1mSTEP[0m: benchmark about starting Container
+[1mSTEP[0m: benchmark about getting Container status
+[1mSTEP[0m: benchmark about stoping Container
+[1mSTEP[0m: benchmark about removing Container
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+
+[90m------------------------------[0m
+[32m• [MEASUREMENT][0m
+[90m[k8s.io] Container [0m[0mbenchmark about operations on Container [0m[90mbenchmark about basic operations on Container [0m
+[37m/home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:54[0m
+
+  [1m20[0m samples:
+    [1mcreate Container[0m - Fastest Time: [32m0.078[0ms, Average Time: [36m0.122[0ms ± [36m0.035[0ms, Slowest Time: [91m0.224[0ms
+    [1mstart Container[0m - Fastest Time: [32m0.019[0ms, Average Time: [36m0.030[0ms ± [36m0.012[0ms, Slowest Time: [91m0.055[0ms
+    [1mContainer status[0m - Fastest Time: [32m0.001[0ms, Average Time: [36m0.002[0ms ± [36m0.001[0ms, Slowest Time: [91m0.003[0ms
+    [1mstop Container[0m - Fastest Time: [32m0.030[0ms, Average Time: [36m0.048[0ms ± [36m0.014[0ms, Slowest Time: [91m0.074[0ms
+    [1mremove Container[0m - Fastest Time: [32m0.022[0ms, Average Time: [36m0.026[0ms ± [36m0.004[0ms, Slowest Time: [91m0.040[0ms
+[90m------------------------------[0m
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:37
+[Measure] benchmark about listing PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86
+[AfterEach] [k8s.io] PodSandbox
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[32m• [MEASUREMENT][0m
+[90m[k8s.io] PodSandbox [0m[0mbenchmark about operations on PodSandbox [0m[90mbenchmark about listing PodSandbox [0m
+[37m/home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/pod.go:86[0m
+
+  [1m20[0m samples:
+    [1mlist PodSandbox[0m - Fastest Time: [32m0.000[0ms, Average Time: [36m0.000[0ms ± [36m0.000[0ms, Slowest Time: [91m0.001[0ms
+[90m------------------------------[0m
+[36mS[0m[36mS[0m[36mS[0m[36mS[0m[36mS[0m[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:12.037: INFO: Created container "db851fc637869feb526f09a2033886a591f8406456fecd208e56635b985aa534"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:12.170: INFO: Created container "1223d579bbe4c1237e9e9735050bfcde105c162f5bc57512e2392ae170dc358c"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:12.254: INFO: Created container "ab8ca4cde3641f26f21f0f0a6ab7e7d5c3e848cc1c96d8fb566b86b4c6c17b10"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:12.325: INFO: Created container "5318f63d7c223ce1c375c9f34db68f9c49a3033451687b0baff6c4be11acb8d8"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:12.421: INFO: Created container "09fc0546c80fca586b697f9a85432b80803425b4af89325598a6e5e1e2fd6a19"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:14.138: INFO: Created container "2d387dc6f96255238ddf5ff669566b83a349ddd23f40b03e221058536e47f7d0"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:14.216: INFO: Created container "8bee0f7b662fa1d0ec2ee19f262b06dffed15d198c5d4f3e005a4a8fd39f4d3f"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:14.340: INFO: Created container "c3f3d6585be2badf7c7bfff935e0a224576911d54661f5bf94c4d2cbc38fdfdc"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:14.549: INFO: Created container "5006e0cdf215388123199025c08cc413a58558cbe0e5fdf9eb88cff16ef1eaa6"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:14.669: INFO: Created container "056e4fb21d199899e7a7c52393f6ea3dde1d7514db7d0e63782de089a5e4724c"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:16.344: INFO: Created container "6a8ebd599c7b672565152d1a756e1df1da7a93dbfc2c0c9de1ab4008635662f6"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:16.487: INFO: Created container "a9fc740f3ffd2767600b20298884919da14046508614607bd11d32c29df440aa"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:16.615: INFO: Created container "b96d50d34a5c307190ea911166631ca0da00fde041f6c36df19993b3c9cc5e47"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:16.752: INFO: Created container "c3f988842f0caf4dd04ff9edb98c5d331ec76a1b3dca1bf1520a3703dc74f05b"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:16.874: INFO: Created container "930a0781b559ea8344c5ce6a6ad99748265b96ab392e8f1741dbb6d42c9129b1"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:18.736: INFO: Created container "301ce17ad65e9475b1bd6f9d2aba0b3289c477e604bbe279b6548f0afae1d5db"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:18.819: INFO: Created container "46c2393afefc63a7778b4eae2f7c0e63a22772248c51cb077c017aade94564ba"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:18.974: INFO: Created container "e3fa9856c87b99c28c34cef5b6e1195541886213fa2cee4717ab303a36137207"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:19.090: INFO: Created container "af459dd8a985e896691d38b4396450261108d02fc8b797fe72ce29218b87c2a4"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:19.204: INFO: Created container "8104f82398df7a29d07b8cae0c4e68fcc0e2286b1d3e0aa6da3598fc5a4de55a"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:21.056: INFO: Created container "75f50d99db3d6c24b43e55b9e80c0d48fee415720b971e32562b4216dec5aaee"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:21.197: INFO: Created container "08c86a25ccec5c679b8394390ddf728edd9e953b382c87bcdf0177a696c471e0"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:21.298: INFO: Created container "5aa40a4378fdc26953be141b4af21eb35348bba39b08c8dd85cce0df67224847"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:21.408: INFO: Created container "a4ec3e1f4ebb6f7b41cbe636edd995796741fb5d0c19e5544646b4484dccb11f"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:21.545: INFO: Created container "ff25b751ad4100478124f3ff021a2eb9993ee71773d646a4fd6150d37731a601"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:23.301: INFO: Created container "20b7cfb46fc3181f117919f5446eaf8e3c75f028d4a5d6929b5f8cee2938e606"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:23.422: INFO: Created container "dca83b36adc36ed2004ef4efd4501492f808d5c7992897e4604444fa64da1eb9"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:23.561: INFO: Created container "9adbbc3206058bd821c8ecb090624fd70f20bdf452ff711c29ce7cbea38c3f1d"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:23.683: INFO: Created container "adba9ff4018f75e758b2a1961d0e4b14c235db04b65d86e988f851e223cbdcf9"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:23.776: INFO: Created container "cb572afcd15aaec7bf5bcd6d6e5996ab5033dd56838f84c7ddf8ddcd8d89f924"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:25.602: INFO: Created container "4273fbdca394706065f0503c7816dc03370a365634396380c4392c38a2853c08"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:25.729: INFO: Created container "0dbbf5ab49850680c81ac6936497d38f00aabbe89e515d94ceea9bce7c73e733"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:25.841: INFO: Created container "b8a593373de6581c01b2101d7481a8b84f761761a22cec274d9d05cba362d5e5"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:25.962: INFO: Created container "9c90d392426846e742f38d308ed007975e7fd3aebfb351d31060e67cb2c90396"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:26.043: INFO: Created container "25c3ba7edf2962308c2fadc405582d0e4db5e4563118f8ded308e4c28768ab88"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:27.714: INFO: Created container "3633e2e0a8be47fc147f17c38fc0f4a5f689332a71d419d670215ab047f8c35f"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:27.817: INFO: Created container "ecf1f34a59d1e37572e29c495b417a44007ff106587858a5eb22a69556416d37"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:27.925: INFO: Created container "3bdcdbbe3eb5e21b9e46431bbd5ca91e633b7a97ccba8ce4537a500bbdabcc9a"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:28.050: INFO: Created container "3211b8b0c2540740abded2ca52923fec138cd3d2de909943f137148a3a160bca"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:28.157: INFO: Created container "3eeb1ac3641166cef67bac4e0261940c1e6bb785945532779d2c3d8801150637"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:30.087: INFO: Created container "b7b9b97c2f47c560ff1d2c0063173c443677d00ff023da1da2643a0724ee2cb0"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:30.169: INFO: Created container "ef6c1753317f371961d66fc2097a48456cddbecce30c807b5d85a62fa74f064d"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:30.260: INFO: Created container "c8f1c888e242c92a90321cb99764bbf7b05eeb2f8f7e08d4c48efd501b889e17"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:30.341: INFO: Created container "c1c00098f73ca6ad304bcd0e3ccfcbc4501b93888d9ea3a8b53f593942eccef1"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:30.429: INFO: Created container "9039d678d4b43f12e4893e8f2ca7dca035bf454d6642fca9804b1bd7f56c905a"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:32.102: INFO: Created container "8531e35564446e47e03516e1fe834509522d26826d9e3c95017216b5af65430e"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:32.178: INFO: Created container "85dc295d285965a9815cc18bd33c38a8c8d2f61c9b2769136bc73dd8eafba7ea"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:32.268: INFO: Created container "cd71dd06e92535a83cf44eb30d2eeee7f7cbc412e82fe3f2be7f9cd77347d1e5"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:32.358: INFO: Created container "fe5dbe4e21976169790bf5d72ff9bfbff0706e62e044396839ec7f79cbac3818"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:32.442: INFO: Created container "e5a538a3f24fc02e3aff7c119d3859e72d99eff79301126759537d8cde45382f"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:34.104: INFO: Created container "db64d81738cc40d2589c0709c9f82a26ba8e314defd72d391661e9c4f375a07d"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:34.251: INFO: Created container "d831a67685cdc659d0fa0ea79d518e54591a3aedf1c08f1f798fae19d5371ef9"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:34.333: INFO: Created container "f5d41f9fa8f125c58f84d288a7fc937b2a388c7507ca73814f1493f7ebe3bdce"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:34.422: INFO: Created container "a8a4153fae28bffcea07fc7e4a171540080a509366a3bbe435e5dc55fe3224b0"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:34.515: INFO: Created container "d9017b41e6a2db08ba645a7dca472b2804dcf588418e0b5f4faa0031be84347f"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:35.983: INFO: Created container "ef6448de4ad3cc62fbc03f4c11c44a334da356c731395fe1d56176527f64c50d"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:36.062: INFO: Created container "a6d3fcaaf22f188087e2e472f3a2a7b666d2752149c9f4eab48d14aeadc65b4d"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:36.143: INFO: Created container "8dc0b9d3195c6d34af500f2a9b6c357a1e5cb813a569ed461d065a701ecb62e9"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:36.248: INFO: Created container "bf235934cf43a3c93a0d4b0a50080e009eb030a055989a90664e2a9dd1849ef5"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:36.336: INFO: Created container "f68d19010079b766160081795b4f0cb4a2a6e638216dc9b0f8449ac21a5ae91e"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:38.023: INFO: Created container "263cea0fdf7c79b5f38fa255a21cac5468c419da902b55d471aabf5d2ffd92db"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:38.103: INFO: Created container "e16f3f464f038c3ec911bc0448c016411f01e163c953cb81a9ce3bb46694340b"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:38.184: INFO: Created container "22a46dd999d3da0a9ddcda725d454759fa7da85524bd24f98cb6d92a30c1fef2"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:38.265: INFO: Created container "b2a24cb0c36e3da60fddb80d690138f3307eee1ab5bd959f8c3c59c7f831dd76"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:38.340: INFO: Created container "9f07cff20f0eb676c1f96216659c9e136f06cb0aceb1cdae12a0391718c98213"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:40.093: INFO: Created container "0f572bfdc71a282ebdec99d70257e163c8059e603d50b87cddbc7d6c3289d17f"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:40.176: INFO: Created container "bee61bc712920260984125dcc6e1ef73cd6cdd0e81a369010fd596917837d42f"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:40.287: INFO: Created container "0115a001390890f65f549f0613ad20004c8ceb2e204d26e68b814be85a6e7650"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:40.375: INFO: Created container "ea3d1268421f128089f9c98286cbe08c4a3ac83b4194d857d62dcbb648ad8f40"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:40.460: INFO: Created container "64ec28e2573cf599c1f66871ee6be9eafae13c3b7b5b4a0a1a4c850b3599e8ed"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:42.178: INFO: Created container "409a28ce039cea2f49984b48d433eb43d532203bc48cb6998448a6c914112a99"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:42.291: INFO: Created container "13d1a6c17b44c8860d5c6e3171399ed3e6531c563151b6a4a7ca8d360ecb2601"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:42.392: INFO: Created container "ae7ddb97e122286c557f0c1bebb03a0353cb2148408891602103cfef03c7d9f4"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:42.503: INFO: Created container "c2a944f1027dbf71670a30821d1178d6ebf0a40d670bade4b10d9131819311ed"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:42.603: INFO: Created container "cfb585030d8b65167a289bcb249fb2f4c86e289dad39395b53691874ba15a974"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:44.110: INFO: Created container "b1aa1c472dde5b8125209a53e4a9659005bf5c8141d8863934df14ec3136db5f"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:44.223: INFO: Created container "42b3141507776d273cf0da2e6920b790878fa78d9b2c0bd1e736724518e5686c"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:44.318: INFO: Created container "c3eefcf599e09c00838555c8f250abf20153f6dab4ea1ffe9aa842e935f14c73"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:44.395: INFO: Created container "4744d013959d08237ced21c577e6ba3ac5ff106b9a14226a46bfa708ebc43f6a"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:44.524: INFO: Created container "1f9b95ff9ed40a1eb490c11267cfdd1631e960c4017c790a7031caac30bfb738"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:46.222: INFO: Created container "a672f02c7eb85db3899712e114b248455ab7ecba5effeab6c0e6219aa017fe9a"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:46.324: INFO: Created container "8dea6650c842b22371387648e3d1c6f6fbece8041e07f4469b761c88654c69f5"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:46.409: INFO: Created container "d7321712ac899f1e171871373e89def246fd1ef2f3f9c1bbeba61ea181a8b29c"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:46.493: INFO: Created container "5a4cc46bc8388c95f4f5025401dec27d2b79f22e080d2f08442c685456190313"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:46.569: INFO: Created container "75c89ad915794d0c2dd600ce119277f6aef64d1f535f8a7ffc804e91f728de1d"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:47.645: INFO: Created container "df73bbd1ef0fbfb6b8114c857d05cc27b81d57747f675c712d946dc8b996a019"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:47.755: INFO: Created container "f9b3cfcfb23f26277b89c56ac9a32c4dd164ca5d3057a99ced71231e22a4f421"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:47.879: INFO: Created container "07ccf4aab9e62f75cf3a2aa33a988f28baa594de73f40b889d0432fdbffa8040"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:48.000: INFO: Created container "471e46597cbefc530bb3eae7d7217e4f04c209c2e2ef6f7ebab88dd9401f730f"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:48.104: INFO: Created container "b3ed6e5c0078e786000aa3db6c5e4a135c3b1104953d84ec61db2351c5bea80b"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:49.762: INFO: Created container "02a0f448487c6ab1f5dc236ddbe46c3787e74542e2c1e41eb6ca74bbf915a396"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:49.868: INFO: Created container "df9b4c5199e38cca876f86d9b08c5a02959eacfcd3c7363d7aebbad8127572ac"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:49.986: INFO: Created container "7c3a4881788c94b58442c777081013b7ef02d5f61cdefeb374044c4888e9e158"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:50.078: INFO: Created container "bd58c9ed5892d83c5045e50d40a84966e19e7979e48fc05a0a772b09a68d8746"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:50.161: INFO: Created container "8fbc016d7ff926e7d4daacc5142ab796c5d8b40df25d6b55787429cf78cf7da7"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:50
+[BeforeEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:34
+[BeforeEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:43
+[Measure] benchmark about listing Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:52.033: INFO: Created container "f24eee53b918788eafe18ba70712e203066bac618ebc0a7f368d64bb1b97ed7b"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:52.147: INFO: Created container "88d81b617d303300bb06e457bd6624c5bce26ae865a55b3155a4ff2b6823c1e4"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:52.269: INFO: Created container "452fd0a92ed548687598019fb2f392c134cafc623b86196b9396c7deed8975be"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:52.346: INFO: Created container "ba7b39aa5cce3830195c93b32dcca28daead4eb885b951a73d52da50199571c5"
+
+[1mSTEP[0m: Get image status for image: busybox:1.28
+[1mSTEP[0m: Create container.
+Jun 25 16:00:52.461: INFO: Created container "19abb5905ecf767823d7fb56ed0e6b08b70ef96446a80b11ed5989ff9c9fa1f1"
+
+[AfterEach] benchmark about operations on Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:47
+[1mSTEP[0m: stop PodSandbox
+[1mSTEP[0m: delete PodSandbox
+[AfterEach] [k8s.io] Container
+  /home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/framework/framework.go:51
+
+[90m------------------------------[0m
+[32m• [MEASUREMENT][0m
+[90m[k8s.io] Container [0m[0mbenchmark about operations on Container [0m[90mbenchmark about listing Container [0m
+[37m/home/abuild/go/src/github.com/kubernetes-sigs/cri-tools/pkg/benchmark/container.go:98[0m
+
+  [1m20[0m samples:
+    [1mlist Container[0m - Fastest Time: [32m0.000[0ms, Average Time: [36m0.000[0ms ± [36m0.000[0ms, Slowest Time: [91m0.001[0ms
+[90m------------------------------[0m
+[36mS[0m[36mS[0m [32mSUCCESS![0m 17m7.041787312s PASS

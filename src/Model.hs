@@ -3,8 +3,8 @@
 -- @since 0.1.0
 module Model
     ( Benchmark(Benchmark)
+    , Benchmarks
     , BenchmarkId
-    , Entry
     , Test(Test)
     , TestId
     , benchmarkAverage
@@ -36,7 +36,8 @@ share [ mkPersist sqlSettings { mpsGenerateLenses = True }
       ]
       $(persistFileWith lowerCaseSettings "src/model")
 
-type Entry = (Test, [Benchmark])
+-- | Multiple Benchmarks
+type Benchmarks = [Benchmark]
 
 -- | Drop the "_benchmark" from the Benchmark
 deriveJSON defaultOptions { fieldLabelModifier = drop 10 } ''Benchmark
