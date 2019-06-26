@@ -55,8 +55,9 @@ executables:
 library:
   source-dirs: src
   dependencies:
-    - aeson
     - ansi-terminal
+    - bytestring
+    - github
     - hslogger
     - lens
     - megaparsec
@@ -64,9 +65,9 @@ library:
     - persistent-sqlite
     - persistent-template
     - regex-compat
-    - split
     - text
     - time
+    - vector
   when:
     - condition: flag(static)
       cc-options: -static -fPIC
@@ -81,7 +82,6 @@ tests:
       - -threaded
       - -with-rtsopts=-N
     dependencies:
-      - aeson
       - lens
       - megaparsec
       - performabot

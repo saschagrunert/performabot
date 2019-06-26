@@ -1,5 +1,7 @@
 let
-  pkgs = (import ./nixpkgs.nix { }).pkgsMusl;
+  pkgs = (import ./nixpkgs.nix {
+    overlays = [(import ./overlay.nix)];
+  }).pkgsMusl;
 in
   (pkgs.haskellPackages.callPackage ./default.nix { }).overrideAttrs(old: {
     doCheck = false;

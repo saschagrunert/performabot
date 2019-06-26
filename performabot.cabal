@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 7b4271c5f25eb1fc060842b0673460b631c6ed5e1ea28a244b5546a597ae7d70
+-- hash: 0c627d55fff6db0f3745e774010e624c0adbc7fa265e79a60506b182fbc4f8c9
 
 name:           performabot
 version:        0.1.0
@@ -31,10 +31,12 @@ flag static
 library
   exposed-modules:
       Environment
+      Github
       Log
       Model
       Parser
       ParserGo
+      Pretty
       Result
   other-modules:
       Paths_performabot
@@ -43,9 +45,10 @@ library
   default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings QuasiQuotes TemplateHaskell TypeFamilies
   ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe
   build-depends:
-      aeson
-    , ansi-terminal
+      ansi-terminal
     , base
+    , bytestring
+    , github
     , hslogger
     , lens
     , megaparsec
@@ -53,9 +56,9 @@ library
     , persistent-sqlite
     , persistent-template
     , regex-compat
-    , split
     , text
     , time
+    , vector
   if flag(static)
     cc-options: -static -fPIC
     ld-options: -static -fPIC
@@ -90,8 +93,7 @@ test-suite performabot-test
   default-extensions: GADTs GeneralizedNewtypeDeriving MultiParamTypeClasses OverloadedStrings QuasiQuotes TemplateHaskell TypeFamilies
   ghc-options: -Werror -Weverything -Wno-all-missed-specialisations -Wno-implicit-prelude -Wno-missed-specialisations -Wno-missing-local-signatures -Wno-monomorphism-restriction -Wno-unsafe -rtsopts -threaded -with-rtsopts=-N
   build-depends:
-      aeson
-    , base
+      base
     , lens
     , megaparsec
     , performabot
