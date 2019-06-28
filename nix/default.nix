@@ -19,7 +19,7 @@ mkDerivation {
     base hslogger lens optparse-applicative
   ];
   testHaskellDepends = [
-    base lens megaparsec tasty tasty-hspec tasty-quickcheck
+    base lens megaparsec tasty tasty-hspec tasty-quickcheck time
   ];
   prePatch = "hpack";
   homepage = "https://github.com/saschagrunert/performabot#readme";

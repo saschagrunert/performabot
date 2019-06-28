@@ -32,19 +32,32 @@ benchmark _ = emptyBenchmark
 parserGoSpec :: Spec
 parserGoSpec = parallel $ do
     it "should succeed to parse" $ do
-        let s = parse Init "  10 samples:"
-        benchmark s ^. benchmarkSamples `shouldBe` 10
-        let res = benchmark . parse s $ "    pullTime - Fastest Time: 0.944s, "
+        let s0 = parse Init "  10 samples:"
+        benchmark s0 ^. benchmarkSamples `shouldBe` 10
+        let s1 = parse s0 $ "    pullTime - Fastest Time: 0.944s, "
                 ++ "Average Time: 0.953s ± 0.008s, Slowest Time: 0.971s"
-        res ^. benchmarkAverage `shouldBe` 0.953
-        res ^. benchmarkDerivation `shouldBe` 0.008
-        res ^. benchmarkName `shouldBe` "pullTime"
-        res ^. benchmarkSamples `shouldBe` 10
-        res ^. benchmarkUnit `shouldBe` "s"
+        let s2 = parse s1 $ "    other benchmark - Fastest Time: 0.944s, "
+                ++ "Average Time: 0.123s ± 1.000s, Slowest Time: 0.971s"
+        let r1 = benchmark s1
+        let r2 = benchmark s2
+        r1 ^. benchmarkAverage `shouldBe` 0.953
+        r1 ^. benchmarkDerivation `shouldBe` 0.008
+        r1 ^. benchmarkName `shouldBe` "pullTime"
+        r1 ^. benchmarkSamples `shouldBe` 10
+        r1 ^. benchmarkUnit `shouldBe` "s"
+        r2 ^. benchmarkAverage `shouldBe` 0.123
+        r2 ^. benchmarkDerivation `shouldBe` 1.000
+        r2 ^. benchmarkName `shouldBe` "other benchmark"
+        r2 ^. benchmarkSamples `shouldBe` 10
+        r2 ^. benchmarkUnit `shouldBe` "s"
 
     it "should succeed to parse a huge sample number" $
         benchmark (parse Init " 192835128754 samples:")
         ^. benchmarkSamples `shouldBe` 192835128754
+
+    it "should succeed to parse with ansi colors" $
+        benchmark (parse Init " [1m20[0m samples:")
+        ^. benchmarkSamples `shouldBe` 20
 
     it "should fail to parse empty input" $ failure (parse Init "")
         `shouldContain` "unexpected end of input"
