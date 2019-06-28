@@ -15,6 +15,16 @@ workflows:
     jobs:
       - build
       - build-static
+      - deploy:
+          requires:
+            - build
+            - doc-publish
+            - image
+            - lint
+            - test
+          filters:
+            branches:
+              only: master
       - doc
       - doc-publish:
           requires:
@@ -74,6 +84,23 @@ jobs:
           root: .
           paths:
             - result/bin
+
+  deploy:
+    machine: true
+    steps:
+      - attach_workspace:
+          at: .
+      - run:
+          name: Login to registry
+          command: docker login -u $DOCKER_USER -p $DOCKER_PASS
+      - run:
+          name: Load the image and tag
+          command: |
+            docker load -i build/image-performabot.tar
+            docker tag localhost/performabot saschagrunert/performabot
+      - run:
+          name: Push the image
+          command: docker push saschagrunert/performabot
 
   doc:
     executor: container
@@ -151,6 +178,10 @@ jobs:
           key: v1-image-{{ checksum "nix/nixpkgs.json" }}
           paths:
             - /nix
+      - persist_to_workspace:
+          root: .
+          paths:
+            - build/image-performabot.tar
       - store_artifacts:
           path: build/image-performabot.tar
           destination: build/image-performabot.tar
