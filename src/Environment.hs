@@ -6,20 +6,20 @@ module Environment
     , commit
     , commitEnvVars
     , fillEnvironment
+    , owner
+    , ownerEnvVars
     , pullRequest
     , pullRequestEnvVars
-    , repoSlug
-    , repoSlugEnvVars
+    , repository
+    , repositoryEnvVars
+    , token
     , tokenEnvVars
     ) where
 
 import           Control.Lens       ( (.~), (^.), makeLenses )
 import           Control.Monad      ( mapM, msum )
 
-import           Data.Aeson.TH
-                 ( defaultOptions, deriveJSON, fieldLabelModifier )
 import           Data.List          ( intercalate )
-import           Data.List.Split    ( splitOn )
 
 import           Log                ( err )
 
@@ -30,62 +30,57 @@ import           Text.Printf        ( printf )
 
 data Environment = Environment { _commit      :: String
                                , _pullRequest :: String
-                               , _repoSlug    :: String
+                               , _repository  :: String
+                               , _owner       :: String
                                , _token       :: String
                                }
     deriving Show
 
 $(makeLenses ''Environment)
 
-deriveJSON defaultOptions { fieldLabelModifier = drop 1 } ''Environment
-
+-- | Try to fill the environment from local variables
 fillEnvironment :: Environment -> Bool -> IO Environment
 fillEnvironment e d = do
     c <- getEnv (e ^. commit) "commit" commitEnvVars
     p <- getEnv (e ^. pullRequest) "pull request" pullRequestEnvVars
-    r <- getEnv (e ^. repoSlug) "repo slug" repoSlugEnvVars
+    r <- getEnv (e ^. repository) "repository" repositoryEnvVars
+    o <- getEnv (e ^. owner) "owner" ownerEnvVars
     t <- getEnv (e ^. token) "token" tokenEnvVars
 
     -- Validate the other environment variables
     if not d && any null [ c, p, r, t ]
         then exitFailure
-        else return $ token .~ t $ pullRequest .~ p $ commit .~ c $
-            repoSlug .~ r $ e
+        else return $ token .~ t $ pullRequest .~ p $ commit .~ c $ owner .~ o $
+            repository .~ r $ e
 
 -- | The prefix for local env vars
 prefix :: String -> String
 prefix = (++) "PB_"
 
--- | The split chars for defining multiple env vars in one single value
-envVarSplit :: String
-envVarSplit = "/$"
-
 -- | Possible token environment variables sorted by priority
 tokenEnvVars :: [String]
 tokenEnvVars = [ prefix "TOKEN" ]
 
--- | Possible repository slug (`username/project`) environment variables sorted
--- by priority
-repoSlugEnvVars :: [String]
-repoSlugEnvVars =
-    [ prefix "REPOSLUG"
-    , "CIRCLE_PROJECT_USERNAME" ++ envVarSplit ++ "CIRCLE_PROJECT_REPONAME"
-    , "TRAVIS_REPO_SLUG"
-    ]
+-- | Possible repository environment variables sorted by priority
+repositoryEnvVars :: [String]
+repositoryEnvVars = [ prefix "REPOSITORY", "CIRCLE_PROJECT_REPONAME" ]
+
+-- | Possible repository environment variables sorted by priority
+ownerEnvVars :: [String]
+ownerEnvVars = [ prefix "OWNER", "CIRCLE_PROJECT_USERNAME" ]
 
 -- | Possible commit environment variables sorted by priority
 commitEnvVars :: [String]
-commitEnvVars = [ prefix "COMMIT", "CIRCLE_SHA1", "TRAVIS_COMMIT" ]
+commitEnvVars = [ prefix "COMMIT", "CIRCLE_SHA1" ]
 
 -- | Possible pull request environment variables sorted by priority
 pullRequestEnvVars :: [String]
-pullRequestEnvVars =
-    [ prefix "PULL_REQUEST", "CIRCLE_PR_NUMBER", "TRAVIS_PULL_REQUEST" ]
+pullRequestEnvVars = [ prefix "PULL_REQUEST", "CIRCLE_PR_NUMBER" ]
 
 -- | Generic environment variable retrieval
 getEnv :: String -> String -> [String] -> IO String
 getEnv "" t v = do
-    e <- mapM lookupSplitEnv v
+    e <- mapM lookupEnv v
     case msum e of
         Just b -> return b
         _ -> do
@@ -97,9 +92,3 @@ getEnv "" t v = do
             return ""
 
 getEnv x _ _ = return x
-
--- | Lookup env vars but split them by `envVarSplit` before
-lookupSplitEnv :: String -> IO (Maybe String)
-lookupSplitEnv i = do
-    e <- mapM lookupEnv $ splitOn envVarSplit i
-    return $ intercalate "/" <$> sequence e

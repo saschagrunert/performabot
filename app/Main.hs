@@ -10,8 +10,9 @@ import           Data.List           ( intercalate )
 
 import           Environment
                  ( Environment(Environment), commit, commitEnvVars
-                 , fillEnvironment, pullRequest, pullRequestEnvVars, repoSlug
-                 , repoSlugEnvVars, tokenEnvVars )
+                 , fillEnvironment, owner, ownerEnvVars, pullRequest
+                 , pullRequestEnvVars, repository, repositoryEnvVars
+                 , tokenEnvVars )
 
 import           Log                 as L ( info )
 import           Log                 ( initLogger, notice, warn )
@@ -72,9 +73,12 @@ environment = Environment <$> strOption (long "commit" <> short 'c'
     <*> strOption (long "pull-request" <> short 'p'
                    <> envHelp "Pull request number" pullRequestEnvVars
                    <> metavar "PULL_REQUEST" <> value "")
-    <*> strOption (long "repo-slug" <> short 'r'
-                   <> envHelp "GitHub repository slug (owner/repo)"
-                              repoSlugEnvVars <> metavar "REPOSLUG" <> value "")
+    <*> strOption (long "repository" <> short 'r'
+                   <> envHelp "GitHub repository" repositoryEnvVars
+                   <> metavar "REPOSITORY" <> value "")
+    <*> strOption (long "owner" <> short 'o'
+                   <> envHelp "GitHub owner" ownerEnvVars <> metavar "OWNER"
+                   <> value "")
     <*> strOption (long "token" <> short 't' <> envHelp "Token" tokenEnvVars
                    <> metavar "TOKEN" <> value "") <**> helper
   where
@@ -114,7 +118,8 @@ run (Args e v d) = do
     env <- fillEnvironment e d
     L.info . printf "Using commit: %s" $ env ^. commit
     L.info . printf "Using pull request: %s" $ env ^. pullRequest
-    L.info . printf "Using repository slug: %s" $ env ^. repoSlug
+    L.info . printf "Using repository: %s" $ env ^. repository
+    L.info . printf "Using owner: %s" $ env ^. owner
 
     -- Parse loop
     notice "Processing input from stdin..."

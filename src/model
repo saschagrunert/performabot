@@ -1,10 +1,11 @@
 Test
     time        UTCTime
     commit      Text
-    repoSlug    Text
+    repository  Text
+    owner       Text
     pullRequest Text
     benchmarks  [BenchmarkId]
-    deriving    Show
+  deriving Show
 
 Benchmark
     average     Double
@@ -12,4 +13,4 @@ Benchmark
     name        Text
     samples     Int
     unit        Text
-    deriving    Show
+  deriving Show
