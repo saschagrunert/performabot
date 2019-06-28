@@ -7,6 +7,8 @@ import           ParserGoSpec          ( parserGoSpec )
 
 import           ParserSpec            ( parserProps, parserSpec )
 
+import           PrettySpec            ( prettySpec )
+
 import           ResultSpec            ( resultSpec )
 
 import           Test.Tasty
@@ -25,11 +27,16 @@ main = do
 -- Unit tests based on hspec
 unitTests :: IO TestTree
 unitTests = do
-    parserUnitTests <- testSpec "Parser.hs" parserSpec
     parserGoUnitTests <- testSpec "ParserGo.hs" parserGoSpec
+    parserUnitTests <- testSpec "Parser.hs" parserSpec
+    prettyUnitTests <- testSpec "Pretty.hs" prettySpec
     resultUnitTests <- testSpec "Result.hs" resultSpec
     return $ testGroup "Unit"
-                       [ parserGoUnitTests, parserUnitTests, resultUnitTests ]
+                       [ parserGoUnitTests
+                       , parserUnitTests
+                       , prettyUnitTests
+                       , resultUnitTests
+                       ]
 
 propertyTests :: TestTree
 propertyTests = testGroup "Property" [ parserProps ]

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: 0c627d55fff6db0f3745e774010e624c0adbc7fa265e79a60506b182fbc4f8c9
+-- hash: e66baad00a9ee7a23314f98b28839f9bbcb511da9795672b6bf1c4cecb9eb427
 
 name:           performabot
 version:        0.1.0
@@ -86,6 +86,7 @@ test-suite performabot-test
   other-modules:
       ParserGoSpec
       ParserSpec
+      PrettySpec
       ResultSpec
       Paths_performabot
   hs-source-dirs:
@@ -100,4 +101,5 @@ test-suite performabot-test
     , tasty
     , tasty-hspec
     , tasty-quickcheck
+    , time
   default-language: Haskell2010
