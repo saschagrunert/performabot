@@ -56,7 +56,7 @@ parserGoSpec = parallel $ do
         ^. benchmarkSamples `shouldBe` 192835128754
 
     it "should succeed to parse with ansi colors" $
-        benchmark (parse Init " [1m20[0m samples:")
+        benchmark (parse Init " \ESC[1m20\ESC[0m samples:")
         ^. benchmarkSamples `shouldBe` 20
 
     it "should fail to parse empty input" $ failure (parse Init "")
@@ -66,13 +66,13 @@ parserGoSpec = parallel $ do
         `shouldContain` "expecting white space"
 
     it "should fail to parse without integer" $ failure (parse Init " wrong")
-        `shouldContain` "expecting integer"
+        `shouldContain` "expecting escape, integer, or white space"
 
     it "should fail to parse without 'samples'" $ failure (parse Init " 10 ")
-        `shouldContain` "expecting \"samples\""
+        `shouldContain` "expecting \"samples:\""
 
     it "should fail to parse without colon" $ failure (parse Init " 10 samples")
-        `shouldContain` "expecting ':'"
+        `shouldContain` "expecting \"samples:\""
 
     it "should fail to parse without eof" $
         failure (parse Init " 10 samples: wrong")

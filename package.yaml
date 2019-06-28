@@ -61,10 +61,10 @@ library:
     - hslogger
     - lens
     - megaparsec
+    - parser-combinators
     - persistent
     - persistent-sqlite
     - persistent-template
-    - regex-compat
     - text
     - time
     - vector

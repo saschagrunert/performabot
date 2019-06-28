@@ -3,20 +3,22 @@
 -- @since 0.1.0
 module ParserGo ( parse ) where
 
-import           Control.Lens         ( (.~), (^.) )
+import           Control.Lens              ( (.~), (^.) )
+import           Control.Monad.Combinators ( skipMany )
 
-import           Data.Text            ( pack )
+import           Data.Text                 ( pack )
 
 import           Model
                  ( Benchmark(Benchmark), benchmarkSamples, emptyBenchmark )
 
-import           Parser               ( Parser, State(Ok, Failure, NeedMore)
-                                      , StringParser, double, integer )
+import           Parser
+                 ( Parser, State(Ok, Failure, NeedMore), StringParser, double
+                 , integer )
 
-import           Text.Megaparsec      ( Token, anySingle, eof, errorBundlePretty
-                                      , manyTill, runParser )
-import           Text.Megaparsec.Char ( char, space1, spaceChar, string )
-import           Text.Regex           ( mkRegex, subRegex )
+import           Text.Megaparsec
+                 ( anySingle, eof, errorBundlePretty, manyTill, runParser )
+import           Text.Megaparsec.Char
+                 ( char, numberChar, space, space1, spaceChar, string )
 
 -- | Parses golang (`ginkgo --succinct`) benchmarks based on the given input
 -- state, for example:
@@ -30,41 +32,34 @@ parse _ i = runStep (step0 emptyBenchmark) i
 
 -- | Run a single step abstraction
 runStep :: Parser -> String -> State
-runStep a i = case runParser a "" (ansiFilter i) of
+runStep a i = case runParser a "" i of
     Left e -> Failure $ errorBundlePretty e
     Right r -> r
-
--- | Strip all colors from the string
-ansiFilter :: String -> String
-ansiFilter line = subRegex (mkRegex "\\[[0-9]+m") stripped ""
-  where
-    stripped = filter (/= '\ESC') line
 
 -- | The initial parse step
 step0 :: Benchmark -> Parser
 step0 b = do
-    space1
+    _ <- space1 <* ansi
     s <- integer
-    _ <- string "samples" <* colon <* eof
+    _ <- ansi <* space <* string "samples:" <* eof
     return . NeedMore $ benchmarkSamples .~ s $ b
 
 -- | The last parse step
 step1 :: Benchmark -> Parser
 step1 b = do
-    space1
-    n <- manyTill anySingle $ string " - "
-    _ <- string "Fastest" <* spaceChar <* string "Time" <* colon
-    _ <- spaceChar <* double <* s <* char ',' <* spaceChar
-    _ <- string "Average" <* spaceChar <* string "Time" <* colon <* spaceChar
+    _ <- space1 <* ansi
+    n <- manyTill anySingle $ ansi <* string " - Fastest Time: "
+    _ <- ansi <* double <* ansi <* s <* char ',' <* spaceChar
+        <* string "Average Time: " <* ansi
     a <- double
-    _ <- s <* spaceChar <* char '±' <* spaceChar
+    _ <- ansi <* s <* spaceChar <* char '±' <* spaceChar <* ansi
     d <- double
-    _ <- s <* char ',' <* spaceChar <* string "Slowest" <* spaceChar
-    _ <- string "Time" <* colon <* spaceChar <* double <* s <* eof
+    _ <- ansi <* s <* string ", Slowest Time: " <* ansi <* double <* ansi <* s
+        <* eof
     return . Ok $ Benchmark a d (pack n) (b ^. benchmarkSamples) "s"
   where
     s = char 's'
 
--- | Parses a single colon
-colon :: StringParser (Token String)
-colon = char ':'
+-- | Parses ansi escape sequences
+ansi :: StringParser ()
+ansi = skipMany $ char '\ESC' <* char '[' <* manyTill numberChar (char 'm')

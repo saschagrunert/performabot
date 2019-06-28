@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: e66baad00a9ee7a23314f98b28839f9bbcb511da9795672b6bf1c4cecb9eb427
+-- hash: a475f7d00ba30f4d6c0ae33a24988e83878600b3f468fd64bba9f2488281705d
 
 name:           performabot
 version:        0.1.0
@@ -52,10 +52,10 @@ library
     , hslogger
     , lens
     , megaparsec
+    , parser-combinators
     , persistent
     , persistent-sqlite
     , persistent-template
-    , regex-compat
     , text
     , time
     , vector
