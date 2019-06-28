@@ -26,18 +26,8 @@ comment which contains all necessary information, like these:
 @@                  Performance Diff                    @@
 ##                                        Ø       ±   × ##
 ==========================================================
-  create PodSandbox                  0.404s  0.471s  20
-  PodSandbox status                  0.000s  0.000s  20
-  stop PodSandbox                    0.240s  0.015s  20
-  remove PodSandbox                  0.056s  0.012s  20
-  create PodSandbox and container    0.405s  0.049s  20
-  list Container                     0.002s  0.005s  20
-  pull Image                         6.498s  0.478s  20
-  Image status                       0.002s  0.001s  20
-  remove Image                       0.068s  0.044s  20
   create Container                   0.122s  0.035s  20
   start Container                    0.030s  0.012s  20
-  Container status                   0.002s  0.001s  20
   stop Container                     0.048s  0.014s  20
   remove Container                   0.026s  0.004s  20
 ==========================================================
@@ -64,11 +54,11 @@ box (except for the token). The needed information are:
 
 | Flag                  | Environment Variable                        | Description                 |
 | --------------------- | ------------------------------------------- | --------------------------- |
-| `-c`, `--commit`      | `$PB_COMMIT`, `$CIRCLE_SHA1`                | Commit hash                 |
-| `-p`,`--pull-request` | `$PB_PULL_REQUEST`,`$CIRCLE_PR_NUMBER`      | Pull request number         |
-| `-r`, `--repository`  | `$PB_REPOSITORY`,`$CIRCLE_PROJECT_REPONAME` | GitHub repository name      |
-| `-o`, `--owner`       | `$PB_OWNER`,`$CIRCLE_PROJECT_USERNAME`      | GitHub repository owner     |
-| `-t`, `--token`       | `$PB_TOKEN`                                 | Personal access OAuth token |
+| `-c` `--commit`       | `$PB_COMMIT` `$CIRCLE_SHA1`                 | Commit hash                 |
+| `-p` `--pull-request` | `$PB_PULL_REQUEST` `$CIRCLE_PR_NUMBER`      | Pull request number         |
+| `-r` `--repository`   | `$PB_REPOSITORY` `$CIRCLE_PROJECT_REPONAME` | GitHub repository name      |
+| `-o` `--owner`        | `$PB_OWNER` `$CIRCLE_PROJECT_USERNAME`      | GitHub repository owner     |
+| `-t` `--token`        | `$PB_TOKEN`                                 | Personal access OAuth token |
 
 Personal access tokens can be generated [via the GitHub developer
 settings](https://github.com/settings/tokens), whereas only `public_repo`
@@ -86,8 +76,23 @@ To build the project, simply run:
 > make
 ```
 
-The binary should be available at `result/bin//performabot` after successful
-compilation. If you need a shell where all build time dependencies are already
+The binary should be available at `result/bin/performabot` after successful
+compilation. Before running that binary please ensure that you have the
+`$LOCALE_ARCHIVE` environment variable set. This is done automatically on
+[NixOS](https://nixos.org) and nix shells, but it does not apply to other
+environments. The repository contains two helper scripts which can be sourced
+from [bash](https://www.gnu.org/software/bash) or [fish](https://fishshell.com)
+to ensure this:
+
+```fish
+. hack/env.fish
+```
+
+```bash
+. hack/env.sh
+```
+
+If you need a shell where all build time dependencies are already
 included in `$PATH`, then run:
 
 ```shell
