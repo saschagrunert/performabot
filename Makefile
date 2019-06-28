@@ -20,10 +20,10 @@ define image
 	$(call nix-shell-pure-run,\
 		hack/podman-config &&\
 		podman --config=$(BUILD_DIR)/podman.conf --storage-driver=vfs \
-			build --pull --no-cache -f image-$(1) -t performabot-$(1) &&\
-		rm -f $(BUILD_DIR)/image-$(1).tar &&\
+			build --pull --no-cache -f image-$(1) -t $(1) &&\
+		rm -f $(BUILD_DIR)/$(1).tar &&\
 		podman --config=$(BUILD_DIR)/podman.conf --storage-driver=vfs \
-			save  -o $(BUILD_DIR)/image-$(1).tar performabot-$(1))
+			save  -o $(BUILD_DIR)/image-$(1).tar $(1))
 endef
 
 
@@ -79,7 +79,7 @@ hlint:
 
 .PHONY: image-build
 image-build:
-	$(call image,build)
+	$(call image,performabot-build)
 
 .PHONY: image-performabot
 image-performabot:
