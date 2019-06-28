@@ -84,11 +84,11 @@ environments. The repository contains two helper scripts which can be sourced
 from [bash](https://www.gnu.org/software/bash) or [fish](https://fishshell.com)
 to ensure this:
 
-```fish
+```shell
 . hack/env.fish
 ```
 
-```bash
+```shell
 . hack/env.sh
 ```
 
