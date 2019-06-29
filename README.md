@@ -13,11 +13,12 @@ performance benchmarks are supported.
 ## How it works
 
 Performabot parses the output of a micro-benchmarking framework. After the
-successful parsing it puts the data into a local
-[SQLite](https://www.sqlite.org) database. This database is named
-`performabot.sqlite`, where multiple consecutive test runs will result in
-reusing that database. If Performabot finds data where it can compare the
-current run against, then it will do that as well.
+successful parsing it puts the data into a new GitHub repository called
+`performabot-results`. This repository is automatically created by the user
+who owns the specified token. All data within that repository will be managed by
+performabot, whereas data updates result in additional commits within that
+repository. If Performabot finds data where it can compare the current run
+against, then it will do that as well.
 
 Performabot updates the corresponding GitHub pull request after the run with a
 comment which contains all necessary information, like these:

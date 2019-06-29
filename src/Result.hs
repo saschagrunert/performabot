@@ -13,10 +13,13 @@ import           Database.Persist        ( (<-.), (==.), SelectOpt(Asc, LimitTo)
                                          , entityVal, insert, selectList )
 import           Database.Persist.Sqlite ( runMigration, runSqlite )
 
+import           Default                 ( db )
+
 import           Environment
                  ( Environment, commit, owner, pullRequest, repository )
 
-import           Github                  ( baseCommit, comment )
+import           Github
+                 ( baseCommit, comment, retrieveRemoteFile, updateRemoteFile )
 
 import           Log                     ( debug, info, notice, noticeR )
 
@@ -74,24 +77,24 @@ debugResult r = debug . printf "Current result: %s" $ show r
 -- | Sen the provided data to the given url including the environment
 save :: Bool -> Step -> Environment -> IO ()
 save l (_, b) e = do
-    insertInDB e b
-    info "Database insertion successful"
     r <- if not l
          then do
+             m <- retrieveRemoteFile e
+             insertInDB e b
+             notice $ printf "Database insertion successful in: %s" db
              c <- baseCommit e
              info "Base commit retrieval successful"
              pb <- entryForCommit c
              let r = prettyPrint b pb
              comment e r
+             updateRemoteFile e m
              return r
          else do
              notice "Local run specified"
+             insertInDB e b
+             notice $ printf "Database insertion successful in: %s" db
              return $ prettyPrint b Nothing
     notice $ printf "The report:\n\n%s" r
-
--- | The database name
-db :: Text
-db = "performabot.sqlite"
 
 -- | Insert the test into the database
 insertInDB :: Environment -> Benchmarks -> IO ()

@@ -4,7 +4,7 @@ cabal-version: 1.12
 --
 -- see: https://github.com/sol/hpack
 --
--- hash: a475f7d00ba30f4d6c0ae33a24988e83878600b3f468fd64bba9f2488281705d
+-- hash: e6e26f2f314098b27b861c22ca69a2dd6934a720876de857f2f7b3251cfc6eec
 
 name:           performabot
 version:        0.1.0
@@ -30,6 +30,7 @@ flag static
 
 library
   exposed-modules:
+      Default
       Environment
       Github
       Log
@@ -47,6 +48,7 @@ library
   build-depends:
       ansi-terminal
     , base
+    , base64-bytestring
     , bytestring
     , github
     , hslogger
