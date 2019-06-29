@@ -1,7 +1,8 @@
 { mkDerivation, ansi-terminal, base, bytestring, github, hpack
-, hslogger, lens, megaparsec, optparse-applicative, persistent
-, persistent-sqlite, persistent-template, regex-compat, stdenv
-, tasty, tasty-hspec, tasty-quickcheck, text, time, vector
+, hslogger, lens, megaparsec, optparse-applicative
+, parser-combinators, persistent, persistent-sqlite
+, persistent-template, stdenv, tasty, tasty-hspec, tasty-quickcheck
+, text, time, vector
 }:
 mkDerivation {
   pname = "performabot";
@@ -11,8 +12,8 @@ mkDerivation {
   isExecutable = true;
   libraryHaskellDepends = [
     ansi-terminal base bytestring github hslogger lens megaparsec
-    persistent persistent-sqlite persistent-template regex-compat text
-    time vector
+    parser-combinators persistent persistent-sqlite persistent-template
+    text time vector
   ];
   libraryToolDepends = [ hpack ];
   executableHaskellDepends = [
