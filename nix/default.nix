@@ -1,5 +1,5 @@
-{ mkDerivation, ansi-terminal, base, bytestring, github, hpack
-, hslogger, lens, megaparsec, optparse-applicative
+{ mkDerivation, ansi-terminal, base, base64-bytestring, bytestring
+, github, hpack, hslogger, lens, megaparsec, optparse-applicative
 , parser-combinators, persistent, persistent-sqlite
 , persistent-template, stdenv, tasty, tasty-hspec, tasty-quickcheck
 , text, time, vector
@@ -11,9 +11,9 @@ mkDerivation {
   isLibrary = true;
   isExecutable = true;
   libraryHaskellDepends = [
-    ansi-terminal base bytestring github hslogger lens megaparsec
-    parser-combinators persistent persistent-sqlite persistent-template
-    text time vector
+    ansi-terminal base base64-bytestring bytestring github hslogger
+    lens megaparsec parser-combinators persistent persistent-sqlite
+    persistent-template text time vector
   ];
   libraryToolDepends = [ hpack ];
   executableHaskellDepends = [

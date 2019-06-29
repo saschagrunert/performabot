@@ -56,6 +56,7 @@ library:
   source-dirs: src
   dependencies:
     - ansi-terminal
+    - base64-bytestring
     - bytestring
     - github
     - hslogger
