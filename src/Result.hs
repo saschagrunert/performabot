@@ -72,16 +72,22 @@ debugResult :: Benchmarks -> IO ()
 debugResult r = debug . printf "Current result: %s" $ show r
 
 -- | Sen the provided data to the given url including the environment
-save :: Step -> Environment -> IO ()
-save (_, b) e = do
-    c <- baseCommit e
-    info "Base commit retrieval successful"
+save :: Bool -> Step -> Environment -> IO ()
+save l (_, b) e = do
     insertInDB e b
     info "Database insertion successful"
-    pb <- entryForCommit c
-    let r = prettyPrint b pb
-    notice $ printf "The report: %s" r
-    comment e r
+    r <- if not l
+         then do
+             c <- baseCommit e
+             info "Base commit retrieval successful"
+             pb <- entryForCommit c
+             let r = prettyPrint b pb
+             comment e r
+             return r
+         else do
+             notice "Local run specified"
+             return $ prettyPrint b Nothing
+    notice $ printf "The report:\n\n%s" r
 
 -- | The database name
 db :: Text
