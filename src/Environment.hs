@@ -40,7 +40,7 @@ $(makeLenses ''Environment)
 
 -- | Try to fill the environment from local variables
 fillEnvironment :: Environment -> Bool -> IO Environment
-fillEnvironment e d = do
+fillEnvironment e l = do
     c <- getEnv (e ^. commit) "commit" commitEnvVars
     p <- getEnv (e ^. pullRequest) "pull request" pullRequestEnvVars
     r <- getEnv (e ^. repository) "repository" repositoryEnvVars
@@ -48,7 +48,7 @@ fillEnvironment e d = do
     t <- getEnv (e ^. token) "token" tokenEnvVars
 
     -- Validate the other environment variables
-    if not d && any null [ c, p, r, t ]
+    if not l && any null [ c, p, r, t ]
         then exitFailure
         else return $ token .~ t $ pullRequest .~ p $ commit .~ c $ owner .~ o $
             repository .~ r $ e

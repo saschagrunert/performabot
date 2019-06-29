@@ -24,8 +24,8 @@ import           Options.Applicative
             prefShowHelpOnEmpty, prefShowHelpOnError, prefBacktrack,
             prefColumns)
                  , customExecParser, flag', footer, fullDesc, header, help
-                 , helper, infoOption, internal, long, many, metavar, short
-                 , short, strOption, switch, value )
+                 , helper, infoOption, long, many, metavar, short, short
+                 , strOption, switch, value )
 
 import           Result
                  ( amount, initParserStep, parseStepIO, save )
@@ -64,7 +64,7 @@ parser =
                        ++ "<https://github.com/saschagrunert/performabot>"))
 
 arguments :: Parser Args
-arguments = Args <$> environment <*> verbosity <*> devel
+arguments = Args <$> environment <*> verbosity <*> local
 
 environment :: Parser Environment
 environment = Environment <$> strOption (long "commit" <> short 'c'
@@ -91,16 +91,16 @@ verbosity :: Parser Priority
 verbosity = priority . length
     <$> many (flag' ()
                     (long "verbose" <> short 'v'
-                     <> help ("the logging verbosity,"
-                              ++ " can be specified up to 2x")))
+                     <> help "Logging verbosity, can be specified up to 2x"))
   where
     priority a
         | a == 0 = NOTICE
         | a == 1 = INFO
         | otherwise = DEBUG
 
-devel :: Parser Bool
-devel = switch (internal <> long "devel" <> short 'd')
+local :: Parser Bool
+local = switch (long "local" <> short 'l'
+                <> help "Run only locally and do not upload anything")
 
 version :: Parser (a -> a)
 version =
@@ -108,14 +108,14 @@ version =
 
 -- | The entry function after argument parsing
 run :: Args -> IO ()
-run (Args e v d) = do
+run (Args e v l) = do
     -- Setup logging
     initLogger v
     notice "Welcome to performabot!"
     notice . printf "The logging verbosity is set to: %s" $ show v
 
     -- Prepare environment
-    env <- fillEnvironment e d
+    env <- fillEnvironment e l
     L.info . printf "Using commit: %s" $ env ^. commit
     L.info . printf "Using pull request: %s" $ env ^. pullRequest
     L.info . printf "Using repository: %s" $ env ^. repository
@@ -132,7 +132,7 @@ run (Args e v d) = do
     notice . printf "Processing done, found %d result%s" c $
         if c == 1 then "" else "s" :: String
     if c /= 0
-        then save r env
+        then save l r env
         else do
             warn "Not saving anything because no results found"
             exitFailure

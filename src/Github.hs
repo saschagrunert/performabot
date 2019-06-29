@@ -14,7 +14,7 @@ import           Environment
                  ( Environment, owner, pullRequest, repository, token )
 
 import           GitHub                           ( Auth(OAuth) )
-import           GitHub.Data.Comments             ( Comment, commentUrl )
+import           GitHub.Data.Comments             ( Comment, commentHtmlUrl )
 import           GitHub.Data.Definitions
                  ( Error, IssueNumber(IssueNumber), Owner )
 import           GitHub.Data.Id                   ( Id(Id) )
@@ -82,7 +82,10 @@ handleCommentErr x t = case x of
         debug $ show f
         exitFailure
     Right c -> notice $
-        printf "Comment %s successful: %s" t (getUrl $ commentUrl c)
+        printf "Comment %s successful: %s" t (urlOf $ commentHtmlUrl c)
+  where
+    urlOf Nothing = "Not found."
+    urlOf (Just u) = getUrl u
 
 -- | Finds comments from performabot
 isFromPerformabot :: [IssueComment] -> Maybe IssueComment
