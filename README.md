@@ -1,5 +1,6 @@
 # Performabot
 
+[![Version](https://img.shields.io/badge/version-0.1.0-blue.svg)](https://github.com/saschagrunert/performabot)
 [![CircleCI](https://circleci.com/gh/saschagrunert/performabot.svg?style=shield)](https://circleci.com/gh/saschagrunert/performabot)
 [![Coverage](https://coveralls.io/repos/github/saschagrunert/performabot/badge.svg?branch=master)](https://coveralls.io/github/saschagrunert/performabot?branch=master)
 [![Doc](https://img.shields.io/badge/doc-performabot-orange.svg)](https://saschagrunert.github.io/performabot)
